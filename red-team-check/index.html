@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taha Bagatur · AI infrastructure & DevOps</title>
+<meta name="description" content="Fixed-price help for small teams and agencies taking AI features from demo to reliable production: readiness reviews, LLM cost checks, deployment fixes and DevOps.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f5e9c'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#fbfbfc;--card:#fff;--ink:#18202b;--muted:#5b6575;--line:#e2e6ec;--accent:#0f5e9c;--accent-soft:#eaf2fa}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1318;--card:#161b22;--ink:#e6e9ee;--muted:#9aa4b2;--line:#283039;--accent:#5aa9e6;--accent-soft:#16283a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter","Segoe UI","Helvetica Neue",Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:20px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:700;text-decoration:none;color:var(--ink)}
+nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--accent)}
+.hero{padding:64px 0 40px}
+.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 16px;letter-spacing:-.5px}
+.hero p{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 26px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent);margin-left:10px}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-size:26px;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0 0 10px;color:var(--muted);font-size:15px}
+.price{font-weight:700;color:var(--accent)}
+.meta{font-size:13px;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px;margin-bottom:10px}
+ul.clean{padding-left:20px;margin:0}
+ul.clean li{margin:6px 0}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:720px){.cols{grid-template-columns:1fr}.btn.ghost{margin:10px 0 0}nav a{margin:0 14px 0 0}}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">Taha Bagatur</a>
+    <nav><a href="#ai">AI in production</a><a href="#devops">DevOps</a><a href="#samples">Samples</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>From AI demo to reliable production.</h1>
+    <p>I help small product teams and agencies run AI features that are fast, measurable and affordable, and keep the infrastructure underneath them healthy. Fixed prices, read-only first, no long contracts.</p>
+    <a class="btn" href="mailto:taha@tahabagatur.com?subject=AI%20production%20question">Email me a problem</a>
+    <a class="btn ghost" href="#samples">See a sample report</a>
+  </div>
+
+  <section id="ai">
+    <h2>AI in production</h2>
+    <p class="lead">For teams that have shipped an LLM, RAG or agent feature and now need it to behave in production.</p>
+    <div class="grid two">
+      <div class="card"><span class="tag">Start here</span><h3>AI Red-Team Check</h3>
+        <p>2-day test of one AI feature on staging, with test data and your written permission: about 40 attacks for prompt injection (also through the documents your AI reads), prompt leaks, unsafe links and personal data reaching the provider, logs or traces. A report with the fix for each finding, and the attack set as a CI regression test.</p>
+        <span class="price">$300 fixed</span></div>
+      <div class="card"><h3>AI Production Readiness Review</h3>
+        <p>3-day review of one AI feature: tracing, evaluation and release gates, latency, fallbacks, cost per answer, privacy and prompt injection, retrieval pipeline. Measured findings and a 30-day plan.</p>
+        <span class="price">$900 fixed</span></div>
+      <div class="card"><h3>LLM Cost Check</h3>
+        <p>Where your LLM spend goes and how to cut it: context size, model per step, caching, provider settings, and a self-hosting break-even estimate (vLLM, open-weight models).</p>
+        <span class="price">$750 fixed</span></div>
+      <div class="card"><h3>AI Deploy Fix</h3>
+        <p>One specific problem: slow or failing answers, timeouts and rate limits, GPU or container issues, a deployment that won’t go live.</p>
+        <span class="price">$250–400 fixed</span></div>
+      <div class="card"><h3>AI Ops Care</h3>
+        <p>Monthly cost and quality review, evaluation runs before releases, provider and model updates, small fixes.</p>
+        <span class="price">$600–1,200 / month</span></div>
+    </div>
+    <p class="meta">Writing: <a href="/notes/red-team-my-own-rag-bot.html">I attacked my own RAG bot. 7 of 10 attacks worked.</a></p>
+  </section>
+
+  <section id="devops">
+    <h2>DevOps &amp; infrastructure</h2>
+    <p class="lead">For teams and agencies without a DevOps person of their own.</p>
+    <div class="grid two">
+      <div class="card"><h3>Deployment Fix</h3><p>A broken pipeline, 502s after deploys, SSL, Docker or NGINX issues, a server you are afraid to touch.</p><span class="price">$150–300 fixed</span></div>
+      <div class="card"><h3>DevOps Health Check</h3><p>3-day review of one application: CI/CD, backups and restore test, monitoring, server security, secrets, cost.</p><span class="price">$750 fixed</span></div>
+      <div class="card"><h3>DevOps Maturity Assessment</h3><p>Whole platform: delivery, infrastructure as code, observability, security, backup and DR. Maturity score per area and a 90-day roadmap.</p><span class="price">from $1,750</span></div>
+      <div class="card"><h3>DevOps Care</h3><p>Monitoring and alert triage, patching, monthly restore test, small fixes, monthly report.</p><span class="price">$400–800 / month</span></div>
+    </div>
+  </section>
+
+  <section id="samples">
+    <h2>Sample reports</h2>
+    <p class="lead">Fictional companies, real format. This is what you receive at the end of a review.</p>
+    <div class="grid">
+      <div class="card"><h3>AI Production Readiness Review</h3><p>A RAG support assistant: tracing, evaluation, latency, cost and privacy findings with a 30-day plan.</p><a href="/samples/Sample-AI-Production-Readiness-Review.pdf">Open PDF</a> <span class="meta">· 4 pages</span></div>
+      <div class="card"><h3>DevOps Health Check</h3><p>A Laravel app on a single VPS: backups, alerting, deploys, access and cost.</p><a href="/samples/Sample-DevOps-Health-Check-Report.pdf">Open PDF</a> <span class="meta">· 4 pages</span></div>
+      <div class="card"><h3>Services &amp; terms</h3><p>All services, how I work, and payment terms on one page.</p><a href="/samples/Services-and-Terms.pdf">Open PDF</a> <span class="meta">· 1 page</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="cols">
+      <div>
+        <h2>About</h2>
+        <p>I’m Taha Bagatur, an AI infrastructure and DevOps engineer. In my day job I run LLM and computer-vision workloads in production for a large retail group: GPU inference servers, RAG services, an edge fleet of 50+ devices, monitoring and drift detection. I also own the DevOps platform underneath: CI/CD, Linux servers, Kubernetes, observability and backups.</p>
+        <p>Alongside that, I take a small number of fixed-price projects for remote teams.</p>
+      </div>
+      <div>
+        <h2>How I work</h2>
+        <ul class="clean">
+          <li><b>Read-only first.</b> Reviews never change your systems; fixes happen only after written approval.</li>
+          <li><b>Evidence, not opinions.</b> Every finding says what was measured, so your team can check it.</li>
+          <li><b>Your data stays yours.</b> Personal data is masked in anything I keep, and access is removed when we finish.</li>
+          <li><b>Agencies:</b> I work behind the scenes; you keep the client relationship.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="lead">Send the problem: an error, a trace, a log or a short description. Within 24 hours you get a fixed price and how I would approach it. Nothing is billed until you approve the quote.</p>
+    <a class="btn" href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a>
+    <p class="meta" style="margin-top:14px">Code and labs: <a href="https://github.com/mtbagatur">github.com/mtbagatur</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Taha Bagatur · No cookies, no tracking on this site.</div>
+</footer>
+
+</body>
+</html>
