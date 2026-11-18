@@ -43,6 +43,62 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot"/>
   </url>
   <url>
+    <loc>https://tahabagatur.com/notes/parallel-ai-sessions</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/parallel-ai-sessions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/parallel-ai-sessions</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/parallel-ai-sessions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/notes/reading-silenced-alerts</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/reading-silenced-alerts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/reading-silenced-alerts</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/reading-silenced-alerts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/notes/empty-source-backups</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/empty-source-backups"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/empty-source-backups"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/empty-source-backups"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/empty-source-backups</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/empty-source-backups"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/empty-source-backups"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/empty-source-backups"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/notes/ai-tool-review</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/ai-tool-review"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/ai-tool-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/ai-tool-review"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/ai-tool-review</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/ai-tool-review"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/ai-tool-review"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/ai-tool-review"/>
+  </url>
+  <url>
     <loc>https://tahabagatur.com/work/slow-llm-prefill</loc>
     <lastmod>2026-11-18</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/work/slow-llm-prefill"/>

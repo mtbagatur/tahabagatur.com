@@ -10,6 +10,10 @@ const BILINGUAL_PAIRS = [
   ['/', '/tr/'],
   ['/notes/', '/tr/notes/'],
   ['/notes/red-team-my-own-rag-bot', '/tr/notes/red-team-my-own-rag-bot'],
+  ['/notes/parallel-ai-sessions', '/tr/notes/parallel-ai-sessions'],
+  ['/notes/reading-silenced-alerts', '/tr/notes/reading-silenced-alerts'],
+  ['/notes/empty-source-backups', '/tr/notes/empty-source-backups'],
+  ['/notes/ai-tool-review', '/tr/notes/ai-tool-review'],
   ['/work/slow-llm-prefill', '/tr/work/slow-llm-prefill'],
   ['/work/gpu-node-nvme-hang', '/tr/work/gpu-node-nvme-hang'],
   ['/work/agentless-monitoring-bridge', '/tr/work/agentless-monitoring-bridge'],
@@ -111,6 +115,10 @@ test.describe('2. Clean URLs, redirects, 404 & security headers', () => {
     expect(readme.headers()['x-robots-tag']).toBe('noindex');
     const script = await request.get('/scripts/kontrol.sh');
     expect(script.headers()['x-robots-tag']).toBe('noindex');
+
+    const cv = await request.get('/assets/taha-bagatur-cv.pdf');
+    expect(cv.status()).toBe(200);
+    expect(cv.headers()['content-type']).toContain('application/pdf');
   });
 });
 

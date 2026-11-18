@@ -32,7 +32,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Blog","name":"Notes · Taha Bagatur","url":"https://tahabagatur.com/notes/","inLanguage":"en","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur"},"blogPost":[{"@type":"BlogPosting","headline":"I attacked my own RAG bot. 7 of 10 attacks worked.","url":"https://tahabagatur.com/notes/red-team-my-own-rag-bot","datePublished":"2026-11-02"}]}
+{"@context":"https://schema.org","@type":"Blog","name":"Notes · Taha Bagatur","url":"https://tahabagatur.com/notes/","inLanguage":"en","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur"},"blogPost":[{"@type":"BlogPosting","headline":"How I screened six AI tools before adoption","url":"https://tahabagatur.com/notes/ai-tool-review","datePublished":"2026-11-18"},{"@type":"BlogPosting","headline":"An empty source is not a successful backup","url":"https://tahabagatur.com/notes/empty-source-backups","datePublished":"2026-11-18"},{"@type":"BlogPosting","headline":"Reading silenced alerts as a separate list","url":"https://tahabagatur.com/notes/reading-silenced-alerts","datePublished":"2026-11-18"},{"@type":"BlogPosting","headline":"Avoiding duplicate work across parallel AI sessions","url":"https://tahabagatur.com/notes/parallel-ai-sessions","datePublished":"2026-11-18"},{"@type":"BlogPosting","headline":"I attacked my own RAG bot. 7 of 10 attacks worked.","url":"https://tahabagatur.com/notes/red-team-my-own-rag-bot","datePublished":"2026-11-02"}]}
 </script>
 </head>
 <body>
@@ -59,6 +59,26 @@
   <h1>Notes</h1>
   <p class="lead">Write-ups from real work: what I tested, what broke and what I changed.</p>
   <ul class="posts">
+    <li>
+      <h2><a href="/notes/ai-tool-review">How I screened six AI tools before adoption</a></h2>
+      <p class="meta" style="margin:0"><time datetime="2026-11-18">18 Nov 2026</time></p>
+      <p>How I evaluated six trending AI tools: one adopted with a pinned commit after reading every file, four parts cherry-picked manually from a ~300-skill bundle, and four rejected over prompt and telemetry flow.</p>
+    </li>
+    <li>
+      <h2><a href="/notes/empty-source-backups">An empty source is not a successful backup</a></h2>
+      <p class="meta" style="margin:0"><time datetime="2026-11-18">18 Nov 2026</time></p>
+      <p>After an object-storage rebuild, restoring backups (~5.6 GB across two buckets, zero diff) exposed a deeper gap: a backup job that could treat zero objects at the source as success.</p>
+    </li>
+    <li>
+      <h2><a href="/notes/reading-silenced-alerts">Reading silenced alerts as a separate list</a></h2>
+      <p class="meta" style="margin:0"><time datetime="2026-11-18">18 Nov 2026</time></p>
+      <p>Inspecting active and silenced alerts as two separate lists prevents known issues from looking like new critical incidents when they resurface.</p>
+    </li>
+    <li>
+      <h2><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h2>
+      <p class="meta" style="margin:0"><time datetime="2026-11-18">18 Nov 2026</time></p>
+      <p>Running several AI sessions in parallel duplicated work twice until I adopted a two-line rule: one owner before starting and a cross-check at the end of the day (8.5 hours logged, 0 duplicate work).</p>
+    </li>
     <li>
       <h2><a href="/notes/red-team-my-own-rag-bot">I attacked my own RAG bot. 7 of 10 attacks worked.</a></h2>
       <p class="meta" style="margin:0"><time datetime="2026-11-02">2 Nov 2026</time></p>
