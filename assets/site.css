@@ -81,8 +81,12 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
 .posts{list-style:none;padding:0;margin:0}
 .posts li{padding:18px 0;border-bottom:1px solid var(--line)}
 .posts li:last-child{border-bottom:0}
-.posts h2{font-size:20px;margin:0 0 4px}
-.posts p{margin:4px 0 0;color:var(--muted)}
+.posts h2,.posts h3{font-size:19px;margin:0 0 4px;line-height:1.35}
+.posts h2 a,.posts h3 a{color:var(--ink);text-decoration:none}
+.posts h2 a:hover,.posts h3 a:hover{color:var(--accent);text-decoration:underline}
+.posts p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
+.post-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.post-date{font-size:13.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:nowrap}
 @media (max-width:600px){
   .hero{padding-top:48px;padding-bottom:36px}
   .hero p{font-size:17px}
