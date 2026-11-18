@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Taha Bagatur · Notes</title>
+  <subtitle>Write-ups from real work.</subtitle>
+  <id>https://tahabagatur.com/notes/</id>
+  <link rel="self" type="application/atom+xml" href="https://tahabagatur.com/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/"/>
+  <updated>2026-11-02T00:00:00Z</updated>
+  <author><name>Taha Bagatur</name><uri>https://tahabagatur.com/</uri></author>
+  <entry>
+    <title>I attacked my own RAG bot. 7 of 10 attacks worked.</title>
+    <id>https://tahabagatur.com/notes/red-team-my-own-rag-bot</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot"/>
+    <published>2026-11-02T00:00:00Z</published>
+    <updated>2026-11-02T00:00:00Z</updated>
+    <summary>A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.</summary>
+  </entry>
+</feed>

@@ -1,0 +1,21 @@
+# Cloudflare Pages response headers. Docs: https://developers.cloudflare.com/pages/configuration/headers/
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+
+# Repo-only files are served too (Pages publishes the repo root); keep them out of search results.
+/README.md
+  X-Robots-Tag: noindex
+/scripts/*
+  X-Robots-Tag: noindex
+/tests/*
+  X-Robots-Tag: noindex
+/package.json
+  X-Robots-Tag: noindex
+/package-lock.json
+  X-Robots-Tag: noindex
+/playwright.config.js
+  X-Robots-Tag: noindex

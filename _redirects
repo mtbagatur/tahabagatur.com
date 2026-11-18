@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects. Case studies live at /work/<slug>; the list is on the home page.
+/work      /#work      302
+/work/     /#work      302
+/tr/work   /tr/#work   302
+/tr/work/  /tr/#work   302

@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>I attacked my own RAG bot · Taha Bagatur</title>
 <meta name="description" content="A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.">
+<meta name="author" content="Taha Bagatur">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot">
+<link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot">
+<link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/red-team-my-own-rag-bot">
+<link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot">
+<link rel="alternate" type="application/atom+xml" title="Taha Bagatur · Notes" href="https://tahabagatur.com/feed.xml">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Taha Bagatur">
 <meta property="og:title" content="I attacked my own RAG bot · Taha Bagatur">
@@ -14,44 +22,44 @@
 <meta property="og:image" content="https://tahabagatur.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Taha Bagatur, DevOps &amp; MLOps Engineer">
 <meta property="og:locale" content="en_US">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f5e9c'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
-<style>
-:root{--bg:#fbfbfc;--card:#fff;--ink:#18202b;--muted:#5b6575;--line:#e2e6ec;--accent:#0f5e9c;--accent-soft:#eaf2fa}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1318;--card:#161b22;--ink:#e6e9ee;--muted:#9aa4b2;--line:#283039;--accent:#5aa9e6;--accent-soft:#16283a}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Inter","Segoe UI","Helvetica Neue",Arial,sans-serif}
-a{color:var(--accent)}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px}
-header{padding:20px 0;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:960px}
-.brand{font-weight:700;text-decoration:none;color:var(--ink)}
-nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-size:15px}
-h1{font-size:clamp(28px,4.5vw,40px);line-height:1.2;margin:48px 0 10px;letter-spacing:-.4px}
-h2{font-size:22px;margin:36px 0 8px}
-.meta{color:var(--muted);font-size:14px;margin:0 0 28px}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0 8px}
-th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
-th{color:var(--muted);font-weight:600}
-.box{background:var(--accent-soft);border-left:4px solid var(--accent);padding:14px 18px;border-radius:6px;margin:28px 0}
-code{font-family:"JetBrains Mono","DejaVu Sans Mono",monospace;font-size:14px;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
-footer{margin-top:56px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-@media (max-width:720px){nav a{margin:0 14px 0 0}}
-</style>
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="I attacked my own RAG bot · Taha Bagatur">
+<meta name="twitter:description" content="A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.">
+<meta name="twitter:image" content="https://tahabagatur.com/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"I attacked my own RAG bot. 7 of 10 attacks worked.","description":"A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.","inLanguage":"en","datePublished":"2026-11-02","url":"https://tahabagatur.com/notes/red-team-my-own-rag-bot","mainEntityOfPage":"https://tahabagatur.com/notes/red-team-my-own-rag-bot","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahabagatur.com/"},{"@type":"ListItem","position":2,"name":"Notes","item":"https://tahabagatur.com/notes/"},{"@type":"ListItem","position":3,"name":"I attacked my own RAG bot. 7 of 10 attacks worked.","item":"https://tahabagatur.com/notes/red-team-my-own-rag-bot"}]}]}
+</script>
+<meta property="article:published_time" content="2026-11-02">
 </head>
 <body>
-
+<!--email_off-->
+<a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="wrap">
     <a class="brand" href="/">Taha Bagatur</a>
-    <nav><a href="/red-team-check/#ai">Services</a><a href="/red-team-check/#samples">Samples</a><a href="/red-team-check/#contact">Contact</a></nav>
+    <div class="top">
+      <nav aria-label="Sections">
+        <a href="/#work">Work</a>
+        <a href="/#projects">Projects</a>
+        <a href="/notes/" aria-current="page">Notes</a>
+        <a href="/#speaking">Speaking</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="lang" href="/tr/notes/red-team-my-own-rag-bot" hreflang="tr" lang="tr">Türkçe</a>
+    </div>
   </div>
 </header>
 
-<main class="wrap">
+<main id="main" class="wrap article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/notes/">Notes</a></p>
+  <article>
   <h1>I attacked my own RAG bot. 7 of 10 attacks worked.</h1>
-  <p class="meta">October 2026 · Test bed and attack set: <a href="https://github.com/mtbagatur/llm-prod-readiness-kit">github.com/mtbagatur/llm-prod-readiness-kit</a></p>
+  <p class="meta"><time datetime="2026-11-02">2 Nov 2026</time> · Test bed and attack set: <a href="https://github.com/mtbagatur/llm-prod-readiness-kit" rel="noopener">github.com/mtbagatur/llm-prod-readiness-kit</a></p>
 
   <p>I built a small support bot the way many teams do: FastAPI, pgvector for retrieval, a model behind LiteLLM, traces in Arize Phoenix. It answers questions from the help centre of a fictional SaaS product. Then I ran ten attacks against it, with no defences beyond a normal system prompt. This is my own test bot with fictional data, not a client system.</p>
 
@@ -85,13 +93,15 @@ footer{margin-top:56px;padding:28px 0 40px;border-top:1px solid var(--line);colo
 
   <div class="box">
     <b>AI Red-Team Check.</b> I run this kind of test against one AI feature of yours: about 40 attacks tailored to it, on staging, with test data and your written permission. You get a short report with the fix for each finding and keep the attack set as a regression test. 2 days, $300 fixed.
-    <a href="mailto:taha@tahabagatur.com?subject=AI%20Red-Team%20Check">taha@tahabagatur.com</a>
+    <a href="mailto:taha@tahabagatur.com?subject=AI%20Red-Team%20Check">taha@tahabagatur.com</a> · <a href="/red-team-check/">Details</a>
   </div>
+
+  </article>
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Taha Bagatur · No cookies, no tracking on this site.</div>
+  <div class="wrap">© 2026 Taha Bagatur · No cookies, no tracking. · <a href="/feed.xml">Atom feed</a></div>
 </footer>
-
+<!--/email_off-->
 </body>
 </html>

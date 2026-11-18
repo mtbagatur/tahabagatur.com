@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://tahabagatur.com/sitemap.xml

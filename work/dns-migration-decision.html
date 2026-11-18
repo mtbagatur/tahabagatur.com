@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A domain-wide DNS move, decided on evidence · Taha Bagatur</title>
+<meta name="description" content="Case study: a domain-wide DNS move to Cloudflare, approved after the evidence and three options with their trade-offs were laid out, and migrated with zero downtime.">
+<meta name="author" content="Taha Bagatur">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://tahabagatur.com/work/dns-migration-decision">
+<link rel="alternate" hreflang="en" href="https://tahabagatur.com/work/dns-migration-decision">
+<link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/work/dns-migration-decision">
+<link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/work/dns-migration-decision">
+<link rel="alternate" type="application/atom+xml" title="Taha Bagatur · Notes" href="https://tahabagatur.com/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Taha Bagatur">
+<meta property="og:title" content="A domain-wide DNS move, decided on evidence">
+<meta property="og:description" content="Case study: a domain-wide DNS move to Cloudflare, approved after the evidence and three options with their trade-offs were laid out, and migrated with zero downtime.">
+<meta property="og:url" content="https://tahabagatur.com/work/dns-migration-decision">
+<meta property="og:image" content="https://tahabagatur.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Taha Bagatur, DevOps &amp; MLOps Engineer">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A domain-wide DNS move, decided on evidence">
+<meta name="twitter:description" content="Case study: a domain-wide DNS move to Cloudflare, approved after the evidence and three options with their trade-offs were laid out, and migrated with zero downtime.">
+<meta name="twitter:image" content="https://tahabagatur.com/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"A domain-wide DNS move, decided on evidence","description":"Case study: a domain-wide DNS move to Cloudflare, approved after the evidence and three options with their trade-offs were laid out, and migrated with zero downtime.","inLanguage":"en","url":"https://tahabagatur.com/work/dns-migration-decision","mainEntityOfPage":"https://tahabagatur.com/work/dns-migration-decision","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahabagatur.com/"},{"@type":"ListItem","position":2,"name":"Selected work","item":"https://tahabagatur.com/#work"},{"@type":"ListItem","position":3,"name":"A domain-wide DNS move, decided on evidence","item":"https://tahabagatur.com/work/dns-migration-decision"}]}]}
+</script>
+</head>
+<body>
+<!--email_off-->
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">Taha Bagatur</a>
+    <div class="top">
+      <nav aria-label="Sections">
+        <a href="/#work" aria-current="page">Work</a>
+        <a href="/#projects">Projects</a>
+        <a href="/notes/">Notes</a>
+        <a href="/#speaking">Speaking</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="lang" href="/tr/work/dns-migration-decision" hreflang="tr" lang="tr">Türkçe</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/#work">Selected work</a></p>
+  <h1>A domain-wide DNS move, decided on evidence</h1>
+  <p class="meta">Case study from my current role at a large retail group's R&amp;D center. No employer names or internal figures beyond what is shown.</p>
+  <dl class="sed">
+            <dt>Situation</dt><dd>A domain-wide DNS move to Cloudflare needed an approved plan.</dd>
+            <dt>Evidence</dt><dd>I documented the evidence and laid out three options with their trade-offs.</dd>
+            <dt>Decision</dt><dd>The recommended option was chosen and migrated with <strong>zero downtime</strong>.</dd>
+          </dl>
+  <h2>Why it is here</h2>
+  <p>DNS changes touch everything and are hard to undo under pressure. Writing the options down with their trade-offs turned a risky change into a decision people could approve, and the move itself went through without downtime.</p>
+
+  <h2>Other cases</h2>
+  <ul>
+    <li><a href="/work/slow-llm-prefill">Slow LLM responses: the vendor's fix targeted the wrong component</a></li>
+    <li><a href="/work/gpu-node-nvme-hang">A recurring GPU-node outage traced to a silent NVMe hang</a></li>
+    <li><a href="/work/agentless-monitoring-bridge">Monitoring a vendor-managed AI platform without installing agents</a></li>
+  </ul>
+  <div class="box">Have a similar problem, or a role where this kind of work matters? <a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a></div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Taha Bagatur · No cookies, no tracking. · <a href="/feed.xml">Atom feed</a></div>
+</footer>
+<!--/email_off-->
+</body>
+</html>

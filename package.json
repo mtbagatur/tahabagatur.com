@@ -1,0 +1,13 @@
+{
+  "name": "tahabagatur.com",
+  "private": true,
+  "scripts": {
+    "serve": "python3 scripts/serve.py 8787",
+    "check": "bash scripts/kontrol.sh",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "1.58.2"
+  }
+}
