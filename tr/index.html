@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taha Bagatur</title>
-<meta name="description" content="Taha Bagatur. Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum: LLM sunumu, RAG hatları, Kubernetes, gözlemlenebilirlik ve uç GPU filoları.">
+<meta name="description" content="Taha Bagatur. Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum — LLM sunumu, RAG hatları, Kubernetes kümeleri, gözlemlenebilirlik ve uç GPU filoları.">
 <meta name="author" content="Taha Bagatur">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121518" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://tahabagatur.com/tr/">
 <link rel="alternate" hreflang="en" href="https://tahabagatur.com/">
 <link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Taha Bagatur">
 <meta property="og:title" content="Taha Bagatur">
-<meta property="og:description" content="Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum: LLM sunumu, RAG hatları, Kubernetes, gözlemlenebilirlik ve uç GPU filoları.">
+<meta property="og:description" content="Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum — LLM sunumu, RAG hatları, Kubernetes kümeleri, gözlemlenebilirlik ve uç GPU filoları.">
 <meta property="og:url" content="https://tahabagatur.com/tr/">
 <meta property="og:image" content="https://tahabagatur.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -27,9 +27,9 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Taha Bagatur">
-<meta name="twitter:description" content="Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum: LLM sunumu, RAG hatları, Kubernetes, gözlemlenebilirlik ve uç GPU filoları.">
+<meta name="twitter:description" content="Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum — LLM sunumu, RAG hatları, Kubernetes kümeleri, gözlemlenebilirlik ve uç GPU filoları.">
 <meta name="twitter:image" content="https://tahabagatur.com/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4975'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tahabagatur.com/#website","name":"Taha Bagatur","url":"https://tahabagatur.com/","inLanguage":["en","tr"]},{"@type":"ProfilePage","@id":"https://tahabagatur.com/tr/#page","url":"https://tahabagatur.com/tr/","inLanguage":"tr","isPartOf":{"@id":"https://tahabagatur.com/#website"},"mainEntity":{"@id":"https://tahabagatur.com/#person"}},{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","alternateName":"Mehmet Taha Bağatur","url":"https://tahabagatur.com/","sameAs":["https://www.linkedin.com/in/mtbagatur","https://github.com/mtbagatur"],"knowsAbout":["AI infrastructure","LLM serving","RAG systems","Kubernetes","Observability","Prometheus","Terraform","Computer vision"]}]}
@@ -40,12 +40,12 @@
 <a class="skip" href="#main">İçeriğe geç</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="/tr/">Taha Bagatur</a>
+    <a class="brand" href="/tr/">tahabagatur.com</a>
     <div class="top">
       <nav aria-label="Bölümler">
-        <a href="/tr/notes/">Yazılar</a>
         <a href="/tr/#work">Vakalar</a>
-        <a href="/tr/#projects">Projeler</a>
+        <a href="/tr/notes/">Notlar</a>
+        <a href="/tr/#projects">Kod</a>
         <a href="/tr/#speaking">Konuşmalar</a>
         <a href="/tr/#contact">İletişim</a>
       </nav>
@@ -57,144 +57,134 @@
 <main id="main">
   <div class="wrap hero">
     <h1>Taha Bagatur</h1>
-    <p>Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum: LLM sunumu, RAG hatları, Kubernetes, gözlemlenebilirlik ve uç GPU filoları. Ağırlıkla Python, Bash, Prometheus ve Linux.</p>
-    <div class="actions">
-      <a class="btn primary" href="/tr/notes/">Yazıları oku</a>
-      <a class="btn ghost" href="#contact">İletişime geç</a>
-    </div>
+    <p>Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum — LLM sunumu, RAG hatları, Kubernetes kümeleri, gözlemlenebilirlik ve uç GPU filoları. Hem model tarafında hem de Linux/operasyon tarafında çalıştığım için işimin çoğu, modellerin gerçek donanım ve gerçek arızalarla karşılaştığı o geçiş hattında geçiyor.</p>
+    <p class="sub">Bu site bir saha defteri: kök nedenine indiğim <a href="#work">üretim vakaları</a>, günlük operasyondan <a href="/tr/notes/">kısa notlar</a> ve varsayımları ölçmek için yazdığım <a href="#projects">küçük araçlar</a>.</p>
   </div>
-
-  <section id="writing">
-    <div class="wrap">
-      <h2>Yazılar</h2>
-      <p class="lead">Üretimde yapay zekâ sistemleri, güvenilirlik ve altyapı işletimi üzerine notlar.</p>
-      <ul class="posts">
-        <li>
-          <div class="post-row">
-            <h3><a href="/tr/notes/ai-tool-review">Altı AI aracını kullanmadan önce nasıl eledim?</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>Tedarik zinciri ve veri akışı incelemesi: biri tüm dosyaları okunup commit sabitlenerek alındı, ~300 becerilik paketten 4 parça elle seçildi, 4 araç elendi.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/tr/notes/empty-source-backups">Boş kaynak, başarılı yedek demek değildir</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>İki kovadaki ~5,6 GB veriyi sıfır farkla geri yüklerken yakalanan boşluk: kaynakta sıfır nesne varken yedek işinin başarılı sayılabilmesi.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/tr/notes/reading-silenced-alerts">Susturulmuş alarmları ayrı bir liste olarak okumak</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>Etkin alarmları ve susturulmuş alarmları iki ayrı liste olarak incelemek, bilinen riski yeni kritik olaylardan nasıl ayırır.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/tr/notes/parallel-ai-sessions">Paralel AI oturumlarında aynı işi iki kez yapmamak</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>Paralel kodlama ajanları aynı düzeltme için iki PR açınca geçilen iki satırlık kural: başlamadan tek sahip atama ve gün sonu çapraz kontrol.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/tr/notes/red-team-my-own-rag-bot">Kendi RAG botuma saldırdım. 10 saldırının 7'si işe yaradı.</a></h3>
-            <time class="post-date" datetime="2026-11-02">2026.11.02</time>
-          </div>
-          <p>Zehirlenmiş bilgi tabanı sayfaları, doğrudan prompt enjeksiyonu ve izlere sızan kişisel veriler: standart bir RAG hattını ne kırdı ve onu ne durdurdu.</p>
-        </li>
-      </ul>
-      <p class="more"><a href="/tr/notes/">Tüm yazılar (5) <span aria-hidden="true">→</span></a></p>
-    </div>
-  </section>
 
   <section id="work">
     <div class="wrap">
-      <h2>Seçili vakalar</h2>
-      <p class="lead">Üretim arızaları ve mimari kararlar: ne bozuldu, metrikler ne gösterdi ve ne değişti.</p>
-      <div class="cases">
-        <article class="case">
-          <h3><a href="/tr/work/slow-llm-prefill">Yavaş LLM yanıtları: tedarikçinin çözümü yanlış bileşeni hedefliyordu</a></h3>
-          <dl>
-            <dt>Durum</dt><dd>LLM yanıtları yavaştı. Tedarikçi, yetkilendirme servisini 1'den 10 replikaya çıkarmıştı.</dd>
-            <dt>Kanıt</dt><dd>Onaylı bir eşzamanlılık testi (<strong>180 istek, 0 hata</strong>) ve vLLM metrikleri, darboğazın tek bir GPU'daki uzun prompt prefill aşaması olduğunu gösterdi.</dd>
-            <dt>Karar</dt><dd>Ayrılmış ama boşta olduğu ölçülen GPU kapasitesinde ikinci bir model replikası çalıştırılması.</dd>
-          </dl>
-          <a class="more" href="/tr/work/slow-llm-prefill">Vakayı oku <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="case">
-          <h3><a href="/tr/work/gpu-node-nvme-hang">Tekrarlayan GPU düğümü kesintisinin kaynağı: sessizce takılan bir NVMe diski</a></h3>
-          <dl>
-            <dt>Durum</dt><dd>Üretimdeki bir GPU düğümü yeniden başlatılana kadar tekrar tekrar NotReady durumuna düşüyordu.</dd>
-            <dt>Kanıt</dt><dd>Prometheus, çekirdek ve BMC loglarından dakika dakika çıkarılan zaman çizelgesi, kesintiyi RAID1 içinde hata döndürmeden takılan ve multipath kuyruğunu kilitleyen bir NVMe diskine bağladı.</dd>
-            <dt>Karar</dt><dd>Kanıt paketi doğrulandı, disk sistemi kapatmadan değiştirildi ve takılı I/O alarmları eklendi.</dd>
-          </dl>
-          <a class="more" href="/tr/work/gpu-node-nvme-hang">Vakayı oku <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="case">
-          <h3><a href="/tr/work/agentless-monitoring-bridge">Tedarikçinin yönettiği bir yapay zekâ platformunu ajan kurmadan izlemek</a></h3>
-          <dl>
-            <dt>Durum</dt><dd>Tedarikçinin yönettiği bir GPU platformu, üzerine ajan kurulmadan merkezi gözlemlenebilirliğe dahil edilmeliydi.</dd>
-            <dt>Kanıt</dt><dd>SSH üzerinden yalnızca Python standart kütüphanesi ve systemd ile salt okunur bir Prometheus federation köprüsü kuruldu.</dd>
-            <dt>Sonuç</dt><dd>Platform merkezi izlemeye katıldı; çekilen zaman serisi sayısı <strong>~25.000'den ~1.900'e</strong> düştü.</dd>
-          </dl>
-          <a class="more" href="/tr/work/agentless-monitoring-bridge">Vakayı oku <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="case">
-          <h3><a href="/tr/work/dns-migration-decision">Alan adı genelinde DNS taşıması, kanıta dayanarak kararlaştırıldı</a></h3>
-          <dl>
-            <dt>Durum</dt><dd>Alan adının tamamını Cloudflare'e taşımak için risk analizi ve geri dönüş planı gerekiyordu.</dd>
-            <dt>Kanıt</dt><dd>Kayıt envanteri çıkarıldı ve üç geçiş seçeneği ödünleşimleriyle belgelendi.</dd>
-            <dt>Karar</dt><dd>Önerilen seçenek seçildi ve geçiş <strong>kesintisiz</strong> tamamlandı.</dd>
-          </dl>
-          <a class="more" href="/tr/work/dns-migration-decision">Vakayı oku <span aria-hidden="true">→</span></a>
-        </article>
-      </div>
+      <h2>Üretim vakaları</h2>
+      <p class="lead">Belirtiden ölçülmüş kanıta ve karara giden üretim arızaları ve mimari ödünleşimler.</p>
+      <ul class="entries">
+        <li>
+          <h3 class="entry-title"><a href="/tr/work/slow-llm-prefill">Yavaş LLM yanıtları: tedarikçinin çözümü yanlış bileşeni hedefliyordu</a></h3>
+          <p class="entry-desc">Onaylı eşzamanlılık testi (<strong>180 istek, 0 hata</strong>) ve vLLM metrikleri, gecikmenin yetkilendirme replikalarından değil tek GPU'daki uzun prompt prefill aşamasından geldiğini kanıtladı; ayrılmış boş kapasitede ikinci model replikası onaylandı.</p>
+          <p class="entry-meta"><a href="/tr/work/slow-llm-prefill">Vakayı oku <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="/tr/work/gpu-node-nvme-hang">Tekrarlayan GPU düğümü kesintisinin kaynağı: sessizce takılan bir NVMe diski</a></h3>
+          <p class="entry-desc">Prometheus, çekirdek ve BMC loglarından dakika dakika çıkarılan zaman çizelgesi, düğüm kilitlenmelerini RAID1 içinde hata döndürmeden asılı kalan ve multipath'in I/O kuyruğunda döndürdüğü NVMe diskine bağladı.</p>
+          <p class="entry-meta"><a href="/tr/work/gpu-node-nvme-hang">Vakayı oku <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="/tr/work/agentless-monitoring-bridge">Tedarikçinin yönettiği bir yapay zekâ platformunu ajan kurmadan izlemek</a></h3>
+          <p class="entry-desc">SSH üzerinden yalnızca Python standart kütüphanesi ve systemd ile kurulan salt okunur Prometheus federation köprüsü, platformu merkezi izlemeye alırken çekilen serileri <strong>~25.000'den ~1.900'e</strong> düşürdü.</p>
+          <p class="entry-meta"><a href="/tr/work/agentless-monitoring-bridge">Vakayı oku <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="/tr/work/dns-migration-decision">Alan adı genelinde DNS taşıması, kanıta dayanarak kararlaştırıldı</a></h3>
+          <p class="entry-desc">Kayıt envanteri ve üç geçiş seçeneğinin açık ödünleşimleriyle hazırlanan karar notu sayesinde Cloudflare DNS geçişi <strong>kesintisiz</strong> tamamlandı.</p>
+          <p class="entry-meta"><a href="/tr/work/dns-migration-decision">Vakayı oku <span aria-hidden="true">→</span></a></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap">
+      <h2>Notlar</h2>
+      <p class="lead">Günlük operasyondan kısa notlar: ne kırıldı, ne ölçüldü ve ne değişti.</p>
+      <ul class="dated-list">
+        <li>
+          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/tr/notes/ai-tool-review">Altı AI aracını kullanmadan önce nasıl eledim?</a></h3>
+            <p class="item-desc">Tedarik zinciri ve istem akışı incelemesi: sabit commit'le bir beceri alındı, büyük paketten dört parça seçildi, dört araç elendi.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/tr/notes/empty-source-backups">Boş kaynak, başarılı yedek demek değildir</a></h3>
+            <p class="item-desc">İki kovadaki ~5,6 GB veriyi sıfır farkla geri yüklerken yakalanan boşluk: kaynakta sıfır nesne varken yedek işinin yeşil yanabilmesi.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/tr/notes/reading-silenced-alerts">Susturulmuş alarmları ayrı bir liste olarak okumak</a></h3>
+            <p class="item-desc">Etkin ve susturulmuş alarmları iki ayrı liste olarak incelemek, bilinen sorunların yeni olay sanılmasını nasıl engeller.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/tr/notes/parallel-ai-sessions">Paralel AI oturumlarında aynı işi iki kez yapmamak</a></h3>
+            <p class="item-desc">Paralel kodlama oturumları aynı düzeltme için iki PR açınca geçilen tek sahip atama ve gün sonu çapraz kontrol kuralı.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-02">Kas 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/tr/notes/red-team-my-own-rag-bot">Kendi RAG botuma saldırdım. 10 saldırının 7'si işe yaradı.</a></h3>
+            <p class="item-desc">Zehirlenmiş bilgi tabanı sayfaları, doğrudan enjeksiyon ve izlere sızan kişisel veriler: standart RAG hattında ne işe yaradı, onu ne durdurdu.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="section-foot"><a href="/tr/notes/">Notlar arşivi</a> · <a href="/tr/feed.xml">Atom akışı</a></p>
     </div>
   </section>
 
   <section id="projects">
     <div class="wrap">
-      <h2>Projeler</h2>
-      <p class="lead">LLM sunumu, değerlendirme ve güvenlik üzerine açık kaynak araçlar ve test ortamları.</p>
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://github.com/mtbagatur/llm-serving-loadlab" rel="noopener">llm-serving-loadlab</a></h3>
-          <p>Uzun prompt prefill doygunluğunu eşzamanlı istek darboğazından ayıran asenkron akışlı yük üreteci ve kapasite analiz aracı.</p>
-          <span class="stack">Python · vLLM · Kubernetes</span>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/mtbagatur/redteam-check" rel="noopener">redteam-check</a></h3>
-          <p>LLM sohbet uç noktaları için kara kutu güvenlik test paketi: 40 prompt enjeksiyonu, zehirlenmiş bağlam ve kişisel veri sızıntısı saldırısı ile CI JUnit çıktısı.</p>
-          <span class="stack">Python · JUnit · CI</span>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/mtbagatur/llm-prod-readiness-kit" rel="noopener">llm-prod-readiness-kit</a></h3>
-          <p>OpenTelemetry izleme, değerlendirme kapıları, yedek sağlayıcı (fallback), embedding öncesi kişisel veri maskeleme ve yanıt başı maliyet takibi için RAG test yatağı.</p>
-          <span class="stack">LiteLLM · pgvector · OpenTelemetry · Phoenix</span>
-        </article>
-      </div>
-      <p class="more"><a href="https://github.com/mtbagatur" rel="noopener">Tüm açık kaynak depoları (GitHub) <span aria-hidden="true">→</span></a></p>
+      <h2>Kod</h2>
+      <p class="lead">Üretimdeki davranışları ve varsayımları sınamak için yazdığım açık kaynak araçlar.</p>
+      <ul class="entries">
+        <li>
+          <h3 class="entry-title"><a href="https://github.com/mtbagatur/llm-serving-loadlab" rel="noopener">llm-serving-loadlab</a></h3>
+          <p class="entry-desc">Uzun prompt prefill doygunluğunu eşzamanlı istek sınırlarından ayıran asenkron akışlı yük üreteci ve kapasite analiz aracı.</p>
+          <p class="entry-meta">Python · vLLM · Kubernetes</p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="https://github.com/mtbagatur/redteam-check" rel="noopener">redteam-check</a></h3>
+          <p class="entry-desc">LLM sohbet uç noktaları için kara kutu güvenlik test paketi: 40 prompt enjeksiyonu, zehirlenmiş bağlam ve kişisel veri sızıntısı saldırısı ile CI JUnit çıktısı.</p>
+          <p class="entry-meta">Python · JUnit · CI</p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="https://github.com/mtbagatur/llm-prod-readiness-kit" rel="noopener">llm-prod-readiness-kit</a></h3>
+          <p class="entry-desc">OpenTelemetry izleme, değerlendirme kapıları, yedek sağlayıcı, embedding öncesi kişisel veri maskeleme ve yanıt başı maliyet takibi için yerel RAG test ortamı.</p>
+          <p class="entry-meta">LiteLLM · pgvector · OpenTelemetry · Phoenix</p>
+        </li>
+      </ul>
+      <p class="section-foot"><a href="https://github.com/mtbagatur" rel="noopener">Diğer depolar (GitHub) <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 
   <section id="speaking">
     <div class="wrap">
-      <h2>Konuşmalar ve yayınlar</h2>
+      <h2>Konuşmalar</h2>
       <p class="lead">Gerçek zamanlı bilgisayarlı görü, tespit ve takip üzerine konferans bildirileri ve sunumlar.</p>
-      <ul class="list">
+      <ul class="dated-list">
         <li>
-          <span class="when">2024.11 · Konuşmacı · ICAIS'24, İstanbul Gedik Üniversitesi</span>
-          International Conference on Artificial Intelligence Studies (Abstract Book ISBN 978-625-94129-4-8): <span class="title" lang="en">Preprocessing Optimization for Enhanced Real-Time Detection and Tracking in Vision Systems</span>
+          <time class="when-col" datetime="2024-11-09">Kas 2024</time>
+          <div>
+            <p class="item-title"><span class="title" lang="en">Preprocessing Optimization for Enhanced Real-Time Detection and Tracking in Vision Systems</span></p>
+            <p class="item-desc">Konuşmacı · ICAIS'24, İstanbul Gedik Üniversitesi · International Conference on Artificial Intelligence Studies (Abstract Book ISBN 978-625-94129-4-8)</p>
+          </div>
         </li>
         <li>
-          <span class="when">2023.11 · Konuşmacı · ICOLES 2023, Antalya</span>
-          6th International Conference on Life and Engineering Sciences: <span class="title" lang="en">An Efficient Framework for Real-Time Age and Gender Detection Using Deep Learning Techniques</span>
+          <time class="when-col" datetime="2023-11">Kas 2023</time>
+          <div>
+            <p class="item-title"><span class="title" lang="en">An Efficient Framework for Real-Time Age and Gender Detection Using Deep Learning Techniques</span></p>
+            <p class="item-desc">Konuşmacı · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+          </div>
         </li>
         <li>
-          <span class="when">2023.11 · Konuşmacı · ICOLES 2023, Antalya</span>
-          6th International Conference on Life and Engineering Sciences: <span class="title" lang="en">Design and Performance Analysis of Deep Learning-Based People Detection from Top-View Images</span>
+          <time class="when-col" datetime="2023-11">Kas 2023</time>
+          <div>
+            <p class="item-title"><span class="title" lang="en">Design and Performance Analysis of Deep Learning-Based People Detection from Top-View Images</span></p>
+            <p class="item-desc">Konuşmacı · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+          </div>
         </li>
       </ul>
     </div>
@@ -203,8 +193,8 @@
   <section id="contact" class="contact">
     <div class="wrap">
       <h2>İletişim</h2>
-      <p class="lead">Bursa'dayım. Üretimde yapay zekâ sistemleri, çıkarım (inference) altyapısı, güvenilirlik ve ilginç mühendislik problemleri üzerine sohbetlere ve işbirliklerine açığım.</p>
-      <p><a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="https://github.com/mtbagatur" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/mtbagatur" rel="noopener">LinkedIn</a></p>
+      <p class="lead">Bursa (UTC+3). Buradaki bir not aklına takıldıysa ya da üretimdeki inatçı bir yapay zekâ altyapısı problemi üzerine konuşmak istersen en hızlı yol e-posta.</p>
+      <p><a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="https://github.com/mtbagatur" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/mtbagatur" rel="noopener">LinkedIn</a> · <a href="/tr/feed.xml">Atom akışı</a></p>
     </div>
   </section>
 </main>

@@ -40,12 +40,12 @@
 <a class="skip" href="#main">İçeriğe geç</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="/tr/">Taha Bagatur</a>
+    <a class="brand" href="/tr/">tahabagatur.com</a>
     <div class="top">
       <nav aria-label="Bölümler">
-        <a href="/tr/#work">İşler</a>
-        <a href="/tr/#projects">Projeler</a>
+        <a href="/tr/#work">Vakalar</a>
         <a href="/tr/notes/" aria-current="page">Notlar</a>
+        <a href="/tr/#projects">Kod</a>
         <a href="/tr/#speaking">Konuşmalar</a>
         <a href="/tr/#contact">İletişim</a>
       </nav>
@@ -57,45 +57,45 @@
 <main id="main" class="wrap article">
   <p class="crumbs"><a href="/tr/">Ana sayfa</a></p>
   <h1>Notlar</h1>
-  <p class="lead">Gerçek işten yazılar: neyi test ettim, ne bozuldu, neyi değiştirdim.</p>
-  <ul class="posts">
+  <p class="lead">Günlük operasyondan kısa notlar: ne kırıldı, ne ölçüldü ve ne değişti.</p>
+  <ul class="dated-list">
     <li>
-      <div class="post-row">
-        <h2><a href="/tr/notes/ai-tool-review">Altı AI aracını kullanmadan önce nasıl eledim?</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/tr/notes/ai-tool-review">Altı AI aracını kullanmadan önce nasıl eledim?</a></h2>
+        <p class="item-desc">Altı popüler AI aracının tedarik zinciri ve veri akışı incelemesi: biri tüm dosyaları okunup commit sabitlenerek alındı, ~300 becerilik paketten 4 parça elle seçildi, 4 araç elendi.</p>
       </div>
-      <p>Altı popüler AI aracının tedarik zinciri ve veri akışı incelemesi: biri tüm dosyaları okunup commit sabitlenerek alındı, ~300 becerilik paketten 4 parça elle seçildi, 4 araç elendi.</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/tr/notes/empty-source-backups">Boş kaynak, başarılı yedek demek değildir</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/tr/notes/empty-source-backups">Boş kaynak, başarılı yedek demek değildir</a></h2>
+        <p class="item-desc">Nesne depolama kurulumu sonrası yedekleri (~5,6 GB iki kova, sıfır fark) geri yüklerken yakalanan boşluk: kaynakta sıfır nesne varken yedek işinin başarılı sayılabilmesi.</p>
       </div>
-      <p>Nesne depolama kurulumu sonrası yedekleri (~5,6 GB iki kova, sıfır fark) geri yüklerken yakalanan boşluk: kaynakta sıfır nesne varken yedek işinin başarılı sayılabilmesi.</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/tr/notes/reading-silenced-alerts">Susturulmuş alarmları ayrı bir liste olarak okumak</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/tr/notes/reading-silenced-alerts">Susturulmuş alarmları ayrı bir liste olarak okumak</a></h2>
+        <p class="item-desc">Etkin alarmları ve susturulmuş alarmları iki ayrı liste olarak incelemek, bilinen sorunların yeniden belirdiğinde yeni kritik olaylar gibi algılanmasını önler.</p>
       </div>
-      <p>Etkin alarmları ve susturulmuş alarmları iki ayrı liste olarak incelemek, bilinen sorunların yeniden belirdiğinde yeni kritik olaylar gibi algılanmasını önler.</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/tr/notes/parallel-ai-sessions">Paralel AI oturumlarında aynı işi iki kez yapmamak</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/tr/notes/parallel-ai-sessions">Paralel AI oturumlarında aynı işi iki kez yapmamak</a></h2>
+        <p class="item-desc">Paralel AI oturumları aynı işi iki kez tekrarlayınca iki satırlık bir kurala geçtim: başlamadan önce tek sahip atama ve gün sonunda çapraz kontrol (8,5 saat kayıtta 0 mükerrer iş).</p>
       </div>
-      <p>Paralel AI oturumları aynı işi iki kez tekrarlayınca iki satırlık bir kurala geçtim: başlamadan önce tek sahip atama ve gün sonunda çapraz kontrol (8,5 saat kayıtta 0 mükerrer iş).</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/tr/notes/red-team-my-own-rag-bot">Kendi RAG botuma saldırdım. 10 saldırının 7'si işe yaradı.</a></h2>
-        <time class="post-date" datetime="2026-11-02">2026.11.02</time>
+      <time class="when-col" datetime="2026-11-02">Kas 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/tr/notes/red-team-my-own-rag-bot">Kendi RAG botuma saldırdım. 10 saldırının 7'si işe yaradı.</a></h2>
+        <p class="item-desc">Küçük bir RAG destek botuna red-team testi: savunmalar eklenmeden önce 10 saldırının 7'si işe yaradı. Ne işe yaradı, onu ne durdurdu ve hâlâ ne geçiyor.</p>
       </div>
-      <p>Küçük bir RAG destek botuna red-team testi: savunmalar eklenmeden önce 10 saldırının 7'si işe yaradı. Ne işe yaradı, onu ne durdurdu ve hâlâ ne geçiyor.</p>
     </li>
   </ul>
-  <p class="meta" style="margin-top:28px">Yeni notları <a href="/tr/feed.xml">Atom akışıyla</a> takip edebilirsiniz.</p>
+  <p class="section-foot">Yeni notları <a href="/tr/feed.xml">Atom akışıyla</a> takip edebilirsiniz.</p>
 </main>
 
 <footer>

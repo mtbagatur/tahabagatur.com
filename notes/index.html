@@ -40,13 +40,13 @@
 <a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="/">Taha Bagatur</a>
+    <a class="brand" href="/">tahabagatur.com</a>
     <div class="top">
       <nav aria-label="Sections">
-        <a href="/#work">Work</a>
-        <a href="/#projects">Projects</a>
+        <a href="/#work">Cases</a>
         <a href="/notes/" aria-current="page">Notes</a>
-        <a href="/#speaking">Speaking</a>
+        <a href="/#projects">Code</a>
+        <a href="/#speaking">Talks</a>
         <a href="/#contact">Contact</a>
       </nav>
       <a class="lang" href="/tr/notes/" hreflang="tr" lang="tr">Türkçe</a>
@@ -57,45 +57,45 @@
 <main id="main" class="wrap article">
   <p class="crumbs"><a href="/">Home</a></p>
   <h1>Notes</h1>
-  <p class="lead">Write-ups from real work: what I tested, what broke and what I changed.</p>
-  <ul class="posts">
+  <p class="lead">Short operational write-ups on what broke, what was measured, and what changed.</p>
+  <ul class="dated-list">
     <li>
-      <div class="post-row">
-        <h2><a href="/notes/ai-tool-review">How I screened six AI tools before adoption</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/notes/ai-tool-review">How I screened six AI tools before adoption</a></h2>
+        <p class="item-desc">How I evaluated six trending AI tools: one adopted with a pinned commit after reading every file, four parts cherry-picked manually from a ~300-skill bundle, and four rejected over prompt and telemetry flow.</p>
       </div>
-      <p>How I evaluated six trending AI tools: one adopted with a pinned commit after reading every file, four parts cherry-picked manually from a ~300-skill bundle, and four rejected over prompt and telemetry flow.</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/notes/empty-source-backups">An empty source is not a successful backup</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/notes/empty-source-backups">An empty source is not a successful backup</a></h2>
+        <p class="item-desc">After an object-storage rebuild, restoring backups (~5.6 GB across two buckets, zero diff) exposed a deeper gap: a backup job that could treat zero objects at the source as success.</p>
       </div>
-      <p>After an object-storage rebuild, restoring backups (~5.6 GB across two buckets, zero diff) exposed a deeper gap: a backup job that could treat zero objects at the source as success.</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/notes/reading-silenced-alerts">Reading silenced alerts as a separate list</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/notes/reading-silenced-alerts">Reading silenced alerts as a separate list</a></h2>
+        <p class="item-desc">Inspecting active and silenced alerts as two separate lists prevents known issues from looking like new critical incidents when they resurface.</p>
       </div>
-      <p>Inspecting active and silenced alerts as two separate lists prevents known issues from looking like new critical incidents when they resurface.</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h2>
-        <time class="post-date" datetime="2026-11-18">2026.11.18</time>
+      <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h2>
+        <p class="item-desc">Running several AI sessions in parallel duplicated work twice until I adopted a two-line rule: one owner before starting and a cross-check at the end of the day (8.5 hours logged, 0 duplicate work).</p>
       </div>
-      <p>Running several AI sessions in parallel duplicated work twice until I adopted a two-line rule: one owner before starting and a cross-check at the end of the day (8.5 hours logged, 0 duplicate work).</p>
     </li>
     <li>
-      <div class="post-row">
-        <h2><a href="/notes/red-team-my-own-rag-bot">I attacked my own RAG bot. 7 of 10 attacks worked.</a></h2>
-        <time class="post-date" datetime="2026-11-02">2026.11.02</time>
+      <time class="when-col" datetime="2026-11-02">Nov 2026</time>
+      <div>
+        <h2 class="item-title"><a href="/notes/red-team-my-own-rag-bot">I attacked my own RAG bot. 7 of 10 attacks worked.</a></h2>
+        <p class="item-desc">A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.</p>
       </div>
-      <p>A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.</p>
     </li>
   </ul>
-  <p class="meta" style="margin-top:28px">Follow new notes with the <a href="/feed.xml">Atom feed</a>.</p>
+  <p class="section-foot">Follow new notes with the <a href="/feed.xml">Atom feed</a>.</p>
 </main>
 
 <footer>

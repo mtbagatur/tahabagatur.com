@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taha Bagatur</title>
-<meta name="description" content="Taha Bagatur. Building and operating production AI systems and the infrastructure underneath them: LLM serving, RAG pipelines, Kubernetes, observability, and edge GPU fleets.">
+<meta name="description" content="Taha Bagatur. Building and running production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets.">
 <meta name="author" content="Taha Bagatur">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121518" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://tahabagatur.com/">
 <link rel="alternate" hreflang="en" href="https://tahabagatur.com/">
 <link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Taha Bagatur">
 <meta property="og:title" content="Taha Bagatur">
-<meta property="og:description" content="Building and operating production AI systems and the infrastructure underneath them: LLM serving, RAG pipelines, Kubernetes, observability, and edge GPU fleets.">
+<meta property="og:description" content="Building and running production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets.">
 <meta property="og:url" content="https://tahabagatur.com/">
 <meta property="og:image" content="https://tahabagatur.com/og.png">
 <meta property="og:image:width" content="1200">
@@ -27,9 +27,9 @@
 <meta property="og:locale:alternate" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Taha Bagatur">
-<meta name="twitter:description" content="Building and operating production AI systems and the infrastructure underneath them: LLM serving, RAG pipelines, Kubernetes, observability, and edge GPU fleets.">
+<meta name="twitter:description" content="Building and running production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets.">
 <meta name="twitter:image" content="https://tahabagatur.com/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4975'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tahabagatur.com/#website","name":"Taha Bagatur","url":"https://tahabagatur.com/","inLanguage":["en","tr"]},{"@type":"ProfilePage","@id":"https://tahabagatur.com/#page","url":"https://tahabagatur.com/","inLanguage":"en","isPartOf":{"@id":"https://tahabagatur.com/#website"},"mainEntity":{"@id":"https://tahabagatur.com/#person"}},{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","alternateName":"Mehmet Taha Bağatur","url":"https://tahabagatur.com/","sameAs":["https://www.linkedin.com/in/mtbagatur","https://github.com/mtbagatur"],"knowsAbout":["AI infrastructure","LLM serving","RAG systems","Kubernetes","Observability","Prometheus","Terraform","Computer vision"]}]}
@@ -40,12 +40,12 @@
 <a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="/">Taha Bagatur</a>
+    <a class="brand" href="/">tahabagatur.com</a>
     <div class="top">
       <nav aria-label="Sections">
-        <a href="/notes/">Writing</a>
-        <a href="/#work">Work</a>
-        <a href="/#projects">Projects</a>
+        <a href="/#work">Cases</a>
+        <a href="/notes/">Notes</a>
+        <a href="/#projects">Code</a>
         <a href="/#speaking">Talks</a>
         <a href="/#contact">Contact</a>
       </nav>
@@ -57,144 +57,134 @@
 <main id="main">
   <div class="wrap hero">
     <h1>Taha Bagatur</h1>
-    <p>Building and operating production AI systems and the infrastructure underneath them: LLM serving, RAG pipelines, Kubernetes, observability, and edge GPU fleets. Mostly Python, Bash, Prometheus, and Linux.</p>
-    <div class="actions">
-      <a class="btn primary" href="/notes/">Read the writing</a>
-      <a class="btn ghost" href="#contact">Get in touch</a>
-    </div>
+    <p>I build and run production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets. Having worked on both the model side and the Linux/operations side, most of my work sits in the seam where models meet real hardware and real failure modes.</p>
+    <p class="sub">This site is a field log: <a href="#work">production cases</a> traced to root cause, <a href="/notes/">short notes</a> from day-to-day operations, and <a href="#projects">small tools</a> built to test assumptions.</p>
   </div>
-
-  <section id="writing">
-    <div class="wrap">
-      <h2>Writing</h2>
-      <p class="lead">Notes on production AI systems, reliability, and operating infrastructure.</p>
-      <ul class="posts">
-        <li>
-          <div class="post-row">
-            <h3><a href="/notes/ai-tool-review">How I screened six AI tools before adoption</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>Supply-chain and data-flow screening: one adopted with a pinned commit after reading every file, four parts cherry-picked from a ~300-skill bundle, and four rejected.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/notes/empty-source-backups">An empty source is not a successful backup</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>Restoring ~5.6 GB across two buckets with zero diff exposed a deeper gap: a backup job that could treat zero objects at the source as a clean run.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/notes/reading-silenced-alerts">Reading silenced alerts as a separate list</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>Why inspecting active alerts and silenced alerts as two separate lists keeps known risk distinct from new critical incidents.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h3>
-            <time class="post-date" datetime="2026-11-18">2026.11.18</time>
-          </div>
-          <p>Parallel coding agents opened two pull requests for the same fix until I enforced single-owner assignment and an end-of-day cross-check.</p>
-        </li>
-        <li>
-          <div class="post-row">
-            <h3><a href="/notes/red-team-my-own-rag-bot">I attacked my own RAG bot. 7 of 10 attacks worked.</a></h3>
-            <time class="post-date" datetime="2026-11-02">2026.11.02</time>
-          </div>
-          <p>Poisoned knowledge-base pages, direct prompt injection, and personal data leaking into traces: what broke a standard RAG pipeline and what stopped it.</p>
-        </li>
-      </ul>
-      <p class="more"><a href="/notes/">See all 5 posts <span aria-hidden="true">→</span></a></p>
-    </div>
-  </section>
 
   <section id="work">
     <div class="wrap">
-      <h2>Selected work</h2>
-      <p class="lead">Production incidents and architecture decisions: what broke, what the metrics showed, and what changed.</p>
-      <div class="cases">
-        <article class="case">
-          <h3><a href="/work/slow-llm-prefill">Slow LLM responses: the vendor's fix targeted the wrong component</a></h3>
-          <dl>
-            <dt>Situation</dt><dd>LLM responses were slow. The vendor had scaled the auth service from 1 to 10 replicas.</dd>
-            <dt>Evidence</dt><dd>An approved concurrency test (<strong>180 requests, 0 errors</strong>) and vLLM metrics showed the bottleneck was long-prompt prefill on a single GPU.</dd>
-            <dt>Decision</dt><dd>Serving a second model replica on GPU capacity measured as allocated but idle.</dd>
-          </dl>
-          <a class="more" href="/work/slow-llm-prefill">Read the case <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="case">
-          <h3><a href="/work/gpu-node-nvme-hang">A recurring GPU-node outage traced to a silent NVMe hang</a></h3>
-          <dl>
-            <dt>Situation</dt><dd>A production GPU node kept going NotReady until rebooted.</dd>
-            <dt>Evidence</dt><dd>A minute-by-minute timeline across Prometheus, kernel journal, and BMC logs traced the freeze to an NVMe disk hanging silently in RAID1 while multipath requeued I/O.</dd>
-            <dt>Decision</dt><dd>The vendor confirmed the evidence pack, hot-swapped the disk, and stuck-I/O alerts were added.</dd>
-          </dl>
-          <a class="more" href="/work/gpu-node-nvme-hang">Read the case <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="case">
-          <h3><a href="/work/agentless-monitoring-bridge">Monitoring a vendor-managed AI platform without installing agents</a></h3>
-          <dl>
-            <dt>Situation</dt><dd>A vendor-managed GPU platform had to join central observability without installing host agents.</dd>
-            <dt>Evidence</dt><dd>Built a read-only Prometheus federation bridge over SSH using only the Python standard library and systemd.</dd>
-            <dt>Result</dt><dd>The platform joined central alerting, and ingested time series dropped from <strong>~25,000 to ~1,900</strong>.</dd>
-          </dl>
-          <a class="more" href="/work/agentless-monitoring-bridge">Read the case <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="case">
-          <h3><a href="/work/dns-migration-decision">A domain-wide DNS move, decided on evidence</a></h3>
-          <dl>
-            <dt>Situation</dt><dd>A domain-wide DNS cutover to Cloudflare required an engineering risk analysis and rollback plan.</dd>
-            <dt>Evidence</dt><dd>Documented zone inventory and evaluated three migration options with explicit trade-offs.</dd>
-            <dt>Decision</dt><dd>The recommended option was executed with <strong>zero downtime</strong>.</dd>
-          </dl>
-          <a class="more" href="/work/dns-migration-decision">Read the case <span aria-hidden="true">→</span></a>
-        </article>
-      </div>
+      <h2>Field cases</h2>
+      <p class="lead">Production failures and architecture trade-offs traced from symptom to measured evidence.</p>
+      <ul class="entries">
+        <li>
+          <h3 class="entry-title"><a href="/work/slow-llm-prefill">Slow LLM responses: the vendor's fix targeted the wrong component</a></h3>
+          <p class="entry-desc">An approved concurrency test (<strong>180 requests, 0 errors</strong>) and vLLM metrics proved latency came from long-prompt prefill on a single GPU rather than auth replicas, unlocking a second model replica on allocated idle GPU capacity.</p>
+          <p class="entry-meta"><a href="/work/slow-llm-prefill">Read case <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="/work/gpu-node-nvme-hang">A recurring GPU-node outage traced to a silent NVMe hang</a></h3>
+          <p class="entry-desc">A minute-by-minute timeline across Prometheus, kernel journal, and BMC logs traced repeated node freezes to an NVMe disk hanging silently in RAID1 while multipath kept requeueing I/O.</p>
+          <p class="entry-meta"><a href="/work/gpu-node-nvme-hang">Read case <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="/work/agentless-monitoring-bridge">Monitoring a vendor-managed AI platform without installing agents</a></h3>
+          <p class="entry-desc">A read-only Prometheus federation bridge over SSH (Python stdlib, systemd) brought a vendor-managed GPU cluster into central alerting while cutting ingested series from <strong>~25,000 to ~1,900</strong>.</p>
+          <p class="entry-meta"><a href="/work/agentless-monitoring-bridge">Read case <span aria-hidden="true">→</span></a></p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="/work/dns-migration-decision">A domain-wide DNS move, decided on evidence</a></h3>
+          <p class="entry-desc">Documented zone inventory and three migration paths with explicit trade-offs so the domain cutover to Cloudflare went through with <strong>zero downtime</strong>.</p>
+          <p class="entry-meta"><a href="/work/dns-migration-decision">Read case <span aria-hidden="true">→</span></a></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap">
+      <h2>Notes</h2>
+      <p class="lead">Short operational write-ups on what broke, what was measured, and what changed.</p>
+      <ul class="dated-list">
+        <li>
+          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/notes/ai-tool-review">How I screened six AI tools before adoption</a></h3>
+            <p class="item-desc">Supply-chain and prompt-flow checks: one skill adopted by pinned commit, four pieces copied from a bundle, four tools rejected.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/notes/empty-source-backups">An empty source is not a successful backup</a></h3>
+            <p class="item-desc">Restoring ~5.6 GB across two buckets with zero diff exposed a backup job condition that could mark zero source objects green.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/notes/reading-silenced-alerts">Reading silenced alerts as a separate list</a></h3>
+            <p class="item-desc">Why reviewing active and silenced alerts as separate lists prevents known issues from masquerading as new incidents.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h3>
+            <p class="item-desc">Two parallel coding sessions opened duplicate PRs for one fix until single-owner assignment and end-of-day cross-checks took effect.</p>
+          </div>
+        </li>
+        <li>
+          <time class="when-col" datetime="2026-11-02">Nov 2026</time>
+          <div>
+            <h3 class="item-title"><a href="/notes/red-team-my-own-rag-bot">I attacked my own RAG bot. 7 of 10 attacks worked.</a></h3>
+            <p class="item-desc">Poisoned knowledge-base documents, direct injection, and PII reaching traces: what failed on a standard RAG pipeline and what stopped it.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="section-foot"><a href="/notes/">Notes archive</a> · <a href="/feed.xml">Atom feed</a></p>
     </div>
   </section>
 
   <section id="projects">
     <div class="wrap">
-      <h2>Projects</h2>
-      <p class="lead">Open-source tools and test beds for LLM serving, evaluation, and security.</p>
-      <div class="grid">
-        <article class="card">
-          <h3><a href="https://github.com/mtbagatur/llm-serving-loadlab" rel="noopener">llm-serving-loadlab</a></h3>
-          <p>Async streaming load generator and capacity analysis kit that separates prompt-length prefill saturation from request concurrency bottlenecks.</p>
-          <span class="stack">Python · vLLM · Kubernetes</span>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/mtbagatur/redteam-check" rel="noopener">redteam-check</a></h3>
-          <p>Black-box security test suite for LLM chat endpoints: 40 prompt-injection, poisoned-context, and PII-leak attacks with a readable report and JUnit CI output.</p>
-          <span class="stack">Python · JUnit · CI</span>
-        </article>
-        <article class="card">
-          <h3><a href="https://github.com/mtbagatur/llm-prod-readiness-kit" rel="noopener">llm-prod-readiness-kit</a></h3>
-          <p>RAG service test bed for OpenTelemetry tracing, evaluation gates, provider fallbacks, PII masking before embedding calls, and cost-per-answer tracking.</p>
-          <span class="stack">LiteLLM · pgvector · OpenTelemetry · Phoenix</span>
-        </article>
-      </div>
-      <p class="more"><a href="https://github.com/mtbagatur" rel="noopener">See all repositories on GitHub <span aria-hidden="true">→</span></a></p>
+      <h2>Code</h2>
+      <p class="lead">Small open-source tools and test harnesses built to verify production behaviour.</p>
+      <ul class="entries">
+        <li>
+          <h3 class="entry-title"><a href="https://github.com/mtbagatur/llm-serving-loadlab" rel="noopener">llm-serving-loadlab</a></h3>
+          <p class="entry-desc">Async streaming load generator and capacity analysis kit that separates long-prompt prefill saturation from request concurrency limits.</p>
+          <p class="entry-meta">Python · vLLM · Kubernetes</p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="https://github.com/mtbagatur/redteam-check" rel="noopener">redteam-check</a></h3>
+          <p class="entry-desc">Black-box security suite for LLM chat endpoints: 40 prompt-injection, poisoned-context, and PII-leak attacks with JUnit CI output.</p>
+          <p class="entry-meta">Python · JUnit · CI</p>
+        </li>
+        <li>
+          <h3 class="entry-title"><a href="https://github.com/mtbagatur/llm-prod-readiness-kit" rel="noopener">llm-prod-readiness-kit</a></h3>
+          <p class="entry-desc">Local RAG test bed for OpenTelemetry tracing, evaluation gates, fallbacks, pre-embedding PII masking, and cost-per-answer tracking.</p>
+          <p class="entry-meta">LiteLLM · pgvector · OpenTelemetry · Phoenix</p>
+        </li>
+      </ul>
+      <p class="section-foot"><a href="https://github.com/mtbagatur" rel="noopener">All repositories on GitHub <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 
   <section id="speaking">
     <div class="wrap">
-      <h2>Talks &amp; publications</h2>
-      <p class="lead">Conference papers and talks on real-time computer vision, detection, and tracking.</p>
-      <ul class="list">
+      <h2>Talks</h2>
+      <p class="lead">Conference papers and presentations on real-time computer vision, detection, and tracking.</p>
+      <ul class="dated-list">
         <li>
-          <span class="when">2024.11 · Speaker · ICAIS'24, Istanbul Gedik University</span>
-          International Conference on Artificial Intelligence Studies (Abstract Book ISBN 978-625-94129-4-8): <span class="title" lang="en">Preprocessing Optimization for Enhanced Real-Time Detection and Tracking in Vision Systems</span>
+          <time class="when-col" datetime="2024-11-09">Nov 2024</time>
+          <div>
+            <p class="item-title"><span class="title" lang="en">Preprocessing Optimization for Enhanced Real-Time Detection and Tracking in Vision Systems</span></p>
+            <p class="item-desc">Speaker · ICAIS'24, Istanbul Gedik University · International Conference on Artificial Intelligence Studies (Abstract Book ISBN 978-625-94129-4-8)</p>
+          </div>
         </li>
         <li>
-          <span class="when">2023.11 · Speaker · ICOLES 2023, Antalya</span>
-          6th International Conference on Life and Engineering Sciences: <span class="title" lang="en">An Efficient Framework for Real-Time Age and Gender Detection Using Deep Learning Techniques</span>
+          <time class="when-col" datetime="2023-11">Nov 2023</time>
+          <div>
+            <p class="item-title"><span class="title" lang="en">An Efficient Framework for Real-Time Age and Gender Detection Using Deep Learning Techniques</span></p>
+            <p class="item-desc">Speaker · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+          </div>
         </li>
         <li>
-          <span class="when">2023.11 · Speaker · ICOLES 2023, Antalya</span>
-          6th International Conference on Life and Engineering Sciences: <span class="title" lang="en">Design and Performance Analysis of Deep Learning-Based People Detection from Top-View Images</span>
+          <time class="when-col" datetime="2023-11">Nov 2023</time>
+          <div>
+            <p class="item-title"><span class="title" lang="en">Design and Performance Analysis of Deep Learning-Based People Detection from Top-View Images</span></p>
+            <p class="item-desc">Speaker · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+          </div>
         </li>
       </ul>
     </div>
@@ -203,8 +193,8 @@
   <section id="contact" class="contact">
     <div class="wrap">
       <h2>Contact</h2>
-      <p class="lead">Based in Bursa, Türkiye. Open to interesting problems, collaborations, and conversations on production AI systems, inference infrastructure, and reliability.</p>
-      <p><a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="https://github.com/mtbagatur" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/mtbagatur" rel="noopener">LinkedIn</a></p>
+      <p class="lead">Bursa, Türkiye (UTC+3). If something here sparked a thought, or you're working through a stubborn AI-infrastructure problem, email is best.</p>
+      <p><a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="https://github.com/mtbagatur" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/mtbagatur" rel="noopener">LinkedIn</a> · <a href="/feed.xml">Atom feed</a></p>
     </div>
   </section>
 </main>
