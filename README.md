@@ -17,6 +17,7 @@ Plain static HTML and CSS, no client-side JavaScript, no build step. Default lan
 - `samples/`: sample reports (PDF)
 - `scripts/kontrol.sh`: deterministic site check (status codes, broken links, meta/OG tags, sitemap, feeds)
 - `scripts/serve.py`: local server matching Cloudflare Pages clean URLs, headers and redirects
+- `scripts/og.mjs`: one social preview card per page (`og/…png`), rendered from the page's own og:title/description; re-renders only what changed. `--check` fails on stale cards (also run by the test suite). Pre-commit hook (`scripts/hooks`, enable once with `git config core.hooksPath scripts/hooks`) runs it automatically. Home pages keep the hand-made `/og.png`.
 - `tests/site.spec.js`: Playwright + axe-core end-to-end and WCAG AA accessibility suite
 
 ## Check & Test

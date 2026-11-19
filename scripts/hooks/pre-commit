@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Keep social preview cards in sync with page titles/descriptions.
+set -e
+if git diff --cached --name-only | grep -q '\.html$'; then
+  node scripts/og.mjs
+  git add og $(git diff --cached --name-only --diff-filter=AM | grep '\.html$') $(git diff --name-only | grep '\.html$') 2>/dev/null || true
+fi

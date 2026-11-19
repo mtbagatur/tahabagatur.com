@@ -3,6 +3,7 @@ const { test, expect } = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const BASE_ORIGIN = 'https://tahabagatur.com';
 
@@ -137,6 +138,10 @@ test.describe('2. Clean URLs, redirects, 404 & security headers', () => {
   });
 });
 
+test('Social cards are up to date with page text', () => {
+  execFileSync('node', ['scripts/og.mjs', '--check'], { stdio: 'inherit' });
+});
+
 test.describe('3. SEO, JSON-LD, OpenGraph & email_off across all pages', () => {
   for (const p of ALL_PAGES) {
     test(`Metadata & JSON-LD check on ${p}`, async ({ page }) => {
@@ -167,11 +172,13 @@ test.describe('3. SEO, JSON-LD, OpenGraph & email_off across all pages', () => {
       const ogImg = await page.locator('meta[property="og:image"]').getAttribute('content');
       expect(ogTitle && ogTitle.length).toBeGreaterThan(5);
       expect(ogUrl).toBe(BASE_ORIGIN + p);
-      const OG_OVERRIDES = {
-        '/lab/canary/': '/lab/canary/og-en.png',
-        '/tr/lab/canary/': '/lab/canary/og-tr.png',
-      };
-      expect(ogImg).toBe(BASE_ORIGIN + (OG_OVERRIDES[p] || '/og.png'));
+      const isHome = p === '/' || p === '/tr/';
+      const slug = p.replace(/^\//, '').replace(/\/$/, '').replace(/\.html$/, '');
+      expect(ogImg).toBe(BASE_ORIGIN + (isHome ? '/og.png' : `/og/${slug}.png`));
+      const twImg = await page.locator('meta[name="twitter:image"]').getAttribute('content');
+      expect(twImg).toBe(ogImg);
+      const imgRes = await page.request.get(ogImg.replace(BASE_ORIGIN, ''));
+      expect(imgRes.status()).toBe(200);
 
       await expect(page.locator('h1')).toHaveCount(1);
 
