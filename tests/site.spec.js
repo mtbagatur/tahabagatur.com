@@ -167,7 +167,11 @@ test.describe('3. SEO, JSON-LD, OpenGraph & email_off across all pages', () => {
       const ogImg = await page.locator('meta[property="og:image"]').getAttribute('content');
       expect(ogTitle && ogTitle.length).toBeGreaterThan(5);
       expect(ogUrl).toBe(BASE_ORIGIN + p);
-      expect(ogImg).toBe(BASE_ORIGIN + '/og.png');
+      const OG_OVERRIDES = {
+        '/lab/canary/': '/lab/canary/og-en.png',
+        '/tr/lab/canary/': '/lab/canary/og-tr.png',
+      };
+      expect(ogImg).toBe(BASE_ORIGIN + (OG_OVERRIDES[p] || '/og.png'));
 
       await expect(page.locator('h1')).toHaveCount(1);
 
