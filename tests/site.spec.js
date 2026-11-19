@@ -14,6 +14,7 @@ const BILINGUAL_PAIRS = [
   ['/notes/reading-silenced-alerts', '/tr/notes/reading-silenced-alerts'],
   ['/notes/empty-source-backups', '/tr/notes/empty-source-backups'],
   ['/notes/ai-tool-review', '/tr/notes/ai-tool-review'],
+  ['/lab/canary/', '/tr/lab/canary/'],
   ['/work/slow-llm-prefill', '/tr/work/slow-llm-prefill'],
   ['/work/gpu-node-nvme-hang', '/tr/work/gpu-node-nvme-hang'],
   ['/work/agentless-monitoring-bridge', '/tr/work/agentless-monitoring-bridge'],
@@ -201,6 +202,17 @@ test.describe('4. Bilingual EN <-> TR navigation and hreflang symmetry', () => {
       await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     });
   }
+});
+
+test('Canary lab contains four harmless codes and no tracking or external scripts', async ({ page }) => {
+  await page.goto('/lab/canary/');
+  const html = await page.content();
+  for (const code of ['CANARY-A7', 'CANARY-B4', 'CANARY-C9', 'CANARY-D2']) {
+    expect(html).toContain(code);
+  }
+  await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+  await expect(page.locator('form')).toHaveCount(0);
+  await expect(page.locator('script:not([type="application/ld+json"])')).toHaveCount(0);
 });
 
 test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
