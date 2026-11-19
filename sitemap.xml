@@ -15,6 +15,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/"/>
   </url>
   <url>
+    <loc>https://tahabagatur.com/red-team-check/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/red-team-check/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/red-team-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/red-team-check/"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/red-team-check/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/red-team-check/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/red-team-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/red-team-check/"/>
+  </url>
+  <url>
     <loc>https://tahabagatur.com/lab/canary/</loc>
     <lastmod>2026-11-20</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/lab/canary/"/>

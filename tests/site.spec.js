@@ -15,6 +15,7 @@ const BILINGUAL_PAIRS = [
   ['/notes/empty-source-backups', '/tr/notes/empty-source-backups'],
   ['/notes/ai-tool-review', '/tr/notes/ai-tool-review'],
   ['/lab/canary/', '/tr/lab/canary/'],
+  ['/red-team-check/', '/tr/red-team-check/'],
   ['/work/slow-llm-prefill', '/tr/work/slow-llm-prefill'],
   ['/work/gpu-node-nvme-hang', '/tr/work/gpu-node-nvme-hang'],
   ['/work/agentless-monitoring-bridge', '/tr/work/agentless-monitoring-bridge'],
@@ -27,7 +28,6 @@ const SITEMAP_PAGES = [
 
 const ALL_PAGES = [
   ...SITEMAP_PAGES,
-  '/red-team-check/',
 ];
 
 test.describe('1. Sitemap, robots.txt & Atom feeds', () => {
@@ -49,6 +49,7 @@ test.describe('1. Sitemap, robots.txt & Atom feeds', () => {
 
     const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
     expect(locs.length).toBe(SITEMAP_PAGES.length);
+    expect(new Set(locs).size).toBe(locs.length);
     for (const p of SITEMAP_PAGES) {
       expect(locs).toContain(BASE_ORIGIN + p);
       const pageRes = await request.get(p);
@@ -59,6 +60,19 @@ test.describe('1. Sitemap, robots.txt & Atom feeds', () => {
     expect(lastmods.length).toBe(SITEMAP_PAGES.length);
     for (const lm of lastmods) {
       expect(lm).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+
+    for (const [enPath, trPath] of BILINGUAL_PAIRS) {
+      const en = BASE_ORIGIN + enPath;
+      const tr = BASE_ORIGIN + trPath;
+      const pairBlocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
+        .filter(m => m[1].includes(`<loc>${en}</loc>`) || m[1].includes(`<loc>${tr}</loc>`));
+      expect(pairBlocks).toHaveLength(2);
+      for (const block of pairBlocks) {
+        expect(block[1]).toContain(`hreflang="en" href="${en}"`);
+        expect(block[1]).toContain(`hreflang="tr" href="${tr}"`);
+        expect(block[1]).toContain(`hreflang="x-default" href="${en}"`);
+      }
     }
   });
 
@@ -227,14 +241,29 @@ test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
     }
   }
 
+  test('Red-team offer renders in both languages with the shared stylesheet and product scope', async ({ page }) => {
+    for (const [p, heading] of [
+      ['/red-team-check/', 'Find the ways your AI feature can be pushed off course.'],
+      ['/tr/red-team-check/', 'AI özelliğinizin nasıl rayından çıkarılabileceğini bulun.'],
+    ]) {
+      await page.goto(p);
+      await expect(page.locator('link[rel="stylesheet"]')).toHaveAttribute('href', '/assets/site.css');
+      await expect(page.locator('main h1')).toHaveText(heading);
+      await expect(page.locator('main')).toContainText('40');
+      await expect(page.locator('main')).toContainText('$300');
+      await expect(page.locator('main')).toContainText('CI');
+    }
+  });
+
   for (const vp of [
+    { name: 'mobile-375', width: 375, height: 812 },
     { name: 'mobile-360', width: 360, height: 740 },
     { name: 'tablet-768', width: 768, height: 1024 },
     { name: 'desktop-1280', width: 1280, height: 800 },
   ]) {
     test(`No horizontal overflow on ${vp.name}`, async ({ page }) => {
       await page.setViewportSize({ width: vp.width, height: vp.height });
-      for (const p of ['/', '/tr/', '/notes/', '/notes/red-team-my-own-rag-bot', '/work/slow-llm-prefill']) {
+      for (const p of ['/', '/tr/', '/notes/', '/notes/red-team-my-own-rag-bot', '/work/slow-llm-prefill', '/red-team-check/', '/tr/red-team-check/']) {
         await page.goto(p);
         const overflow = await page.evaluate(() => {
           return document.documentElement.scrollWidth > document.documentElement.clientWidth;
