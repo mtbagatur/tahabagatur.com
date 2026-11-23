@@ -277,7 +277,8 @@ test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
       await expect(page.locator('main h1')).toHaveText(heading);
       await expect(page.locator('main')).toContainText(p.startsWith('/tr/') ? 'Örnek veri' : 'Sample data');
       await expect(page.locator('main')).toContainText('SLO');
-      await expect(page.locator('script:not([type="application/ld+json"])')).toHaveCount(0);
+      // Only the first-party day/night toggle; no data fetching or tracking.
+      await expect(page.locator('script:not([type="application/ld+json"]):not([src="/assets/tema.js"])')).toHaveCount(0);
     }
   });
 

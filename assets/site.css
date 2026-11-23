@@ -33,7 +33,7 @@
   --ease-out:cubic-bezier(0.23,1,0.32,1);
 }
 @media (prefers-color-scheme:dark){
-  :root{
+  :root:not([data-theme="light"]){
     --bg:#0f1622;
     --surface:#151e2d;
     --surface-hover:#1b2638;
@@ -49,10 +49,29 @@
     --yesil:#5fb393;
   }
 }
+:root[data-theme="dark"]{
+    --bg:#0f1622;
+    --surface:#151e2d;
+    --surface-hover:#1b2638;
+    --paper-2:#151e2d;
+    --ink:#ece4d3;
+    --muted:#ece4d3c4;
+    --faint:#ece4d3a8;
+    --line:#ece4d321;
+    --accent:#ece4d3;
+    --accent-soft:#1b2638;
+    --lal:#e0756e;
+    --zer:#c9a46a;
+    --yesil:#5fb393;
+}
+:root{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark}}
 @media (prefers-contrast:more){
   :root{--muted:#16233f;--faint:#16233fd9;--line:#16233f66}
+  :root[data-theme="dark"]{--muted:#ece4d3;--faint:#ece4d3d9;--line:#ece4d366}
   @media (prefers-color-scheme:dark){
-    :root{--muted:#ece4d3;--faint:#ece4d3d9;--line:#ece4d366}
+    :root:not([data-theme="light"]){--muted:#ece4d3;--faint:#ece4d3d9;--line:#ece4d366}
   }
 }
 *{box-sizing:border-box}
@@ -366,3 +385,19 @@ code{font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1p
 }
 .background{margin:28px 0 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;max-width:70ch}
 .background .k{display:block;font-size:12.5px;color:var(--faint);margin-bottom:4px}
+
+/* Rüzgâr gülü ve gece/gündüz düğmesi (F, 24.11) */
+.rhumb .rose{stroke:var(--zer);fill:none;opacity:.5}
+.rhumb .rose .pt{fill:var(--zer);stroke:none;opacity:.5}
+
+/* Gece/gündüz düğmesi: gündüz şemse (tezhip güneşi), gece hilal */
+.tema{position:relative;width:38px;height:38px;padding:0;border-radius:50%;border:1px solid var(--zer);background:transparent;color:var(--zer);display:inline-grid;place-items:center;flex-shrink:0}
+.tema svg{position:absolute;width:22px;height:22px;transition:opacity 220ms var(--ease-out),transform 320ms var(--ease-out)}
+.tema .semse .ic{fill:var(--lal)}
+.tema .hilal{opacity:0;transform:rotate(-40deg) scale(.6)}
+.tema .hilal .y{fill:var(--zer)}
+.is-dark .tema .semse{opacity:0;transform:rotate(45deg) scale(.6)}
+.is-dark .tema .hilal{opacity:1;transform:none}
+@media (hover:hover) and (pointer:fine){.tema:hover{background:var(--paper-2)}}
+@media (prefers-reduced-motion:reduce){.tema svg{transition:none}}
+@media (max-width:640px){.tema{order:2;margin-left:auto}.lang{margin-left:0}}
