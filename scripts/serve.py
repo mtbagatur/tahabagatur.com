@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Serve the site locally the way Cloudflare Pages does, closely enough for tests.
-  python3 scripts/serve.py [port] [root]
+  python3 scripts/serve.py [port] [root] [--bind ADDR]
+  --bind defaults to 127.0.0.1. Use a Tailscale IP to view from a phone on the tailnet.
 - /a/b -> a/b.html, /a/ -> a/index.html, /a -> 308 /a/ when a/ is a folder
 - /x.html -> 308 /x, /index.html and /a/index.html -> 308 to the folder
 - unknown paths -> 404.html with status 404
@@ -8,8 +9,12 @@
 Not Cloudflare: no compression, no email obfuscation, no caching."""
 import http.server, os, sys, fnmatch
 
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8787
-ROOT = os.path.abspath(sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.path.dirname(__file__), ".."))
+ARGS = sys.argv[1:]
+BIND = "127.0.0.1"
+if "--bind" in ARGS:
+    i = ARGS.index("--bind"); BIND = ARGS[i + 1]; del ARGS[i:i + 2]
+PORT = int(ARGS[0]) if len(ARGS) > 0 else 8787
+ROOT = os.path.abspath(ARGS[1] if len(ARGS) > 1 else os.path.join(os.path.dirname(__file__), ".."))
 
 def parse_headers():
     rules, cur = [], None
@@ -86,5 +91,5 @@ class H(http.server.SimpleHTTPRequestHandler):
         return t + "; charset=utf-8" if t.startswith("text/") else t
 
 if __name__ == "__main__":
-    print(f"serving {ROOT} on http://127.0.0.1:{PORT}", flush=True)
-    http.server.ThreadingHTTPServer(("127.0.0.1", PORT), H).serve_forever()
+    print(f"serving {ROOT} on http://{BIND}:{PORT}", flush=True)
+    http.server.ThreadingHTTPServer((BIND, PORT), H).serve_forever()
