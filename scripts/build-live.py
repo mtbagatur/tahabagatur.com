@@ -18,7 +18,7 @@ if DATA.get("uptime_percent") is not None and not 0 <= float(DATA["uptime_percen
 if not isinstance(DATA.get("slo", []), list) or not isinstance(DATA.get("alarms", []), list):
     raise SystemExit("slo and alarms must be arrays")
 
-FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4975'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E"
+FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' shape-rendering='crispEdges'%3E%3Crect width='11' height='11' fill='%2316233f'/%3E%3Cpath fill='%23f5f0e6' d='M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z'/%3E%3C/svg%3E"
 
 def card(title, value, detail=""):
     heading = f'<h3>{escape(title)}</h3>' if title else ""
@@ -51,12 +51,12 @@ def build(tr=False):
     structured = json.dumps({"@context":"https://schema.org","@type":"WebPage","name":title,"description":intro,"inLanguage":lang,"url":"https://tahabagatur.com"+path}, ensure_ascii=False, separators=(",", ":"))
     marker = '<!-- Cloudflare Web Analytics insertion point: token supplied by Taha. -->\n<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->'
     if tr:
-        nav = '<nav aria-label="Bölümler"><a href="/tr/#work">Vakalar</a><a href="/tr/notes/">Notlar</a><a href="/tr/#projects">Kod</a><a href="/tr/#speaking">Konuşmalar</a><a href="/tr/#ask">Danış bana</a><a href="/tr/#contact">İletişim</a></nav>'
+        nav = '<nav aria-label="Bölümler"><a href="/tr/#work">Vakalar</a><a href="/tr/notes/">Notlar</a><a href="/tr/#divan">Divan</a><a href="/tr/#ask">Danış bana</a></nav>'
         crumb = '<a href="/tr/">Ana sayfa</a> › Canlı durum'
         feed_link = '<a href="/tr/feed.xml">Atom akışı</a>'
         footer_text = f'© 2026 Taha Bagatur · Çerez yok. · {feed_link}'
     else:
-        nav = '<nav aria-label="Sections"><a href="/#work">Cases</a><a href="/notes/">Notes</a><a href="/#projects">Code</a><a href="/#speaking">Talks</a><a href="/#ask">Ask me</a><a href="/#contact">Contact</a></nav>'
+        nav = '<nav aria-label="Sections"><a href="/#work">Cases</a><a href="/notes/">Notes</a><a href="/#divan">Divan</a><a href="/#ask">Ask me</a></nav>'
         crumb = '<a href="/">Home</a> › Live'
         feed_link = '<a href="/feed.xml">Atom feed</a>'
         footer_text = f'© 2026 Taha Bagatur · No cookies. · {feed_link}'
@@ -69,8 +69,8 @@ def build(tr=False):
 <meta name="description" content="{escape(intro)}">
 <meta name="author" content="Taha Bagatur">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111418" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1622" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://tahabagatur.com{path}">
 <link rel="alternate" hreflang="en" href="https://tahabagatur.com/live/">
 <link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/live/">
@@ -96,7 +96,7 @@ def build(tr=False):
 <a class="skip" href="#main">{'İçeriğe geç' if tr else 'Skip to content'}</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="{'/tr/' if tr else '/'}">tahabagatur.com</a>
+    <a class="brand" href="{'/tr/' if tr else '/'}"><svg class="seal" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect class="s-bg" width="11" height="11"/><path class="s-fg" d="M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z"/></svg>Taha Bagatur</a>
     <div class="top">
       {nav}
       <a class="lang" href="{'/live/' if tr else '/tr/live/'}" hreflang="{'en' if tr else 'tr'}" lang="{'en' if tr else 'tr'}">{'English' if tr else 'Türkçe'}</a>

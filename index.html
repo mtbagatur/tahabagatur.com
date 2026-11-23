@@ -7,8 +7,8 @@
 <meta name="description" content="Taha Bagatur. Building and running production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets.">
 <meta name="author" content="Taha Bagatur">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111418" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1622" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://tahabagatur.com/">
 <link rel="alternate" hreflang="en" href="https://tahabagatur.com/">
 <link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/">
@@ -29,7 +29,7 @@
 <meta name="twitter:title" content="Taha Bagatur">
 <meta name="twitter:description" content="Building and running production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets.">
 <meta name="twitter:image" content="https://tahabagatur.com/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4975'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' shape-rendering='crispEdges'%3E%3Crect width='11' height='11' fill='%2316233f'/%3E%3Cpath fill='%23f5f0e6' d='M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tahabagatur.com/#website","name":"Taha Bagatur","url":"https://tahabagatur.com/","inLanguage":["en","tr"]},{"@type":"ProfilePage","@id":"https://tahabagatur.com/#page","url":"https://tahabagatur.com/","inLanguage":"en","isPartOf":{"@id":"https://tahabagatur.com/#website"},"mainEntity":{"@id":"https://tahabagatur.com/#person"}},{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","alternateName":"Mehmet Taha Bağatur","jobTitle":"Platform Engineer (DevOps / MLOps)","url":"https://tahabagatur.com/","sameAs":["https://www.linkedin.com/in/mtbagatur","https://github.com/mtbagatur"],"knowsAbout":["AI infrastructure","LLM serving","RAG systems","Kubernetes","Observability","Prometheus","Terraform","Computer vision"]}]}
@@ -40,169 +40,109 @@
 <a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="/">tahabagatur.com</a>
+    <a class="brand" href="/"><svg class="seal" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect class="s-bg" width="11" height="11"/><path class="s-fg" d="M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z"/></svg>Taha Bagatur</a>
     <div class="top">
       <nav aria-label="Sections">
         <a href="/#work">Cases</a>
         <a href="/notes/">Notes</a>
-        <a href="/#projects">Code</a>
-        <a href="/#speaking">Talks</a>
+        <a href="/#divan">Divan</a>
         <a href="/#ask">Ask me</a>
-        <a href="/#contact">Contact</a>
       </nav>
       <a class="lang" href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
     </div>
   </div>
 </header>
 
-<main id="main">
-  <div class="wrap hero">
-    <h1>Platform Engineer · DevOps / MLOps · AI in production</h1>
-    <p>I build and run production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets. Having worked on both the model side and the Linux/operations side, most of my work sits in the seam where models meet real hardware and real failure modes.</p>
-    <p class="sub">This site is a field log: <a href="#work">production cases</a> traced to root cause, <a href="/notes/">short notes</a> from day-to-day operations, and <a href="#projects">small tools</a> built to test assumptions.</p>
-  </div>
-
-  <section id="ask">
+<main id="main" class="home">
+  <div class="home-hero">
+    <svg class="rhumb" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <g fill="none"><path d="M1110 250 L0 40 M1110 250 L0 250 M1110 250 L0 520 M1110 250 L420 640 M1110 250 L900 640 M1110 250 L1440 600 M1110 250 L1440 120 M1110 250 L1280 0 M1110 250 L760 0"/><circle cx="1110" cy="250" r="64"/><circle cx="1110" cy="250" r="150"/></g>
+      <path class="route" d="M1110 250 C1180 330 1250 400 1440 470"/>
+      <circle class="port" cx="1110" cy="250" r="3.5"/>
+    </svg>
     <div class="wrap">
-      <h2>Ask me</h2>
-      <p class="lead">A few topics I enjoy thinking through together. Choose a question and it will open as an email draft.</p>
-      <ul class="entries ask-list">
-        <li><a href="mailto:taha@tahabagatur.com?subject=LLM%20serving%20latency%20and%20capacity">How do you reason about LLM serving latency and capacity?</a></li>
-        <li><a href="mailto:taha@tahabagatur.com?subject=RAG%20security%20and%20red-teaming">How do you test RAG security and prompt-injection boundaries?</a></li>
-        <li><a href="mailto:taha@tahabagatur.com?subject=Kubernetes%20and%20GPU%20node%20operations">What tends to make Kubernetes and GPU node operations reliable?</a></li>
-        <li><a href="mailto:taha@tahabagatur.com?subject=Observability%20and%20alert%20noise">How do you reduce alert noise without hiding risk?</a></li>
-        <li><a href="mailto:taha@tahabagatur.com?subject=Edge%20computer%20vision%20deployment">What changes when deploying computer vision at the edge?</a></li>
-        <li><a href="mailto:taha@tahabagatur.com?subject=Choosing%20AI%20tools">How do you evaluate an AI tool's data flow and maintenance?</a></li>
-      </ul>
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Bursa, Türkiye · 40.19°N 29.06°E · day starts 05:30</p>
+      <h1>I run AI in production, and keep it <em>honest</em>.</h1>
+      <p class="lede">Platform engineer. I build and operate the systems under production AI: LLM serving, RAG pipelines, Kubernetes, observability and edge GPU fleets. This site is my field log: cases traced to root cause, short notes, small tools.</p>
+      <div class="cta"><a class="btn" href="#ask">Ask me <span aria-hidden="true">→</span></a><a class="cta-alt" href="#work">or read the cases ↓</a></div>
+      <div class="ledger"><a href="/work/slow-llm-prefill"><b>180 / 0</b><span>requests / errors in an approved load test that found the real <i>LLM latency</i> cause</span></a><a href="/work/agentless-monitoring-bridge"><b>~25,000 → ~1,900</b><span>ingested series after an <i>agentless</i> monitoring bridge</span></a><a href="/notes/red-team-my-own-rag-bot"><b>7 / 10</b><span>attacks that worked on my own <i>RAG bot</i>, and what stopped them</span></a></div>
     </div>
-  </section>
+  </div>
 
   <section id="work">
     <div class="wrap">
-      <h2>Cases</h2>
-      <p class="lead">Production failures and architecture trade-offs traced from symptom to measured evidence.</p>
-      <ul class="entries">
-        <li>
-          <h3 class="entry-title"><a href="/work/slow-llm-prefill">Slow LLM responses: the vendor's fix targeted the wrong component</a></h3>
-          <p class="entry-desc">An approved concurrency test (<strong>180 requests, 0 errors</strong>) and vLLM metrics proved latency came from long-prompt prefill on a single GPU rather than auth replicas, unlocking a second model replica on allocated idle GPU capacity.</p>
-          <p class="entry-meta"><a href="/work/slow-llm-prefill">Read case <span aria-hidden="true">→</span></a></p>
-        </li>
-        <li>
-          <h3 class="entry-title"><a href="/work/gpu-node-nvme-hang">A recurring GPU-node outage traced to a silent NVMe hang</a></h3>
-          <p class="entry-desc">A minute-by-minute timeline across Prometheus, kernel journal, and BMC logs traced repeated node freezes to an NVMe disk hanging silently in RAID1 while multipath kept requeueing I/O.</p>
-          <p class="entry-meta"><a href="/work/gpu-node-nvme-hang">Read case <span aria-hidden="true">→</span></a></p>
-        </li>
-        <li>
-          <h3 class="entry-title"><a href="/work/agentless-monitoring-bridge">Monitoring a vendor-managed AI platform without installing agents</a></h3>
-          <p class="entry-desc">A read-only Prometheus federation bridge over SSH (Python stdlib, systemd) brought a vendor-managed GPU cluster into central alerting while cutting ingested series from <strong>~25,000 to ~1,900</strong>.</p>
-          <p class="entry-meta"><a href="/work/agentless-monitoring-bridge">Read case <span aria-hidden="true">→</span></a></p>
-        </li>
-        <li>
-          <h3 class="entry-title"><a href="/work/dns-migration-decision">A domain-wide DNS move, decided on evidence</a></h3>
-          <p class="entry-desc">Documented zone inventory and three migration paths with explicit trade-offs so the domain cutover to Cloudflare went through with <strong>zero downtime</strong>.</p>
-          <p class="entry-meta"><a href="/work/dns-migration-decision">Read case <span aria-hidden="true">→</span></a></p>
-        </li>
-      </ul>
+      <div class="sh"><span class="k mono">01 · Work</span><h2>Cases</h2><p class="lead">Production failures and trade-offs, traced from symptom to measured evidence.</p></div>
+      <div class="case-grid body">
+        <a class="case-card" href="/work/slow-llm-prefill"><span class="n mono">I</span><h3>Slow LLM responses: the vendor's fix targeted the wrong component</h3><p>Long-prompt prefill on a single GPU, not auth replicas. 180 requests, 0 errors.</p><span class="go">Read case →</span></a>
+        <a class="case-card" href="/work/gpu-node-nvme-hang"><span class="n mono">II</span><h3>A recurring GPU-node outage traced to a silent NVMe hang</h3><p>Prometheus, kernel journal and BMC logs, minute by minute.</p><span class="go">Read case →</span></a>
+        <a class="case-card" href="/work/agentless-monitoring-bridge"><span class="n mono">III</span><h3>Monitoring a vendor-managed AI platform without installing agents</h3><p>A read-only federation bridge over SSH. ~25,000 → ~1,900 series.</p><span class="go">Read case →</span></a>
+        <a class="case-card" href="/work/dns-migration-decision"><span class="n mono">IV</span><h3>A domain-wide DNS move, decided on evidence</h3><p>Three paths, explicit trade-offs, zero downtime.</p><span class="go">Read case →</span></a>
+      </div>
     </div>
   </section>
 
   <section id="notes">
     <div class="wrap">
-      <h2>Notes</h2>
-      <p class="lead">Short operational write-ups on what broke, what was measured, and what changed.</p>
-      <ul class="dated-list">
-        <li>
-          <time class="when-col" datetime="2026-11-23">23 Nov 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/notes/bekci-agent-security">My coding agents triggered 223 safety decisions in 8 days</a></h3>
-            <p class="item-desc">A Bekci decision log, corrected for test traffic, and the fixes to its tests and rule validation.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-23">23 Nov 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h3>
-            <p class="item-desc">A single-owner rule and end-of-day cross-check caught overlapping parallel work before it multiplied.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-02">2 Nov 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/notes/red-team-my-own-rag-bot">I attacked my own RAG bot. 7 of 10 attacks worked.</a></h3>
-            <p class="item-desc">Poisoned knowledge-base documents, direct injection, and PII reaching traces: what failed on a standard RAG pipeline and what stopped it.</p>
-          </div>
-        </li>
+      <div class="sh"><span class="k mono">02 · Notes</span><h2>Field notes</h2><p class="lead">What broke, what was measured, what changed.</p></div>
+      <ul class="dated-list body">
+        <li><time class="when-col" datetime="2026-11-23">23 Nov 2026</time><div><h3 class="item-title"><a href="/notes/bekci-agent-security">My coding agents triggered 223 safety decisions in 8 days</a></h3><p class="item-desc">A Bekci decision log, corrected for test traffic.</p></div></li>
+        <li><time class="when-col" datetime="2026-11-23">23 Nov 2026</time><div><h3 class="item-title"><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h3><p class="item-desc">A single-owner rule and an end-of-day cross-check.</p></div></li>
+        <li><time class="when-col" datetime="2026-11-02">2 Nov 2026</time><div><h3 class="item-title"><a href="/notes/red-team-my-own-rag-bot">I attacked my own RAG bot. 7 of 10 attacks worked.</a></h3><p class="item-desc">Poisoned documents, direct injection, PII reaching traces.</p></div></li>
       </ul>
-      <p class="section-foot"><a href="/notes/">Notes archive</a> · <a href="/feed.xml">Atom feed</a></p>
+      <p class="section-foot body"><a href="/notes/">All notes</a> · <a href="/feed.xml">Atom feed</a></p>
+    </div>
+  </section>
+
+  <section id="divan" class="divan">
+    <div class="wrap">
+      <div class="sh"><span class="k mono">03 · Divan</span><h2>The council</h2><p class="lead">I work with a small council of AI agents. Each carries an Ottoman court title, because the old titles already describe the jobs.</p></div>
+      <div class="body">
+        <ul class="council">
+          <li><span class="name">Lala</span><span class="gloss mono">the tutor who raised princes</span><p><b>Chief of staff.</b> Routes the day and keeps the others on task.</p></li>
+          <li><span class="name">Kurmay</span><span class="gloss mono">staff officer</span><p><b>Planner.</b> Turns goals into one clear task per day.</p></li>
+          <li><span class="name">Bekçi</span><span class="gloss mono">night watchman</span><p><b>Guard.</b> Checks every risky shell command before it runs. <a href="https://github.com/mtbagatur/bekci" rel="noopener">Open source</a>.</p></li>
+          <li><span class="name">Ulak</span><span class="gloss mono">royal courier</span><p><b>Messenger.</b> Carries updates to my phone.</p></li>
+          <li><span class="name">Tuğra</span><span class="gloss mono">the sultan's signature</span><p><b>Identity.</b> Keeps this site and my profiles in one voice.</p></li>
+        </ul>
+        <p class="aside">Some councillors handle private matters; they stay off this page. How the council stays safe: <a href="/notes/bekci-agent-security">223 decisions in 8 days</a>.</p>
+      </div>
     </div>
   </section>
 
   <section id="projects">
     <div class="wrap">
-      <h2>Code</h2>
-      <p class="lead">Small open-source tools and test harnesses built to verify production behaviour.</p>
-      <ul class="entries">
-        <li>
-          <h3 class="entry-title"><a href="https://github.com/mtbagatur/llm-serving-loadlab" rel="noopener">llm-serving-loadlab</a></h3>
-          <p class="entry-desc">Async streaming load generator and capacity analysis kit that separates long-prompt prefill saturation from request concurrency limits.</p>
-          <p class="entry-meta">Python · vLLM · Kubernetes</p>
-        </li>
-        <li>
-          <h3 class="entry-title"><a href="https://github.com/mtbagatur/redteam-check" rel="noopener">redteam-check</a></h3>
-          <p class="entry-desc">Black-box security suite for LLM chat endpoints: 40 prompt-injection, poisoned-context, and PII-leak attacks with JUnit CI output.</p>
-          <p class="entry-meta">Python · JUnit · CI</p>
-        </li>
-        <li>
-          <h3 class="entry-title"><a href="https://github.com/mtbagatur/llm-prod-readiness-kit" rel="noopener">llm-prod-readiness-kit</a></h3>
-          <p class="entry-desc">Local RAG test bed for OpenTelemetry tracing, evaluation gates, fallbacks, pre-embedding PII masking, and cost-per-answer tracking.</p>
-          <p class="entry-meta">LiteLLM · pgvector · OpenTelemetry · Phoenix</p>
-        </li>
-        <li>
-          <h3 class="entry-title"><a href="https://github.com/mtbagatur/bekci" rel="noopener">bekci</a></h3>
-          <p class="entry-desc">PreToolUse safety hook for Claude Code and Codex: deny/ask rules for risky shell commands, credential files, and AI attribution trailers. 50 tests.</p>
-          <p class="entry-meta">Python · Claude Code hooks · Codex</p>
-        </li>
+      <div class="sh"><span class="k mono">04 · Code</span><h2>Small tools</h2><p class="lead">Open-source harnesses built to verify production behaviour.</p></div>
+      <ul class="repos body">
+        <li><a href="https://github.com/mtbagatur/llm-serving-loadlab" rel="noopener">llm-serving-loadlab</a><p>Separates long-prompt prefill saturation from concurrency limits.</p></li>
+        <li><a href="https://github.com/mtbagatur/redteam-check" rel="noopener">redteam-check</a><p>40 prompt-injection, poisoned-context and PII-leak attacks, JUnit output for CI.</p></li>
+        <li><a href="https://github.com/mtbagatur/llm-prod-readiness-kit" rel="noopener">llm-prod-readiness-kit</a><p>Tracing, eval gates, fallbacks, PII masking, cost per answer.</p></li>
+        <li><a href="https://github.com/mtbagatur/bekci" rel="noopener">bekci</a><p>Safety hook for Claude Code and Codex. 50 tests.</p></li>
       </ul>
-      <p class="section-foot"><a href="https://github.com/mtbagatur" rel="noopener">All repositories on GitHub <span aria-hidden="true">→</span></a></p>
+      <p class="section-foot body"><a href="https://github.com/mtbagatur" rel="noopener">All repositories on GitHub <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 
-  <section id="speaking">
+  <section id="ask">
     <div class="wrap">
-      <h2>Talks</h2>
-      <p class="lead">Conference papers and presentations on real-time computer vision, detection, and tracking.</p>
-      <ul class="dated-list">
-        <li>
-          <time class="when-col" datetime="2024-11-09">Nov 2024</time>
-          <div>
-            <p class="item-title"><span class="title" lang="en">Preprocessing Optimization for Enhanced Real-Time Detection and Tracking in Vision Systems</span></p>
-            <p class="item-desc">Speaker · ICAIS'24, Istanbul Gedik University · <a href="https://doi.org/10.61150/gedikyay.2401" rel="noopener">ICAIS'24 abstract book · ISBN 978-625-94129-4-8</a> · <a href="https://www.researchgate.net/publication/387802832_Preprocessing_Optimization_for_Enhanced_Real-Time_Detection_and_Tracking_in_Vision_Systems" rel="noopener">ResearchGate</a></p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2023-11">Nov 2023</time>
-          <div>
-            <p class="item-title"><span class="title" lang="en">An Efficient Framework for Real-Time Age and Gender Detection Using Deep Learning Techniques</span></p>
-            <p class="item-desc">Speaker · ICOLES 2023, Antalya · <a href="https://www.researchgate.net/publication/376237600_An_Efficient_Framework_for_Real-Time_Age_and_Gender_Detection_Using_Deep_Learning_Techniques" rel="noopener">6th International Conference on Life and Engineering Sciences</a></p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2023-11">Nov 2023</time>
-          <div>
-            <p class="item-title"><span class="title" lang="en">Design and Performance Analysis of Deep Learning-Based People Detection from Top-View Images</span></p>
-            <p class="item-desc">Speaker · ICOLES 2023, Antalya · <a href="https://www.researchgate.net/publication/374166581_Design_and_Performance_Analysis_of_Deep_Learning-Based_People_Detection_from_Top-View_Images" rel="noopener">6th International Conference on Life and Engineering Sciences</a></p>
-          </div>
-        </li>
+      <div class="sh"><span class="k mono">05 · Ask me</span><h2>Ask me</h2><p class="lead">Pick a question; it opens as an email draft.</p></div>
+      <ul class="asks body">
+        <li><a href="mailto:taha@tahabagatur.com?subject=LLM%20serving%20latency%20and%20capacity">LLM serving latency and capacity</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=RAG%20security%20and%20red-teaming">RAG security and prompt injection</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Kubernetes%20and%20GPU%20node%20operations">Reliable Kubernetes and GPU nodes</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Observability%20and%20alert%20noise">Less alert noise, no hidden risk</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Edge%20computer%20vision%20deployment">Computer vision at the edge</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Running%20a%20council%20of%20AI%20agents">Running a council of AI agents</a></li>
       </ul>
     </div>
   </section>
 
-
-  <section id="contact" class="contact">
+  <section id="contact" class="contact" aria-label="Contact">
     <div class="wrap">
-      <h2>Contact</h2>
-      <p class="lead">Bursa, Türkiye (UTC+3). If something here sparked a thought, or you're working through a stubborn AI-infrastructure problem, email is best.</p>
-      <p><a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="https://github.com/mtbagatur" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/mtbagatur" rel="noopener">LinkedIn</a> · <a href="/cv.pdf" download>CV (PDF)</a></p>
+      <h2 class="big">Write to me.<br><em>Selam</em> works too.</h2>
+      <a class="mailbig" href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a>
+      <p class="cv"><a href="/cv.pdf" download>CV (PDF)</a></p>
+      <ul class="social"><li><a href="https://github.com/mtbagatur" rel="noopener me">GitHub <span class="mono">mtbagatur</span></a></li><li><a href="https://www.linkedin.com/in/mtbagatur" rel="noopener me">LinkedIn <span class="mono">mtbagatur</span></a></li><li><a href="https://x.com/mtbagatur" rel="noopener me">X <span class="mono">@mtbagatur</span></a></li><li><a href="https://medium.com/@mtbagatur" rel="noopener me">Medium <span class="mono">@mtbagatur</span></a></li><li><a href="https://www.youtube.com/@bagaturtaha" rel="noopener me">YouTube <span class="mono">@bagaturtaha</span></a></li><li><a href="https://www.instagram.com/bagaturtaha/" rel="noopener me">Instagram <span class="mono">@bagaturtaha</span></a></li><li><a href="https://www.threads.com/@bagaturtaha" rel="noopener me">Threads <span class="mono">@bagaturtaha</span></a></li><li><a href="https://www.tiktok.com/@bagaturtaha" rel="noopener me">TikTok <span class="mono">@bagaturtaha</span></a></li></ul>
+      <p class="talks" id="speaking">Earlier: three conference papers on real-time computer vision, <a href="https://doi.org/10.61150/gedikyay.2401" rel="noopener">ICAIS'24</a> and ICOLES 2023.</p>
     </div>
   </section>
 </main>
@@ -210,7 +150,7 @@
 <!-- Cloudflare Web Analytics insertion point: Taha supplies the site token before activation. -->
 <!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->
 <footer>
-  <div class="wrap">© 2026 Taha Bagatur · No cookies. · <a href="/feed.xml">Atom feed</a></div>
+  <div class="wrap"><svg class="seal" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect class="s-bg" width="11" height="11"/><path class="s-fg" d="M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z"/></svg><span>© 2026 Taha Bagatur · Bursa · No cookies.</span> · <a href="/feed.xml">Atom feed</a></div>
 </footer>
 <!--/email_off-->
 </body>
