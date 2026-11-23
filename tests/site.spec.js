@@ -315,6 +315,6 @@ test('Retired service URLs redirect away and home pages avoid employment-seeking
     const questions = await page.locator('#ask a[href^="mailto:"]').evaluateAll(links => links.map(link => link.getAttribute('href')));
     expect(questions.every(href => href.includes('subject='))).toBe(true);
     await expect(page.locator('#ask h2')).toHaveText(p.startsWith('/tr/') ? 'Danış bana' : 'Ask me');
-    await expect(page.locator('a[href="/cv.pdf"]')).toHaveCount(0);
+    await expect(page.locator('a[href="/cv.pdf"]')).toHaveCount(1);
   }
 });
