@@ -286,8 +286,12 @@ code{font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1p
 .social a{display:flex;align-items:baseline;gap:8px;padding:14px 16px 14px 0;text-decoration:none;white-space:nowrap}
 .social a span{color:var(--faint);overflow:hidden;text-overflow:ellipsis}
 .social a::after{content:"↗";color:var(--zer);margin-left:auto}
-.talks{margin:28px 0 0;color:var(--faint);font-size:14px;max-width:70ch}
-.talks a{color:var(--faint)}
+.talklist{list-style:none;margin:0;padding:0}
+.talklist li{display:grid;grid-template-columns:7.5em 1fr;gap:0 20px;padding:16px 0;border-top:1px solid var(--line);min-width:0}
+.talklist .when{font-size:13px;color:var(--faint);padding-top:3px}
+.talklist .ttl{margin:0;font-weight:500;overflow-wrap:anywhere}
+.talklist .where{margin:4px 0 0;color:var(--muted);font-size:14.5px}
+@media (max-width:640px){.talklist li{grid-template-columns:1fr}.talklist .when{padding:0 0 4px}}
 
 @media (hover:hover) and (pointer:fine){
   a:hover{text-decoration-color:var(--lal)}
