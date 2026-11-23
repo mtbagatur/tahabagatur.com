@@ -188,6 +188,7 @@ footer{
 }
 footer .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 footer .seal{width:18px;height:18px}
+footer .runes{height:13px;width:auto;fill:var(--lal);flex:none;opacity:.9}
 footer a{color:var(--faint)}
 
 /* Article pages (notes, case studies, live status) */
@@ -290,6 +291,7 @@ code{font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1p
 .talklist li{display:grid;grid-template-columns:7.5em 1fr;gap:0 20px;padding:16px 0;border-top:1px solid var(--line);min-width:0}
 .talklist .when{font-size:13px;color:var(--faint);padding-top:3px}
 .talklist .ttl{margin:0;font-weight:500;overflow-wrap:anywhere}
+.talklist .ttl a{color:inherit;text-decoration-color:var(--zer);text-underline-offset:3px}
 .talklist .where{margin:4px 0 0;color:var(--muted);font-size:14.5px}
 @media (max-width:640px){.talklist li{grid-template-columns:1fr}.talklist .when{padding:0 0 4px}}
 
