@@ -74,11 +74,11 @@
 
   <h2>Results</h2>
   <div class="table-wrap">
-  <table>
+  <table class="stack-table">
     <tr><th>Attack</th><th>No defences</th><th>With defences</th><th>What stopped it</th></tr>
-    <tr><td>Poisoned pages</td><td>3 of 3 worked: the bot told users to email their card number and password, and to download <code>setup.exe</code></td><td>0 of 3</td><td>Ingest quarantine (2 pages), output link check (the third page, which had no trigger words)</td></tr>
-    <tr><td>Direct injection</td><td>1 of 4 worked: it confirmed the fake billing domain</td><td>0 of 4</td><td>Stricter prompt and relevance guardrail</td></tr>
-    <tr><td>Personal data</td><td>3 of 3 leaked to the provider and the traces</td><td>0 of 3</td><td>Masking before the first model call</td></tr>
+    <tr><td data-label="Attack">Poisoned pages</td><td data-label="No defences">3 of 3 worked: the bot told users to email their card number and password, and to download <code>setup.exe</code></td><td data-label="With defences">0 of 3</td><td data-label="What stopped it">Ingest quarantine (2 pages), output link check (the third page, which had no trigger words)</td></tr>
+    <tr><td data-label="Attack">Direct injection</td><td data-label="No defences">1 of 4 worked: it confirmed the fake billing domain</td><td data-label="With defences">0 of 4</td><td data-label="What stopped it">Stricter prompt and relevance guardrail</td></tr>
+    <tr><td data-label="Attack">Personal data</td><td data-label="No defences">3 of 3 leaked to the provider and the traces</td><td data-label="With defences">0 of 3</td><td data-label="What stopped it">Masking before the first model call</td></tr>
   </table>
   </div>
   <p>The model refused the obvious “print your system prompt” requests on its own. The damage came from places a prompt can’t fix: documents it trusted, and data nobody thought of as leaving the building.</p>

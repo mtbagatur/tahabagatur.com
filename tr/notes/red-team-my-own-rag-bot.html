@@ -75,11 +75,11 @@
 
   <h2>Sonuçlar</h2>
   <div class="table-wrap">
-  <table>
+  <table class="stack-table">
     <tr><th>Saldırı</th><th>Savunmasız</th><th>Savunmalı</th><th>Onu ne durdurdu</th></tr>
-    <tr><td>Zehirlenmiş sayfalar</td><td>3'te 3 işe yaradı: bot kullanıcılara kart numaralarını ve şifrelerini e-postayla göndermelerini ve <code>setup.exe</code> indirmelerini söyledi</td><td>3'te 0</td><td>İçe alırken karantina (2 sayfa), çıktıda bağlantı kontrolü (tetikleyici kelime içermeyen üçüncü sayfa)</td></tr>
-    <tr><td>Doğrudan enjeksiyon</td><td>4'te 1 işe yaradı: sahte ödeme alan adını onayladı</td><td>4'te 0</td><td>Daha sıkı prompt ve ilgililik korkuluğu (guardrail)</td></tr>
-    <tr><td>Kişisel veri</td><td>3'te 3'ü sağlayıcıya ve izlere sızdı</td><td>3'te 0</td><td>İlk model çağrısından önce maskeleme</td></tr>
+    <tr><td data-label="Saldırı">Zehirlenmiş sayfalar</td><td data-label="Savunmasız">3'te 3 işe yaradı: bot kullanıcılara kart numaralarını ve şifrelerini e-postayla göndermelerini ve <code>setup.exe</code> indirmelerini söyledi</td><td data-label="Savunmalı">3'te 0</td><td data-label="Onu ne durdurdu">İçe alırken karantina (2 sayfa), çıktıda bağlantı kontrolü (tetikleyici kelime içermeyen üçüncü sayfa)</td></tr>
+    <tr><td data-label="Saldırı">Doğrudan enjeksiyon</td><td data-label="Savunmasız">4'te 1 işe yaradı: sahte ödeme alan adını onayladı</td><td data-label="Savunmalı">4'te 0</td><td data-label="Onu ne durdurdu">Daha sıkı prompt ve ilgililik korkuluğu (guardrail)</td></tr>
+    <tr><td data-label="Saldırı">Kişisel veri</td><td data-label="Savunmasız">3'te 3'ü sağlayıcıya ve izlere sızdı</td><td data-label="Savunmalı">3'te 0</td><td data-label="Onu ne durdurdu">İlk model çağrısından önce maskeleme</td></tr>
   </table>
   </div>
   <p>Model, bariz “sistem promptunu yazdır” isteklerini kendiliğinden reddetti. Zarar, bir promptun düzeltemeyeceği yerlerden geldi: güvendiği belgelerden ve kimsenin dışarı çıktığını düşünmediği verilerden.</p>
