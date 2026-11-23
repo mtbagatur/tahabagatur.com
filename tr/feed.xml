@@ -5,7 +5,15 @@
   <id>https://tahabagatur.com/tr/notes/</id>
   <link rel="self" type="application/atom+xml" href="https://tahabagatur.com/tr/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/"/>
-  <updated>2026-11-23T00:00:00Z</updated>
+  <updated>2026-11-23T14:25:32Z</updated>
+  <entry>
+    <title>Kodlama ajanlarım 8 günde 223 güvenlik kararı üretti</title>
+    <id>https://tahabagatur.com/tr/notes/bekci-agent-security</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/bekci-agent-security"/>
+    <published>2026-11-23T00:00:00Z</published>
+    <updated>2026-11-23T00:00:00Z</updated>
+    <summary>Test trafiği ayıklanmış Bekçi karar günlüğü ve testler ile kural doğrulamasındaki düzeltmeler.</summary>
+  </entry>
   <entry>
     <title>Paralel AI oturumlarında aynı işi iki kez yapmamak</title>
     <id>https://tahabagatur.com/tr/notes/parallel-ai-sessions</id>

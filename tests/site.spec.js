@@ -12,6 +12,7 @@ const BILINGUAL_PAIRS = [
   ['/notes/', '/tr/notes/'],
   ['/notes/red-team-my-own-rag-bot', '/tr/notes/red-team-my-own-rag-bot'],
   ['/notes/parallel-ai-sessions', '/tr/notes/parallel-ai-sessions'],
+  ['/notes/bekci-agent-security', '/tr/notes/bekci-agent-security'],
   ['/lab/canary/', '/tr/lab/canary/'],
   ['/live/', '/tr/live/'],
   ['/work/slow-llm-prefill', '/tr/work/slow-llm-prefill'],

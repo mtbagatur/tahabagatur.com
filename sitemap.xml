@@ -57,6 +57,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot"/>
   </url>
   <url>
+    <loc>https://tahabagatur.com/notes/bekci-agent-security</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/bekci-agent-security"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/bekci-agent-security"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/bekci-agent-security"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/bekci-agent-security</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/bekci-agent-security"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/bekci-agent-security"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/bekci-agent-security"/>
+  </url>
+  <url>
     <loc>https://tahabagatur.com/notes/parallel-ai-sessions</loc>
     <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>

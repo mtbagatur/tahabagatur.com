@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My coding agents triggered 223 safety decisions in 8 days · Taha Bagatur</title>
+<meta name="description" content="A Bekci decision log, corrected for test traffic, and the fixes to its tests and rule validation.">
+<meta name="author" content="Taha Bagatur">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111418" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://tahabagatur.com/notes/bekci-agent-security">
+<link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/bekci-agent-security">
+<link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/bekci-agent-security">
+<link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/bekci-agent-security">
+<link rel="alternate" type="application/atom+xml" title="Taha Bagatur · Notes" href="https://tahabagatur.com/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Taha Bagatur">
+<meta property="og:title" content="My coding agents triggered 223 safety decisions in 8 days · Taha Bagatur">
+<meta property="og:description" content="A Bekci decision log, corrected for test traffic, and the fixes to its tests and rule validation.">
+<meta property="og:url" content="https://tahabagatur.com/notes/bekci-agent-security">
+<meta property="og:image" content="https://tahabagatur.com/og/notes/bekci-agent-security.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="My coding agents triggered 223 safety decisions in 8 days">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My coding agents triggered 223 safety decisions in 8 days">
+<meta name="twitter:description" content="A Bekci decision log, corrected for test traffic, and the fixes to its tests and rule validation.">
+<meta name="twitter:image" content="https://tahabagatur.com/og/notes/bekci-agent-security.png">
+<meta name="twitter:image:alt" content="My coding agents triggered 223 safety decisions in 8 days">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4975'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"My coding agents triggered 223 safety decisions in 8 days","description":"A Bekci decision log, corrected for test traffic, and the fixes to its tests and rule validation.","inLanguage":"en","datePublished":"2026-11-23","url":"https://tahabagatur.com/notes/bekci-agent-security","mainEntityOfPage":"https://tahabagatur.com/notes/bekci-agent-security","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahabagatur.com/"},{"@type":"ListItem","position":2,"name":"Notes","item":"https://tahabagatur.com/notes/"},{"@type":"ListItem","position":3,"name":"My coding agents triggered 223 safety decisions in 8 days","item":"https://tahabagatur.com/notes/bekci-agent-security"}]}]}
+</script>
+<meta property="article:published_time" content="2026-11-23">
+</head>
+<body>
+<!--email_off-->
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">tahabagatur.com</a>
+    <div class="top">
+      <nav aria-label="Sections">
+        <a href="/#work">Cases</a>
+        <a href="/notes/" aria-current="page">Notes</a>
+        <a href="/#projects">Code</a>
+        <a href="/#speaking">Talks</a>
+        <a href="/#ask">Ask me</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a class="lang" href="/tr/notes/bekci-agent-security" hreflang="tr" lang="tr">Türkçe</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/notes/">Notes</a></p>
+  <article><h1>My coding agents triggered 223 safety decisions in 8 days</h1>
+  <p class="meta"><time datetime="2026-11-23">23 Nov 2026</time></p>
+
+  <h2>The problem</h2>
+  <p>Coding agents can run shell commands, edit files and call connected tools. A broad “yes” or “no” policy either leaves risky actions unchecked or interrupts routine work. I wanted a small, inspectable guard that asks for a human decision when a rule calls for it.</p>
+
+  <h2>What Bekci does: ask, don’t block</h2>
+  <p>Bekci is a local PreToolUse hook for Claude Code and Codex. Built-in protections cover credential files, AI attribution, external actions and destructive commands. Extra Markdown rules can ask, warn or deny; they cannot weaken the built-in protections. In Claude Code, an <code>ask</code> decision requests approval. Codex has no approval prompt for this hook, so Bekci maps <code>ask</code> to <code>deny</code> there. The same rule therefore has a different user experience across clients.</p>
+
+  <h2>Real use, measured from the decision log</h2>
+  <p>From 16 to 23 November 2026, the log contains <strong>223 decisions across an 8-day date range</strong>: 174 asks, 43 denials and 6 warnings. Entries appear on seven of those dates. The log also records 21 secret-related rule matches and 73 push/force-push rule matches. These are rule and decision counts, not a count of unique commands or users. The snapshot ends at 16:04:02 on 23 November.</p>
+
+  <h2>Examples (command shapes only)</h2>
+  <ul>
+    <li><code>git push &lt;remote&gt; &lt;branch&gt;</code> → ask</li>
+    <li><code>sudo &lt;system command&gt;</code> → ask, subject to configured exceptions</li>
+    <li><code>cat &lt;credential file&gt;</code> → deny</li>
+    <li><code>curl &lt;script&gt; | sh</code> → ask</li>
+    <li><code>rm -rf &lt;wide target&gt;</code> → ask</li>
+  </ul>
+  <p>The log stores timestamps, tool names, decisions and rule identifiers, not command text. These examples describe tested rule shapes; they are not quoted log entries.</p>
+
+  <h2>What broke, and the fix</h2>
+  <p>My test suite was writing to the production log, so the first count included 32 test-generated lines, including all 10 malformed-rule skips. I fixed this by making the tests hermetic: they write to a temporary log. Separately, malformed rules previously failed open because Bekci skipped them. They now fail closed with <code>ask</code> (which Codex maps to <code>deny</code>), and <code>--check</code> validates the rules file. The OSS fix is commit <a href="https://github.com/mtbagatur/bekci/commit/7e928cf" rel="noopener"><code>7e928cf</code></a>.</p>
+
+  <h2>Try it</h2>
+  <p>Bekci is public on <a href="https://github.com/mtbagatur/bekci">GitHub</a>. It is a small Python hook; the repository README has setup instructions and tests.</p>
+
+  <h2>Next</h2>
+  <p>This is the first post in a monthly agent-security audit series: one concrete tool or workflow, tested in use, with findings and limits documented.</p>
+
+  <div class="box">Questions or notes on this write-up · <a href="/notes/">All notes</a></div></article>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Taha Bagatur · No cookies. · <a href="/feed.xml">Atom feed</a></div>
+</footer>
+<!--/email_off-->
+</body>
+</html>

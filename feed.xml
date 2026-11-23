@@ -5,7 +5,15 @@
   <id>https://tahabagatur.com/notes/</id>
   <link rel="self" type="application/atom+xml" href="https://tahabagatur.com/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/"/>
-  <updated>2026-11-23T00:00:00Z</updated>
+  <updated>2026-11-23T14:25:32Z</updated>
+  <entry>
+    <title>My coding agents triggered 223 safety decisions in 8 days</title>
+    <id>https://tahabagatur.com/notes/bekci-agent-security</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/bekci-agent-security"/>
+    <published>2026-11-23T00:00:00Z</published>
+    <updated>2026-11-23T00:00:00Z</updated>
+    <summary>A Bekci decision log, corrected for test traffic, and the fixes to its tests and rule validation.</summary>
+  </entry>
   <entry>
     <title>Avoiding duplicate work across parallel AI sessions</title>
     <id>https://tahabagatur.com/notes/parallel-ai-sessions</id>
