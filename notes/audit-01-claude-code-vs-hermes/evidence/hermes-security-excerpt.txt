@@ -1,0 +1,13 @@
+Source repository commit: 2de9f51b8008a7d49a49221c184f2f11cbfc4af1
+Permalink: https://github.com/NousResearch/hermes-agent/blob/2de9f51b8008a7d49a49221c184f2f11cbfc4af1/website/docs/user-guide/security.md
+website/docs/user-guide/security.md (numbered source lines):
+13-22: eight security layers: user authorization, dangerous command approval, file write safety, container isolation, MCP credential filtering, context scanning, cross-session isolation, input sanitization.
+26: commands are checked against curated dangerous patterns.
+30-41: approvals.mode configured in user config with smart/manual/off, cron/single-query/unattended modes.
+57-65: smart is the documented default; manual prompts; off disables all approval checks.
+141-165: hardline blocklist is an always-on floor; examples include root wipes, fork bombs, block-device writes and URL-to-shell at root.
+167-175: approvals.deny is user-editable glob patterns, checked unconditionally before YOLO/off.
+418: write_file/patch path denylist and optional sandbox block writes without prompt/override.
+469: terminal runs as same OS user; write denylist does not sandbox hostile agent.
+921-943: context scanning, with different behavior for AGENTS.md (block) and SOUL.md (warn/load).
+1035: valid gateway hooks load in process with gateway privileges; hook contents are trusted configuration.

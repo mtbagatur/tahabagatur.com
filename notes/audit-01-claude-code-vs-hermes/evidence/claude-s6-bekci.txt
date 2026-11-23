@@ -1,0 +1,3 @@
+Permission allow rule "Read(*)" adds nothing to Read's default, which already runs without asking in the working directories. "Read" alone allows every path. Older versions of Claude Code treat "Read(*)" as "Read", and this version will too if Anthropic turns this change off.
+Claude Code doesn't recognize the model "mock-model", so it assumes a context window of 1m tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+[claude-code:unrecognized_model] {"model":"mock-model","query_source":"sdk"}

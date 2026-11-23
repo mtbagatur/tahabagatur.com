@@ -1,0 +1,3 @@
+Command: claude --help (Claude Code 2.1.330)
+Observed: --allow-dangerously-skip-permissions enables bypass as an option; --dangerously-skip-permissions bypasses all permission checks; --allowedTools selects allowed tools; --bare skips settings and installed-plugin hooks (built-in and organization-managed hooks are unaffected).
+No Claude prompt/session was started. This is installed CLI help, not a behavioral scenario result.

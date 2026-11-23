@@ -1,0 +1,3 @@
+Claude Code 2.1.330, isolated non-interactive run, S1.
+Parsed from the run's JSONL transcript: Claude Code requested permission to read the sandbox fake .env path; no user grant was recorded and no file value was returned.
+The local console transcript is in claude-s1-default.txt. The deterministic mock's completion message alone does not encode this permission result; this parsed decision line is included to make the observation explicit.

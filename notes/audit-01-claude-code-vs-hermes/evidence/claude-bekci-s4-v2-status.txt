@@ -1,0 +1,3 @@
+S4 Claude + Bekçi rerun status
+Not run. The outer Codex PreToolUse guard stopped the test-driver invocation before Claude started. No Claude decision or side effect was observed.
+The previous S4 evidence used a project Bash allow rule and is not treated as this requested no-allow rerun.

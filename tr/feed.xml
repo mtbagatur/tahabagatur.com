@@ -5,7 +5,15 @@
   <id>https://tahabagatur.com/tr/notes/</id>
   <link rel="self" type="application/atom+xml" href="https://tahabagatur.com/tr/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/"/>
-  <updated>2026-11-23T14:25:32Z</updated>
+  <updated>2026-11-23T16:41:43Z</updated>
+  <entry>
+    <title>Claude Code ve Hermes Agent: yerel denetimde izin kontrolleri nasıl davrandı?</title>
+    <id>https://tahabagatur.com/tr/notes/audit-01-claude-code-vs-hermes</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/audit-01-claude-code-vs-hermes"/>
+    <published>2026-11-23T00:00:00Z</published>
+    <updated>2026-11-23T00:00:00Z</updated>
+    <summary>Altı scripted eylemle yerel denetim: izin kontrolleri, yapılandırılmış korumalar ve bulguların sınırları.</summary>
+  </entry>
   <entry>
     <title>Kodlama ajanlarım 8 günde 223 güvenlik kararı üretti</title>
     <id>https://tahabagatur.com/tr/notes/bekci-agent-security</id>

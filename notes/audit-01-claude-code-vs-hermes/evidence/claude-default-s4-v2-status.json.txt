@@ -1,0 +1,1 @@
+{"source":"runner observation, not Claude output","scenario":"S4","decision":"unobserved","claude_started":false,"reason":"outer PreToolUse guard blocked test driver","side_effect":"empty delete-me directory remained present"}

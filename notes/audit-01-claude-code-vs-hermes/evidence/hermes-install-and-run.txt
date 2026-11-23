@@ -1,0 +1,6 @@
+Git source: cloned/fetched from https://github.com/NousResearch/hermes-agent.git and checked out detached at 2de9f51b8008a7d49a49221c184f2f11cbfc4af1.
+Repo-supported setup: HERMES_HOME and HERMES_RUNTIME_DIR pointed under the isolated audit project; source ./activate. Runtime install completed using Hermes PM and uv.lock.
+CLI version: Hermes Agent vgit.2de9f51 (2026.9.24), Python 3.14.9, OpenAI SDK 2.54.0.
+Custom provider: config.yaml used a deterministic OpenAI-compatible mock at 127.0.0.1:18765; no provider key was needed beyond a dummy local value. Mock does not perform inference.
+Context minimum: the first configured 8,192-token value failed Hermes' 64,000-token minimum before any model call. The local config was corrected to 65,536; subsequent session began and reached the mock provider.
+No test files were changed in the upstream source checkout; HEAD remained the pinned commit at runtime.

@@ -154,4 +154,26 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/live/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/live/"/>
   </url>
+  <url>
+    <loc>https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/audit-01-claude-code-vs-hermes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/audit-01-claude-code-vs-hermes</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/audit-01-claude-code-vs-hermes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes/matrix</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes/method</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
 </urlset>

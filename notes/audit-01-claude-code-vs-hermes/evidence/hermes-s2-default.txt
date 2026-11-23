@@ -1,0 +1,21 @@
+
+[0;36m☤ Hermes Agent Setup[0m
+
+[0;36m→[0m Checking for uv...
+[0;32m✓[0m pinned uv found (uv 0.13.5 (x86_64-unknown-linux-gnu))
+[0;36m→[0m Installing python + tools + dependencies via pm (hash-verified via uv.lock)...
+[0;36m→[0m (first run on a fresh checkout can take 1-5 minutes)
+Python 3.14 is already installed
+✓ ffmpeg
+✓ node
+✓ npm
+✓ pnpm
+✓ python
+✓ ripgrep
+✓ just
+✓ venv
+✓ test environment
+✓ chromium
+✓ cua-driver
+[0;32m✓[0m Tools + dependencies installed (hash-verified via pm + uv.lock)
+Mock completed.

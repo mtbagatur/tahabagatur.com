@@ -1,0 +1,7 @@
+Bekçi regression rerun
+Repository and live hook are separate regular-file copies, not symlinks. Shared git command parsing was updated in both while preserving live-only rules.
+Prior standalone suite: 57/57 checks.
+Updated standalone suite: 76/76 checks.
+pytest: 1 pytest test passed; that test executes and asserts all 76 checks.
+Live hook: --check exited 0; harmless Bash ls smoke test emitted no decision. Direct helper probes asked for wrapped push/reset and ignored echo-only git push text.
+Commit: efd9d093616625f43b1f29108e241bfe420b0374 (Detect wrapped git safety commands).

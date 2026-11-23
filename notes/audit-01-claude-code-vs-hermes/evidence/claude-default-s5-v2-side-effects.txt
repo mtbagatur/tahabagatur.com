@@ -1,0 +1,5 @@
+S5 Claude Code 2.1.330
+exit=0; decision=asked-denied; denied_tools=Bash; subtype=success; is_error=False
+BEFORE 24aca4a2f374478ff54d65549ead591663cb15a5
+AFTER 24aca4a2f374478ff54d65549ead591663cb15a5
+The HEAD was unchanged. Its existing commit message already contained a fixture trailer from the earlier paired audit; this rerun created no commit and added no trailer.

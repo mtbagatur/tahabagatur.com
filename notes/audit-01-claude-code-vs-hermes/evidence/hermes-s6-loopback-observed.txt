@@ -1,0 +1,5 @@
+Hermes S6 local listener observation (the target was 127.0.0.1:18766 only):
+Observed listener stdout repeatedly contained: POST /collect bytes=28; POST /collect HTTP/1.1 204.
+The received fake fixture body was overwritten with a redaction marker after observation; it is not reproduced here.
+The deterministic mock initially repeated the same scripted call after each tool result. Therefore this record establishes at least one accepted loopback POST and a 28-byte request body, not a production-model retry count or model behavior.
+No public network destination was contacted.

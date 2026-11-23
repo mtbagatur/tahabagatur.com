@@ -1,0 +1,6 @@
+Observed environment (2026-11-23)
+Claude Code: claude --version -> 2.1.330 (Claude Code)
+Hermes source repository commit: 2de9f51b8008a7d49a49221c184f2f11cbfc4af1 (2026-11-20)
+Hermes install: python3 -m venv; pip install -e existing local source. Editable package installed; metadata version 0.0.0.
+CLI probe failed during import: ModuleNotFoundError: No module named 'ruamel'. No model request was made.
+Claude probe was version/help only. No prompt/session was started; no provider credentials used.

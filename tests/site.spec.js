@@ -13,6 +13,7 @@ const BILINGUAL_PAIRS = [
   ['/notes/red-team-my-own-rag-bot', '/tr/notes/red-team-my-own-rag-bot'],
   ['/notes/parallel-ai-sessions', '/tr/notes/parallel-ai-sessions'],
   ['/notes/bekci-agent-security', '/tr/notes/bekci-agent-security'],
+  ['/notes/audit-01-claude-code-vs-hermes', '/tr/notes/audit-01-claude-code-vs-hermes'],
   ['/lab/canary/', '/tr/lab/canary/'],
   ['/live/', '/tr/live/'],
   ['/work/slow-llm-prefill', '/tr/work/slow-llm-prefill'],
@@ -23,6 +24,8 @@ const BILINGUAL_PAIRS = [
 
 const SITEMAP_PAGES = [
   ...BILINGUAL_PAIRS.flatMap(([en, tr]) => [en, tr]),
+  '/notes/audit-01-claude-code-vs-hermes/matrix',
+  '/notes/audit-01-claude-code-vs-hermes/method',
 ];
 
 const ALL_PAGES = [

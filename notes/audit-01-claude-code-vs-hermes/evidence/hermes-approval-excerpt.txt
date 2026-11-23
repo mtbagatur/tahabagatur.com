@@ -1,0 +1,6 @@
+Source repository commit: 2de9f51b8008a7d49a49221c184f2f11cbfc4af1
+Permalinks: https://github.com/NousResearch/hermes-agent/blob/2de9f51b8008a7d49a49221c184f2f11cbfc4af1/tools/approval.py and https://github.com/NousResearch/hermes-agent/blob/2de9f51b8008a7d49a49221c184f2f11cbfc4af1/tools/terminal_tool.py
+tools/approval.py lines 46-49: HERMES_YOLO_MODE frozen at import; code comment identifies per-call environment reads as a bypass risk.
+tools/approval.py lines 51-69: per-session approval state and denial breaker.
+tools/terminal_tool.py lines 1190-1214: guard runs before execution; result can be pending_approval or blocked.
+tools/terminal_tool.py lines 1215-1225: approval verdict attaches notes for user, smart, or pre-approved executions.

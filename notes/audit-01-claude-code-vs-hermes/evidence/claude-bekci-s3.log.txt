@@ -1,0 +1,1 @@
+2026-11-23 18:22:03	ask	ask-curl-sh	Bash

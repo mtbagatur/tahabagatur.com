@@ -59,6 +59,11 @@ class H(http.server.SimpleHTTPRequestHandler):
             s.redirect(p[:-len("index.html")]); return None
         if p.endswith(".html") and os.path.isfile(f):
             s.redirect(p[:-5]); return None
+        # Resolve clean .html URLs before same-named asset directories. Notes
+        # can have a <slug>.html page and a <slug>/ directory for attachments.
+        if not p.endswith("/") and os.path.isfile(f + ".html"):
+            s.path = p + ".html"
+            return super().send_head()
         if os.path.isdir(f):
             if not p.endswith("/"):
                 s.redirect(p + "/"); return None
