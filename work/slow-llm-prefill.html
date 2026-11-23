@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Slow LLM responses: the vendor's fix targeted the wrong component · Taha Bagatur</title>
 <meta name="description" content="Case study: a vendor scaled the auth service from 1 to 10 replicas, but an approved load test and vLLM metrics showed the bottleneck was long-prompt prefill on a single GPU.">
 <meta name="author" content="Taha Bagatur">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111418" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://tahabagatur.com/work/slow-llm-prefill">
 <link rel="alternate" hreflang="en" href="https://tahabagatur.com/work/slow-llm-prefill">
 <link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/work/slow-llm-prefill">
@@ -30,7 +30,7 @@
 <meta name="twitter:description" content="Case study: a vendor scaled the auth service from 1 to 10 replicas, but an approved load test and vLLM metrics showed the bottleneck was long-prompt prefill on a single GPU.">
 <meta name="twitter:image" content="https://tahabagatur.com/og/work/slow-llm-prefill.png">
 <meta name="twitter:image:alt" content="Slow LLM responses: the vendor's fix targeted the wrong component">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4975'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Slow LLM responses: the vendor's fix targeted the wrong component","description":"Case study: a vendor scaled the auth service from 1 to 10 replicas, but an approved load test and vLLM metrics showed the bottleneck was long-prompt prefill on a single GPU.","inLanguage":"en","url":"https://tahabagatur.com/work/slow-llm-prefill","mainEntityOfPage":"https://tahabagatur.com/work/slow-llm-prefill","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahabagatur.com/"},{"@type":"ListItem","position":2,"name":"Selected work","item":"https://tahabagatur.com/#work"},{"@type":"ListItem","position":3,"name":"Slow LLM responses: the vendor's fix targeted the wrong component","item":"https://tahabagatur.com/work/slow-llm-prefill"}]}]}
@@ -48,6 +48,7 @@
         <a href="/notes/">Notes</a>
         <a href="/#projects">Code</a>
         <a href="/#speaking">Talks</a>
+        <a href="/#ask">Ask me</a>
         <a href="/#contact">Contact</a>
       </nav>
       <a class="lang" href="/tr/work/slow-llm-prefill" hreflang="tr" lang="tr">Türkçe</a>

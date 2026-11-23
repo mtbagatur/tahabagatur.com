@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>I attacked my own RAG bot · Taha Bagatur</title>
 <meta name="description" content="A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.">
 <meta name="author" content="Taha Bagatur">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#111417" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111418" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot">
 <link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/red-team-my-own-rag-bot">
 <link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/red-team-my-own-rag-bot">
@@ -30,7 +30,7 @@
 <meta name="twitter:description" content="A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.">
 <meta name="twitter:image" content="https://tahabagatur.com/og/notes/red-team-my-own-rag-bot.png">
 <meta name="twitter:image:alt" content="I attacked my own RAG bot">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4975'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"I attacked my own RAG bot. 7 of 10 attacks worked.","description":"A red-team run against a small RAG support bot: 7 of 10 attacks worked before defences were added. What worked, what stopped it, and what still gets through.","inLanguage":"en","datePublished":"2026-11-02","url":"https://tahabagatur.com/notes/red-team-my-own-rag-bot","mainEntityOfPage":"https://tahabagatur.com/notes/red-team-my-own-rag-bot","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahabagatur.com/"},{"@type":"ListItem","position":2,"name":"Notes","item":"https://tahabagatur.com/notes/"},{"@type":"ListItem","position":3,"name":"I attacked my own RAG bot. 7 of 10 attacks worked.","item":"https://tahabagatur.com/notes/red-team-my-own-rag-bot"}]}]}
@@ -49,6 +49,7 @@
         <a href="/notes/" aria-current="page">Notes</a>
         <a href="/#projects">Code</a>
         <a href="/#speaking">Talks</a>
+        <a href="/#ask">Ask me</a>
         <a href="/#contact">Contact</a>
       </nav>
       <a class="lang" href="/tr/notes/red-team-my-own-rag-bot" hreflang="tr" lang="tr">Türkçe</a>
