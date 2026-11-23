@@ -6,7 +6,7 @@ base="${1:-https://tahabagatur.com}"
 tmp=$(mktemp -d); trap 'rm -rf "$tmp"' EXIT
 # Pages come from the sitemap, so a new page is checked as soon as it is listed there.
 pages=$(curl -s --max-time 15 "$base/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's#<loc>https://tahabagatur.com##;s#</loc>##')
-[ -n "$pages" ] || pages="/ /red-team-check/ /notes/red-team-my-own-rag-bot"
+[ -n "$pages" ] || pages="/ /live/ /notes/red-team-my-own-rag-bot"
 pages="$pages /404-test-yok"
 for p in $pages; do
   f="$tmp/$(echo "$p" | tr '/' '_').html"

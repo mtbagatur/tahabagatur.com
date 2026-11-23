@@ -1,0 +1,10 @@
+{
+  "source": "open-ops-lab",
+  "sample": true,
+  "generated_at": null,
+  "uptime_percent": null,
+  "slo": [
+    { "name": "Request availability", "target": null, "actual": null, "status": "not-connected" }
+  ],
+  "alarms": []
+}

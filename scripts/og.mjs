@@ -23,7 +23,6 @@ const KICKERS = [
   ['work/', 'CASE STUDY', 'VAKA ÇALIŞMASI'],
   ['notes/index', 'FIELD NOTES', 'SAHA NOTLARI'],
   ['notes/', 'FIELD NOTE', 'SAHA NOTU'],
-  ['red-team-check/', 'AI RED-TEAM CHECK', 'AI RED-TEAM CHECK'],
   ['lab/canary/', 'PROMPT-INJECTION CANARY', 'PROMPT INJECTION KANARYASI'],
   ['lab/', 'LAB', 'LAB'],
 ];

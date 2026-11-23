@@ -47,6 +47,7 @@
         <a href="/notes/">Notes</a>
         <a href="/#projects">Code</a>
         <a href="/#speaking">Talks</a>
+        <a href="/#ask">Ask me</a>
         <a href="/#contact">Contact</a>
       </nav>
       <a class="lang" href="/tr/" hreflang="tr" lang="tr">Türkçe</a>
@@ -56,10 +57,25 @@
 
 <main id="main">
   <div class="wrap hero">
-    <h1>Taha Bagatur</h1>
+    <h1>Platform Engineer · DevOps / MLOps · AI in production</h1>
     <p>I build and run production AI systems and the infrastructure underneath them — LLM serving, RAG pipelines, Kubernetes clusters, observability, and edge GPU fleets. Having worked on both the model side and the Linux/operations side, most of my work sits in the seam where models meet real hardware and real failure modes.</p>
     <p class="sub">This site is a field log: <a href="#work">production cases</a> traced to root cause, <a href="/notes/">short notes</a> from day-to-day operations, and <a href="#projects">small tools</a> built to test assumptions.</p>
   </div>
+
+  <section id="ask">
+    <div class="wrap">
+      <h2>Ask me</h2>
+      <p class="lead">A few topics I enjoy thinking through together. Choose a question and it will open as an email draft.</p>
+      <ul class="entries ask-list">
+        <li><a href="mailto:taha@tahabagatur.com?subject=LLM%20serving%20latency%20and%20capacity">How do you reason about LLM serving latency and capacity?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=RAG%20security%20and%20red-teaming">How do you test RAG security and prompt-injection boundaries?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Kubernetes%20and%20GPU%20node%20operations">What tends to make Kubernetes and GPU node operations reliable?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Observability%20and%20alert%20noise">How do you reduce alert noise without hiding risk?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Edge%20computer%20vision%20deployment">What changes when deploying computer vision at the edge?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Choosing%20AI%20tools">How do you evaluate an AI tool's data flow and maintenance?</a></li>
+      </ul>
+    </div>
+  </section>
 
   <section id="work">
     <div class="wrap">
@@ -96,31 +112,10 @@
       <p class="lead">Short operational write-ups on what broke, what was measured, and what changed.</p>
       <ul class="dated-list">
         <li>
-          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/notes/ai-tool-review">How I screened six AI tools before adoption</a></h3>
-            <p class="item-desc">Supply-chain and prompt-flow checks: one skill adopted by pinned commit, four pieces copied from a bundle, four tools rejected.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/notes/empty-source-backups">An empty source is not a successful backup</a></h3>
-            <p class="item-desc">Restoring ~5.6 GB across two buckets with zero diff exposed a backup job condition that could mark zero source objects green.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/notes/reading-silenced-alerts">Reading silenced alerts as a separate list</a></h3>
-            <p class="item-desc">Why reviewing active and silenced alerts as separate lists prevents known issues from masquerading as new incidents.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-18">Nov 2026</time>
+          <time class="when-col" datetime="2026-11-23">Nov 23, 2026</time>
           <div>
             <h3 class="item-title"><a href="/notes/parallel-ai-sessions">Avoiding duplicate work across parallel AI sessions</a></h3>
-            <p class="item-desc">Two parallel coding sessions opened duplicate PRs for one fix until single-owner assignment and end-of-day cross-checks took effect.</p>
+            <p class="item-desc">A single-owner rule and end-of-day cross-check caught overlapping parallel work before it multiplied.</p>
           </div>
         </li>
         <li>
@@ -169,26 +164,31 @@
           <time class="when-col" datetime="2024-11-09">Nov 2024</time>
           <div>
             <p class="item-title"><span class="title" lang="en">Preprocessing Optimization for Enhanced Real-Time Detection and Tracking in Vision Systems</span></p>
-            <p class="item-desc">Speaker · ICAIS'24, Istanbul Gedik University · International Conference on Artificial Intelligence Studies (Abstract Book ISBN 978-625-94129-4-8)</p>
+            <p class="item-desc">Speaker · ICAIS'24, Istanbul Gedik University · <a href="https://doi.org/10.61150/gedikyay.2401" rel="noopener">ICAIS'24 abstract book · ISBN 978-625-94129-4-8</a></p>
+            <p class="item-desc">The study examines how preprocessing choices affect real-time detection and tracking.</p>
           </div>
         </li>
         <li>
           <time class="when-col" datetime="2023-11">Nov 2023</time>
           <div>
             <p class="item-title"><span class="title" lang="en">An Efficient Framework for Real-Time Age and Gender Detection Using Deep Learning Techniques</span></p>
-            <p class="item-desc">Speaker · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+            <p class="item-desc">Speaker · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences · <span>[TEYİT: safe proceedings link]</span></p>
+            <p class="item-desc">The work evaluates a deep-learning pipeline for real-time age and gender estimation from facial images.</p>
           </div>
         </li>
         <li>
           <time class="when-col" datetime="2023-11">Nov 2023</time>
           <div>
             <p class="item-title"><span class="title" lang="en">Design and Performance Analysis of Deep Learning-Based People Detection from Top-View Images</span></p>
-            <p class="item-desc">Speaker · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+            <p class="item-desc">Speaker · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences · <span>[TEYİT: safe proceedings link]</span></p>
+            <p class="item-desc">The study examines deep-learning methods for detecting people in top-view imagery.</p>
           </div>
         </li>
       </ul>
     </div>
   </section>
+
+  <!-- Add the visible CV link after the approved v5 PDF is placed at /cv.pdf. -->
 
   <section id="contact" class="contact">
     <div class="wrap">
@@ -199,8 +199,10 @@
   </section>
 </main>
 
+<!-- Cloudflare Web Analytics insertion point: Taha supplies the site token before activation. -->
+<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->
 <footer>
-  <div class="wrap">© 2026 Taha Bagatur · No cookies, no tracking. · <a href="/feed.xml">Atom feed</a></div>
+  <div class="wrap">© 2026 Taha Bagatur · No cookies. · <a href="/feed.xml">Atom feed</a></div>
 </footer>
 <!--/email_off-->
 </body>

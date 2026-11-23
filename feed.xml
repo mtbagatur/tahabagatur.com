@@ -5,40 +5,16 @@
   <id>https://tahabagatur.com/notes/</id>
   <link rel="self" type="application/atom+xml" href="https://tahabagatur.com/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/"/>
-  <updated>2026-11-18T00:00:00Z</updated>
-  <author><name>Taha Bagatur</name><uri>https://tahabagatur.com/</uri></author>
-  <entry>
-    <title>How I screened six AI tools before adoption</title>
-    <id>https://tahabagatur.com/notes/ai-tool-review</id>
-    <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/ai-tool-review"/>
-    <published>2026-11-18T00:00:00Z</published>
-    <updated>2026-11-18T00:00:00Z</updated>
-    <summary>How I evaluated six trending AI tools: one adopted with a pinned commit after reading every file, four parts cherry-picked manually from a ~300-skill bundle, and four rejected over prompt and telemetry flow.</summary>
-  </entry>
-  <entry>
-    <title>An empty source is not a successful backup</title>
-    <id>https://tahabagatur.com/notes/empty-source-backups</id>
-    <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/empty-source-backups"/>
-    <published>2026-11-18T00:00:00Z</published>
-    <updated>2026-11-18T00:00:00Z</updated>
-    <summary>After an object-storage rebuild, restoring backups (~5.6 GB across two buckets, zero diff) exposed a deeper gap: a backup job that could treat zero objects at the source as success.</summary>
-  </entry>
-  <entry>
-    <title>Reading silenced alerts as a separate list</title>
-    <id>https://tahabagatur.com/notes/reading-silenced-alerts</id>
-    <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
-    <published>2026-11-18T00:00:00Z</published>
-    <updated>2026-11-18T00:00:00Z</updated>
-    <summary>Inspecting active and silenced alerts as two separate lists prevents known issues from looking like new critical incidents when they resurface.</summary>
-  </entry>
+  <updated>2026-11-23T00:00:00Z</updated>
   <entry>
     <title>Avoiding duplicate work across parallel AI sessions</title>
     <id>https://tahabagatur.com/notes/parallel-ai-sessions</id>
     <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
-    <published>2026-11-18T00:00:00Z</published>
-    <updated>2026-11-18T00:00:00Z</updated>
-    <summary>Running several AI sessions in parallel duplicated work twice until I adopted a two-line rule: one owner before starting and a cross-check at the end of the day (8.5 hours logged, 0 duplicate work).</summary>
+    <published>2026-11-23T00:00:00Z</published>
+    <updated>2026-11-23T00:00:00Z</updated>
+    <summary>Clear task ownership and a final cross-check make duplicated parallel work visible early.</summary>
   </entry>
+  <author><name>Taha Bagatur</name><uri>https://tahabagatur.com/</uri></author>
   <entry>
     <title>I attacked my own RAG bot. 7 of 10 attacks worked.</title>
     <id>https://tahabagatur.com/notes/red-team-my-own-rag-bot</id>

@@ -12,11 +12,8 @@ const BILINGUAL_PAIRS = [
   ['/notes/', '/tr/notes/'],
   ['/notes/red-team-my-own-rag-bot', '/tr/notes/red-team-my-own-rag-bot'],
   ['/notes/parallel-ai-sessions', '/tr/notes/parallel-ai-sessions'],
-  ['/notes/reading-silenced-alerts', '/tr/notes/reading-silenced-alerts'],
-  ['/notes/empty-source-backups', '/tr/notes/empty-source-backups'],
-  ['/notes/ai-tool-review', '/tr/notes/ai-tool-review'],
   ['/lab/canary/', '/tr/lab/canary/'],
-  ['/red-team-check/', '/tr/red-team-check/'],
+  ['/live/', '/tr/live/'],
   ['/work/slow-llm-prefill', '/tr/work/slow-llm-prefill'],
   ['/work/gpu-node-nvme-hang', '/tr/work/gpu-node-nvme-hang'],
   ['/work/agentless-monitoring-bridge', '/tr/work/agentless-monitoring-bridge'],
@@ -105,6 +102,18 @@ test.describe('2. Clean URLs, redirects, 404 & security headers', () => {
     expect(robots).toBe('noindex');
   });
 
+  test('unpublished scheduled notes redirect to the archive in both languages', async ({ request }) => {
+    for (const [from, to] of [
+      ['/notes/reading-silenced-alerts', '/notes/'], ['/tr/notes/reading-silenced-alerts', '/tr/notes/'],
+      ['/notes/empty-source-backups', '/notes/'], ['/tr/notes/empty-source-backups', '/tr/notes/'],
+      ['/notes/ai-tool-review', '/notes/'], ['/tr/notes/ai-tool-review', '/tr/notes/'],
+    ]) {
+      const res = await request.get(from, { maxRedirects: 0 });
+      expect([301, 302]).toContain(res.status());
+      expect(res.headers()['location']).toBe(to);
+    }
+  });
+
   test('clean URL redirects (.html, /work, trailing slash)', async ({ request }) => {
     const r1 = await request.get('/notes/red-team-my-own-rag-bot.html', { maxRedirects: 0 });
     expect([301, 302, 308]).toContain(r1.status());
@@ -130,6 +139,8 @@ test.describe('2. Clean URLs, redirects, 404 & security headers', () => {
     expect(h['x-frame-options']).toBe('DENY');
     expect(h['referrer-policy']).toBe('strict-origin-when-cross-origin');
     expect(h['content-security-policy']).toContain("default-src 'self'");
+    expect(h['content-security-policy']).toContain('https://static.cloudflareinsights.com/beacon.min.js');
+    expect(h['content-security-policy']).toContain('https://cloudflareinsights.com');
 
     const readme = await request.get('/README.md');
     expect(readme.headers()['x-robots-tag']).toBe('noindex');
@@ -252,21 +263,22 @@ test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
     }
   }
 
-  test('Red-team offer renders in both languages with the shared stylesheet and product scope', async ({ page }) => {
+  test('Live status pages are static, labeled as sample data, and bilingual', async ({ page }) => {
     for (const [p, heading] of [
-      ['/red-team-check/', 'Find the ways your AI feature can be pushed off course.'],
-      ['/tr/red-team-check/', 'AI özelliğinizin nasıl rayından çıkarılabileceğini bulun.'],
+      ['/live/', 'Production status · sample data'],
+      ['/tr/live/', 'Üretim durumu · örnek veri'],
     ]) {
       await page.goto(p);
       await expect(page.locator('link[rel="stylesheet"]')).toHaveAttribute('href', '/assets/site.css');
       await expect(page.locator('main h1')).toHaveText(heading);
-      await expect(page.locator('main')).toContainText('40');
-      await expect(page.locator('main')).toContainText('$300');
-      await expect(page.locator('main')).toContainText('CI');
+      await expect(page.locator('main')).toContainText(p.startsWith('/tr/') ? 'Örnek veri' : 'Sample data');
+      await expect(page.locator('main')).toContainText('SLO');
+      await expect(page.locator('script:not([type="application/ld+json"])')).toHaveCount(0);
     }
   });
 
   for (const vp of [
+    { name: 'mobile-320', width: 320, height: 740 },
     { name: 'mobile-375', width: 375, height: 812 },
     { name: 'mobile-360', width: 360, height: 740 },
     { name: 'tablet-768', width: 768, height: 1024 },
@@ -274,7 +286,7 @@ test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
   ]) {
     test(`No horizontal overflow on ${vp.name}`, async ({ page }) => {
       await page.setViewportSize({ width: vp.width, height: vp.height });
-      for (const p of ['/', '/tr/', '/notes/', '/notes/red-team-my-own-rag-bot', '/work/slow-llm-prefill', '/red-team-check/', '/tr/red-team-check/']) {
+      for (const p of ['/', '/tr/', '/notes/', '/notes/red-team-my-own-rag-bot', '/work/slow-llm-prefill', '/live/', '/tr/live/']) {
         await page.goto(p);
         const overflow = await page.evaluate(() => {
           return document.documentElement.scrollWidth > document.documentElement.clientWidth;
@@ -282,5 +294,27 @@ test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
         expect(overflow, `Overflow on ${p} at ${vp.name}`).toBe(false);
       }
     });
+  }
+});
+
+
+test('Retired service URLs redirect away and home pages avoid employment-seeking language', async ({ page, request }) => {
+  for (const [oldPath, destination] of [['/red-team-check/', '/'], ['/tr/red-team-check/', '/tr/']]) {
+    const res = await request.get(oldPath, { maxRedirects: 0 });
+    expect(res.status()).toBe(301);
+    expect(res.headers()['location']).toBe(destination);
+  }
+  for (const p of ['/', '/tr/']) {
+    await page.goto(p);
+    const text = (await page.locator('body').innerText()).toLowerCase();
+    for (const phrase of ['open to work', 'available for', 'hire me', 'taking engagements', 'fixed-price red-team', 'ai red-team check']) {
+      expect(text).not.toContain(phrase);
+    }
+    await expect(page.locator('a[href^="mailto:"]')).toHaveCount(7);
+    await expect(page.locator('#ask a[href^="mailto:"]')).toHaveCount(6);
+    const questions = await page.locator('#ask a[href^="mailto:"]').evaluateAll(links => links.map(link => link.getAttribute('href')));
+    expect(questions.every(href => href.includes('subject='))).toBe(true);
+    await expect(page.locator('#ask h2')).toHaveText(p.startsWith('/tr/') ? 'Danış bana' : 'Ask me');
+    await expect(page.locator('a[href="/cv.pdf"]')).toHaveCount(0);
   }
 });

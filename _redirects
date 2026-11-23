@@ -3,3 +3,16 @@
 /work/     /#work      302
 /tr/work   /tr/#work   302
 /tr/work/  /tr/#work   302
+
+# Retired service page
+/red-team-check / 301
+/red-team-check/ / 301
+/tr/red-team-check/ /tr/ 301
+
+# Scheduled notes return to the current archive until their publication dates.
+/notes/reading-silenced-alerts /notes/ 302
+/tr/notes/reading-silenced-alerts /tr/notes/ 302
+/notes/empty-source-backups /notes/ 302
+/tr/notes/empty-source-backups /tr/notes/ 302
+/notes/ai-tool-review /notes/ 302
+/tr/notes/ai-tool-review /tr/notes/ 302

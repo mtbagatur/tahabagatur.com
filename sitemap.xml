@@ -2,31 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tahabagatur.com/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/"/>
   </url>
   <url>
     <loc>https://tahabagatur.com/tr/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/red-team-check/</loc>
-    <lastmod>2026-11-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/red-team-check/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/red-team-check/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/red-team-check/"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/tr/red-team-check/</loc>
-    <lastmod>2026-11-20</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/red-team-check/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/red-team-check/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/red-team-check/"/>
   </url>
   <url>
     <loc>https://tahabagatur.com/lab/canary/</loc>
@@ -72,59 +58,17 @@
   </url>
   <url>
     <loc>https://tahabagatur.com/notes/parallel-ai-sessions</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/parallel-ai-sessions"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
   </url>
   <url>
     <loc>https://tahabagatur.com/tr/notes/parallel-ai-sessions</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/parallel-ai-sessions"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/notes/reading-silenced-alerts</loc>
-    <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/reading-silenced-alerts"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/tr/notes/reading-silenced-alerts</loc>
-    <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/reading-silenced-alerts"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/reading-silenced-alerts"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/notes/empty-source-backups</loc>
-    <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/empty-source-backups"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/empty-source-backups"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/empty-source-backups"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/tr/notes/empty-source-backups</loc>
-    <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/empty-source-backups"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/empty-source-backups"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/empty-source-backups"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/notes/ai-tool-review</loc>
-    <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/ai-tool-review"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/ai-tool-review"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/ai-tool-review"/>
-  </url>
-  <url>
-    <loc>https://tahabagatur.com/tr/notes/ai-tool-review</loc>
-    <lastmod>2026-11-18</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/ai-tool-review"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/ai-tool-review"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/ai-tool-review"/>
   </url>
   <url>
     <loc>https://tahabagatur.com/work/slow-llm-prefill</loc>
@@ -181,5 +125,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/work/dns-migration-decision"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/work/dns-migration-decision"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/work/dns-migration-decision"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/live/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/live/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/live/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/live/"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/live/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/live/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/live/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/live/"/>
   </url>
 </urlset>

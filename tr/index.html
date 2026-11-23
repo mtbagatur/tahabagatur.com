@@ -47,6 +47,7 @@
         <a href="/tr/notes/">Notlar</a>
         <a href="/tr/#projects">Kod</a>
         <a href="/tr/#speaking">Konuşmalar</a>
+        <a href="/tr/#ask">Danış bana</a>
         <a href="/tr/#contact">İletişim</a>
       </nav>
       <a class="lang" href="/" hreflang="en" lang="en">English</a>
@@ -56,10 +57,25 @@
 
 <main id="main">
   <div class="wrap hero">
-    <h1>Taha Bagatur</h1>
+    <h1>Platform Mühendisi · DevOps / MLOps · Üretimde Yapay Zekâ</h1>
     <p>Üretimdeki yapay zekâ sistemlerini ve altındaki altyapıyı kuruyor ve işletiyorum — LLM sunumu, RAG hatları, Kubernetes kümeleri, gözlemlenebilirlik ve uç GPU filoları. Hem model tarafında hem de Linux/operasyon tarafında çalıştığım için işimin çoğu, modellerin gerçek donanım ve gerçek arızalarla karşılaştığı o geçiş hattında geçiyor.</p>
     <p class="sub">Bu site bir saha defteri: kök nedenine indiğim <a href="#work">üretim vakaları</a>, günlük operasyondan <a href="/tr/notes/">kısa notlar</a> ve varsayımları ölçmek için yazdığım <a href="#projects">küçük araçlar</a>.</p>
   </div>
+
+  <section id="ask">
+    <div class="wrap">
+      <h2>Danış bana</h2>
+      <p class="lead">Birlikte fikir yürütmekten keyif aldığım birkaç konu. Bir soru seçince e-posta taslağı açılır.</p>
+      <ul class="entries ask-list">
+        <li><a href="mailto:taha@tahabagatur.com?subject=LLM%20sunum%20gecikmesi%20ve%20kapasitesi">LLM sunum gecikmesi ve kapasitesi üzerine nasıl düşünürsün?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=RAG%20guvenligi%20ve%20red-teaming">RAG güvenliği ve prompt enjeksiyonu sınırlarını nasıl sınarsın?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Kubernetes%20ve%20GPU%20dugum%20operasyonlari">Kubernetes ve GPU düğüm operasyonlarını güvenilir kılan nedir?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Gozlemlenebilirlik%20ve%20alarm%20gurultusu">Riski gizlemeden alarm gürültüsünü nasıl azaltırsın?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=Ucta%20bilgisayarli%20goru%20dagitimi">Bilgisayarlı görüyü uçta dağıtırken neler değişir?</a></li>
+        <li><a href="mailto:taha@tahabagatur.com?subject=AI%20araci%20secimi">Bir AI aracının veri akışını ve bakımını nasıl değerlendirirsin?</a></li>
+      </ul>
+    </div>
+  </section>
 
   <section id="work">
     <div class="wrap">
@@ -96,31 +112,10 @@
       <p class="lead">Günlük operasyondan kısa notlar: ne kırıldı, ne ölçüldü ve ne değişti.</p>
       <ul class="dated-list">
         <li>
-          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/tr/notes/ai-tool-review">Altı AI aracını kullanmadan önce nasıl eledim?</a></h3>
-            <p class="item-desc">Tedarik zinciri ve istem akışı incelemesi: sabit commit'le bir beceri alındı, büyük paketten dört parça seçildi, dört araç elendi.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/tr/notes/empty-source-backups">Boş kaynak, başarılı yedek demek değildir</a></h3>
-            <p class="item-desc">İki kovadaki ~5,6 GB veriyi sıfır farkla geri yüklerken yakalanan boşluk: kaynakta sıfır nesne varken yedek işinin yeşil yanabilmesi.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
-          <div>
-            <h3 class="item-title"><a href="/tr/notes/reading-silenced-alerts">Susturulmuş alarmları ayrı bir liste olarak okumak</a></h3>
-            <p class="item-desc">Etkin ve susturulmuş alarmları iki ayrı liste olarak incelemek, bilinen sorunların yeni olay sanılmasını nasıl engeller.</p>
-          </div>
-        </li>
-        <li>
-          <time class="when-col" datetime="2026-11-18">Kas 2026</time>
+          <time class="when-col" datetime="2026-11-23">23 Kas 2026</time>
           <div>
             <h3 class="item-title"><a href="/tr/notes/parallel-ai-sessions">Paralel AI oturumlarında aynı işi iki kez yapmamak</a></h3>
-            <p class="item-desc">Paralel kodlama oturumları aynı düzeltme için iki PR açınca geçilen tek sahip atama ve gün sonu çapraz kontrol kuralı.</p>
+            <p class="item-desc">Tek sahip atama ve gün sonu çapraz kontrolü, paralel işteki örtüşmeyi erkenden görünür kılıyor.</p>
           </div>
         </li>
         <li>
@@ -169,26 +164,31 @@
           <time class="when-col" datetime="2024-11-09">Kas 2024</time>
           <div>
             <p class="item-title"><span class="title" lang="en">Preprocessing Optimization for Enhanced Real-Time Detection and Tracking in Vision Systems</span></p>
-            <p class="item-desc">Konuşmacı · ICAIS'24, İstanbul Gedik Üniversitesi · International Conference on Artificial Intelligence Studies (Abstract Book ISBN 978-625-94129-4-8)</p>
+            <p class="item-desc">Konuşmacı · ICAIS'24, İstanbul Gedik Üniversitesi · <a href="https://doi.org/10.61150/gedikyay.2401" rel="noopener">ICAIS'24 özet kitabı · ISBN 978-625-94129-4-8</a></p>
+            <p class="item-desc">Çalışma, gerçek zamanlı tespit ve takipte ön işleme tercihlerinin etkisini inceliyor.</p>
           </div>
         </li>
         <li>
           <time class="when-col" datetime="2023-11">Kas 2023</time>
           <div>
             <p class="item-title"><span class="title" lang="en">An Efficient Framework for Real-Time Age and Gender Detection Using Deep Learning Techniques</span></p>
-            <p class="item-desc">Konuşmacı · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+            <p class="item-desc">Konuşmacı · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences · <span>[TEYİT: güvenli bildiri bağlantısı]</span></p>
+            <p class="item-desc">Çalışma, yüz görüntülerinde yaş ve cinsiyet tahmini için gerçek zamanlı bir derin öğrenme hattını değerlendiriyor.</p>
           </div>
         </li>
         <li>
           <time class="when-col" datetime="2023-11">Kas 2023</time>
           <div>
             <p class="item-title"><span class="title" lang="en">Design and Performance Analysis of Deep Learning-Based People Detection from Top-View Images</span></p>
-            <p class="item-desc">Konuşmacı · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences</p>
+            <p class="item-desc">Konuşmacı · ICOLES 2023, Antalya · 6th International Conference on Life and Engineering Sciences · <span>[TEYİT: güvenli bildiri bağlantısı]</span></p>
+            <p class="item-desc">Çalışma, üstten çekilmiş görüntülerde insan tespiti için derin öğrenme yöntemlerini inceliyor.</p>
           </div>
         </li>
       </ul>
     </div>
   </section>
+
+  <!-- Onaylı v5 PDF /cv.pdf konunca görünür CV bağlantısını ekle. -->
 
   <section id="contact" class="contact">
     <div class="wrap">
@@ -199,8 +199,12 @@
   </section>
 </main>
 
+<!-- Cloudflare Web Analytics ekleme noktası: Taha site token'ını verdikten sonra etkinleştir. -->
+<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->
+<!-- Cloudflare Web Analytics insertion point: token supplied by Taha. -->
+<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->
 <footer>
-  <div class="wrap">© 2026 Taha Bagatur · Çerez yok, izleme yok. · <a href="/tr/feed.xml">Atom akışı</a></div>
+  <div class="wrap">© 2026 Taha Bagatur · Çerez yok. · <a href="/tr/feed.xml">Atom akışı</a></div>
 </footer>
 <!--/email_off-->
 </body>
