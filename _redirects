@@ -4,12 +4,11 @@
 /tr/work   /tr/#work   302
 /tr/work/  /tr/#work   302
 
-# Old service URL (still in the e-mail signature). Temporary: points to the related note
-# until the offer page has its own home; 302 so browsers do not cache it.
-/red-team-check /notes/red-team-my-own-rag-bot 302
-/red-team-check/ /notes/red-team-my-own-rag-bot 302
-/tr/red-team-check /tr/notes/red-team-my-own-rag-bot 302
-/tr/red-team-check/ /tr/notes/red-team-my-own-rag-bot 302
+# Old service URL (still in the e-mail signature) -> offer page on its own subdomain.
+/red-team-check https://check.tahabagatur.com/ 302
+/red-team-check/ https://check.tahabagatur.com/ 302
+/tr/red-team-check https://check.tahabagatur.com/tr/ 302
+/tr/red-team-check/ https://check.tahabagatur.com/tr/ 302
 
 # Scheduled notes return to the current archive until their publication dates.
 /notes/reading-silenced-alerts /notes/ 302
