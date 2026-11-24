@@ -323,3 +323,40 @@ test('Retired service URLs redirect away and home pages avoid employment-seeking
     await expect(page.locator('a[href="/cv.pdf"]')).toHaveCount(1);
   }
 });
+
+test.describe('6. Bottom-of-page account links open in a new tab', () => {
+  for (const p of [...ALL_PAGES, '/404']) {
+    test(`external account links on ${p} use target=_blank and rel=noopener`, async ({ page }) => {
+      await page.goto(p);
+      const bottom = page.locator('#contact, footer');
+      const links = await bottom.locator('a[href]').evaluateAll(els => els.map(a => ({
+        href: a.getAttribute('href'), target: a.getAttribute('target'), rel: (a.getAttribute('rel') || '').split(/\s+/),
+      })));
+      for (const l of links) {
+        if (/^https?:\/\//.test(l.href)) {
+          expect(l.target, l.href).toBe('_blank');
+          expect(l.rel, l.href).toContain('noopener');
+          expect(l.rel, l.href).toContain('noreferrer');
+        } else {
+          expect(l.target, l.href).toBeNull();
+        }
+      }
+      if (p === '/' || p === '/tr/') {
+        expect(links.filter(l => /^https?:\/\//.test(l.href))).toHaveLength(8);
+        await expect(page.locator('#newtab-hint')).toHaveText(p === '/' ? '(opens in a new tab)' : '(yeni sekmede açılır)');
+      }
+    });
+  }
+
+  test('clicking an account link opens a new tab and keeps the home page', async ({ page, context }) => {
+    await context.route(/^https:\/\/github\.com\//, route => route.fulfill({ status: 200, contentType: 'text/html', body: '<title>stub</title>' }));
+    await page.goto('/');
+    const [popup] = await Promise.all([
+      context.waitForEvent('page'),
+      page.locator('#contact .social a[href="https://github.com/mtbagatur"]').click(),
+    ]);
+    await popup.waitForLoadState();
+    expect(popup.url()).toBe('https://github.com/mtbagatur');
+    expect(new URL(page.url()).pathname).toBe('/');
+  });
+});
