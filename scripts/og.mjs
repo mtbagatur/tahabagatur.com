@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://tahabagatur.com';
-const TEMPLATE_VERSION = '2';
+const TEMPLATE_VERSION = '3';
 const SKIP = new Set(['index.html', 'tr/index.html', '404.html']);
 const IGNORE_DIRS = new Set(['node_modules', 'test-results', 'og', '.git', 'samples', 'scripts', 'tests', 'onizleme']);
 const CHECK = process.argv.includes('--check');
@@ -55,17 +55,42 @@ function cardFor(file, html) {
   return { title, desc, kicker, pageUrl, png: `og/${slug}.png` };
 }
 
+// Card look = the hand-made home card (scripts/og-home.html): fonts, compass and
+// palette are read from it so the two cannot drift apart.
+const HOME = readFileSync(join(ROOT, 'scripts/og-home.html'), 'utf8');
+const FONT_FACES = HOME.split('\n').filter(l => l.startsWith('@font-face')).join('\n');
+const COMPASS = HOME.match(/<svg class="bg"[\s\S]*?<\/svg>/)[0];
+const SEAL = HOME.match(/<svg class="seal"[\s\S]*?<\/svg>/)[0];
+
 function cardHtml(c) {
-  const titleSize = c.title.length > 70 ? 54 : c.title.length > 40 ? 62 : 72;
+  const titleSize = c.title.length > 70 ? 50 : c.title.length > 40 ? 58 : 68;
   const body = c.desc.replace(/^(Case study|Vaka çalışması|Vaka):\s*/i, '');
-  const desc = body.length > 170 ? body.slice(0, 167).replace(/\s+\S*$/, '') + '…' : body;
-  return `<html><body style="margin:0;width:1200px;height:630px;background:#121518;color:#e8e6e1;font-family:'Noto Sans',system-ui,sans-serif;overflow:hidden">
-<div style="position:absolute;left:0;top:0;bottom:0;width:14px;background:#c8692a"></div>
-<div style="position:absolute;left:90px;right:90px;top:84px;bottom:70px;display:flex;flex-direction:column">
-  <div style="color:#a8be7a;font-weight:600;letter-spacing:2px;font-size:24px">${esc(c.kicker)}</div>
-  <div style="font-weight:700;font-size:${titleSize}px;line-height:1.1;margin-top:24px">${esc(c.title)}</div>
-  <div style="color:#9ea5ad;font-size:27px;line-height:1.42;margin-top:26px">${esc(desc)}</div>
-  <div style="margin-top:auto;color:#8bb8e6;font-weight:600;font-size:25px">Taha Bagatur · ${esc(c.pageUrl)}</div>
+  const desc = body.length > 135 ? body.slice(0, 132).replace(/\s+\S*$/, '') + '…' : body;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>
+${FONT_FACES}
+html,body{margin:0}
+body{width:1200px;height:630px;overflow:hidden;background:#f5f0e6;color:#16233f;font-family:"Inter Tight",sans-serif;position:relative}
+.bg{position:absolute;inset:0}
+.bg line{stroke:#a8834c;stroke-width:.8;opacity:.25}
+.bg .rose{stroke:#a8834c;fill:none;opacity:.55}
+.bg .rose .pt{fill:#a8834c;stroke:none}
+.bg .route{stroke:#9e2a2b;stroke-width:1.6;stroke-dasharray:4 7;fill:none;opacity:.6}
+.in{position:absolute;left:84px;top:64px;right:84px;bottom:56px;display:flex;flex-direction:column}
+.brand{display:flex;align-items:center;gap:16px;font:600 28px "Inter Tight"}
+.seal{width:42px;height:42px} .s-bg{fill:#16233f} .s-fg{fill:#f5f0e6}
+.eb{margin-top:auto;font:400 20px "IBM Plex Mono";letter-spacing:.08em;color:#16233fc2}
+.eb i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#1f5f4a;margin-right:12px;vertical-align:2px}
+h1{font:400 ${titleSize}px/1.06 Fraunces,serif;margin:16px 0 0;letter-spacing:-.01em;max-width:780px}
+p{margin:18px 0 0;font:400 25px/1.38 "Inter Tight";color:#16233fc2;max-width:800px}
+.ft{margin-top:26px;padding-top:16px;border-top:1.5px solid #a8834c;display:flex;justify-content:space-between;font:400 19px "IBM Plex Mono";color:#16233fc2}
+</style></head><body>
+${COMPASS}
+<div class="in">
+<div class="brand">${SEAL}Taha Bagatur</div>
+<div class="eb"><i></i>${esc(c.kicker)}</div>
+<h1>${esc(c.title)}</h1>
+<p>${esc(desc)}</p>
+<div class="ft"><span>cases · notes · talks</span><span>${esc(c.pageUrl)}</span></div>
 </div></body></html>`;
 }
 
@@ -89,7 +114,7 @@ for (const file of walk(ROOT).sort()) {
   if (!html.includes('property="og:title"')) continue;
   const c = cardFor(file, html);
   const hash = createHash('sha256').update(TEMPLATE_VERSION + cardHtml(c)).digest('hex').slice(0, 16);
-  const img = `${ORIGIN}/${c.png}`;
+  const img = `${ORIGIN}/${c.png}?v=${TEMPLATE_VERSION}`; // versioned: platforms cache cards by URL
   let next = html;
   next = setMeta(next, 'property', 'og:image', img, { attr: 'property', key: 'og:url' });
   next = setMeta(next, 'property', 'og:image:width', '1200', { attr: 'property', key: 'og:image' });
@@ -116,9 +141,17 @@ if (jobs.length) {
   const { chromium } = await import('@playwright/test');
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
+  let current = '';
+  await page.route('https://card.local/**', route => {
+    const path = new URL(route.request().url()).pathname;
+    if (path === '/card.html') return route.fulfill({ contentType: 'text/html', body: current });
+    return route.fulfill({ path: join(ROOT, path) });
+  });
   for (const { c, hash } of jobs) {
     mkdirSync(dirname(join(ROOT, c.png)), { recursive: true });
-    await page.setContent(cardHtml(c));
+    current = cardHtml(c);
+    await page.goto('https://card.local/card.html');
+    await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: join(ROOT, c.png) });
     manifest[c.png] = hash;
     console.log('rendered', c.png);

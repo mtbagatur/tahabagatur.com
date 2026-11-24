@@ -189,7 +189,7 @@ test.describe('3. SEO, JSON-LD, OpenGraph & email_off across all pages', () => {
       expect(ogUrl).toBe(BASE_ORIGIN + p);
       const isHome = p === '/' || p === '/tr/';
       const slug = p.replace(/^\//, '').replace(/\/$/, '').replace(/\.html$/, '');
-      expect(ogImg).toBe(BASE_ORIGIN + (isHome ? '/og.png' : `/og/${slug}.png`));
+      expect(ogImg).toMatch(new RegExp("^" + (BASE_ORIGIN + (isHome ? "/og.png" : `/og/${slug}.png`)).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + (isHome ? "$" : "\\?v=\\d+$")));
       const twImg = await page.locator('meta[name="twitter:image"]').getAttribute('content');
       expect(twImg).toBe(ogImg);
       const imgRes = await page.request.get(ogImg.replace(BASE_ORIGIN, ''));
