@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://tahabagatur.com';
-const TEMPLATE_VERSION = '3';
+const TEMPLATE_VERSION = '4';
 const SKIP = new Set(['index.html', 'tr/index.html', '404.html']);
 const IGNORE_DIRS = new Set(['node_modules', 'test-results', 'og', '.git', 'samples', 'scripts', 'tests', 'onizleme']);
 const CHECK = process.argv.includes('--check');
@@ -63,34 +63,30 @@ const COMPASS = HOME.match(/<svg class="bg"[\s\S]*?<\/svg>/)[0];
 const SEAL = HOME.match(/<svg class="seal"[\s\S]*?<\/svg>/)[0];
 
 function cardHtml(c) {
-  const titleSize = c.title.length > 70 ? 50 : c.title.length > 40 ? 58 : 68;
-  const body = c.desc.replace(/^(Case study|Vaka çalışması|Vaka):\s*/i, '');
-  const desc = body.length > 135 ? body.slice(0, 132).replace(/\s+\S*$/, '') + '…' : body;
+  const titleSize = c.title.length > 70 ? 56 : c.title.length > 40 ? 66 : 78;
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${FONT_FACES}
 html,body{margin:0}
-body{width:1200px;height:630px;overflow:hidden;background:#f5f0e6;color:#16233f;font-family:"Inter Tight",sans-serif;position:relative}
+body{width:1200px;height:630px;overflow:hidden;background:#0f1622;color:#ece4d3;font-family:"Inter Tight",sans-serif;position:relative}
 .bg{position:absolute;inset:0}
-.bg line{stroke:#a8834c;stroke-width:.8;opacity:.25}
-.bg .rose{stroke:#a8834c;fill:none;opacity:.55}
-.bg .rose .pt{fill:#a8834c;stroke:none}
-.bg .route{stroke:#9e2a2b;stroke-width:1.6;stroke-dasharray:4 7;fill:none;opacity:.6}
-.in{position:absolute;left:84px;top:64px;right:84px;bottom:56px;display:flex;flex-direction:column}
+.bg line{stroke:#c9a46a;stroke-width:.8;opacity:.07}
+.bg .rose{stroke:#c9a46a;fill:none;opacity:.16}
+.bg .rose .pt{fill:#c9a46a;stroke:none}
+.bg .route{stroke:#e0756e;stroke-width:1.6;stroke-dasharray:4 7;fill:none;opacity:.22}
+.in{position:absolute;left:84px;top:64px;right:84px;bottom:60px;display:flex;flex-direction:column}
 .brand{display:flex;align-items:center;gap:16px;font:600 28px "Inter Tight"}
-.seal{width:42px;height:42px} .s-bg{fill:#16233f} .s-fg{fill:#f5f0e6}
-.eb{margin-top:auto;font:400 20px "IBM Plex Mono";letter-spacing:.08em;color:#16233fc2}
-.eb i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#1f5f4a;margin-right:12px;vertical-align:2px}
-h1{font:400 ${titleSize}px/1.06 Fraunces,serif;margin:16px 0 0;letter-spacing:-.01em;max-width:780px}
-p{margin:18px 0 0;font:400 25px/1.38 "Inter Tight";color:#16233fc2;max-width:800px}
-.ft{margin-top:26px;padding-top:16px;border-top:1.5px solid #a8834c;display:flex;justify-content:space-between;font:400 19px "IBM Plex Mono";color:#16233fc2}
+.seal{width:42px;height:42px} .s-bg{fill:#ece4d3} .s-fg{fill:#0f1622}
+.eb{margin-top:auto;font:400 20px "IBM Plex Mono";letter-spacing:.08em;color:#ece4d3c4}
+.eb i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#5fb393;margin-right:12px;vertical-align:2px}
+h1{font:400 ${titleSize}px/1.06 Fraunces,serif;margin:18px 0 0;letter-spacing:-.01em;max-width:900px}
+.ft{margin-top:34px;display:flex;justify-content:flex-end;font:400 20px "IBM Plex Mono";color:#ece4d3a8}
 </style></head><body>
 ${COMPASS}
 <div class="in">
 <div class="brand">${SEAL}Taha Bagatur</div>
 <div class="eb"><i></i>${esc(c.kicker)}</div>
 <h1>${esc(c.title)}</h1>
-<p>${esc(desc)}</p>
-<div class="ft"><span>cases · notes · talks</span><span>${esc(c.pageUrl)}</span></div>
+<div class="ft"><span>${esc(c.pageUrl)}</span></div>
 </div></body></html>`;
 }
 
