@@ -304,9 +304,14 @@ test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
 
 
 test('Retired service URLs redirect away and home pages avoid employment-seeking language', async ({ page, request }) => {
-  for (const [oldPath, destination] of [['/red-team-check/', '/'], ['/tr/red-team-check/', '/tr/']]) {
+  for (const [oldPath, destination] of [
+    ['/red-team-check', '/notes/red-team-my-own-rag-bot'],
+    ['/red-team-check/', '/notes/red-team-my-own-rag-bot'],
+    ['/tr/red-team-check', '/tr/notes/red-team-my-own-rag-bot'],
+    ['/tr/red-team-check/', '/tr/notes/red-team-my-own-rag-bot'],
+  ]) {
     const res = await request.get(oldPath, { maxRedirects: 0 });
-    expect(res.status()).toBe(301);
+    expect(res.status()).toBe(302);
     expect(res.headers()['location']).toBe(destination);
   }
   for (const p of ['/', '/tr/']) {
