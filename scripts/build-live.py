@@ -76,7 +76,7 @@ def build(tr=False):
 <link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/live/">
 <link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/live/">
 <link rel="icon" href="{FAVICON}">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=20261124">
 <script type="application/ld+json">{structured}</script>
 <meta property="og:title" content="{escape(title)}">
 <meta property="og:description" content="{escape(intro)}">

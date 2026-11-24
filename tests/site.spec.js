@@ -273,7 +273,7 @@ test.describe('5. Accessibility (axe-core WCAG AA) & responsive layout', () => {
       ['/tr/live/', 'Üretim durumu · örnek veri'],
     ]) {
       await page.goto(p);
-      await expect(page.locator('link[rel="stylesheet"]')).toHaveAttribute('href', '/assets/site.css');
+      await expect(page.locator('link[rel="stylesheet"]')).toHaveAttribute('href', /^\/assets\/site\.css(\?v=\w+)?$/);
       await expect(page.locator('main h1')).toHaveText(heading);
       await expect(page.locator('main')).toContainText(p.startsWith('/tr/') ? 'Örnek veri' : 'Sample data');
       await expect(page.locator('main')).toContainText('SLO');

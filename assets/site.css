@@ -403,5 +403,5 @@ code{font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1p
 @media (max-width:640px){.tema{order:2;margin-left:auto}.lang{margin-left:0}}
 /* Telefonda gül ortadan kırpılınca ekran dışında kalıyordu: sabit ölçek, gül başlığın sağında */
 @media (max-width:640px){
-  .rhumb{inset:-52px auto auto calc(100% - 892px);width:1080px;height:480px;overflow:visible}
+  .rhumb{top:-52px;right:auto;bottom:auto;left:calc(100% - 892px);width:1080px;height:480px;overflow:visible}
 }
