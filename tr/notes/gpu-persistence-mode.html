@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir? · Taha Bagatur</title>
+<meta name="description" content="Persistence mode sürücüyü yüklü tutar, böylece ilk CUDA çağrısı daha hızlı başlar. GPU'nun kendisini hızlandırmaz.">
+<meta name="author" content="Taha Bagatur">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1622" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://tahabagatur.com/tr/notes/gpu-persistence-mode">
+<link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/gpu-persistence-mode">
+<link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/gpu-persistence-mode">
+<link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/gpu-persistence-mode">
+<link rel="alternate" type="application/atom+xml" title="Taha Bagatur · Notlar" href="https://tahabagatur.com/tr/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Taha Bagatur">
+<meta property="og:title" content="NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir? · Taha Bagatur">
+<meta property="og:description" content="Persistence mode sürücüyü yüklü tutar, böylece ilk CUDA çağrısı daha hızlı başlar. GPU'nun kendisini hızlandırmaz.">
+<meta property="og:url" content="https://tahabagatur.com/tr/notes/gpu-persistence-mode">
+<meta property="og:image" content="https://tahabagatur.com/og/tr/notes/gpu-persistence-mode.png?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir?">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir?">
+<meta name="twitter:description" content="Persistence mode sürücüyü yüklü tutar, böylece ilk CUDA çağrısı daha hızlı başlar. GPU'nun kendisini hızlandırmaz.">
+<meta name="twitter:image" content="https://tahabagatur.com/og/tr/notes/gpu-persistence-mode.png?v=4">
+<meta name="twitter:image:alt" content="NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir?">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' shape-rendering='crispEdges'%3E%3Crect width='11' height='11' fill='%2316233f'/%3E%3Cpath fill='%23f5f0e6' d='M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css?v=20261125">
+<script src="/assets/tema.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir?","description":"Persistence mode sürücüyü yüklü tutar, böylece ilk CUDA çağrısı daha hızlı başlar. GPU'nun kendisini hızlandırmaz.","inLanguage":"tr","datePublished":"2026-11-25","url":"https://tahabagatur.com/tr/notes/gpu-persistence-mode","mainEntityOfPage":"https://tahabagatur.com/tr/notes/gpu-persistence-mode","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://tahabagatur.com/tr/"},{"@type":"ListItem","position":2,"name":"Notlar","item":"https://tahabagatur.com/tr/notes/"},{"@type":"ListItem","position":3,"name":"NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir?","item":"https://tahabagatur.com/tr/notes/gpu-persistence-mode"}]}]}
+</script>
+<meta property="article:published_time" content="2026-11-25">
+</head>
+<body>
+<!--email_off-->
+<a class="skip" href="#main">İçeriğe geç</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/tr/"><svg class="seal" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect class="s-bg" width="11" height="11"/><path class="s-fg" d="M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z"/></svg>Taha Bagatur</a>
+    <div class="top">
+      <nav aria-label="Bölümler">
+        <a href="/tr/#work">Vakalar</a>
+        <a href="/tr/notes/" aria-current="page">Notlar</a>
+        <a href="/tr/#divan">Divan</a>
+        <a href="/tr/#ask">Danış bana</a>
+      </nav>
+      <button class="tema" type="button" aria-label="Geceye geç" aria-pressed="false" title="Gündüz / gece"><svg class="semse" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="14" height="14"/><rect x="5" y="5" width="14" height="14" transform="rotate(45 12 12)"/></g><circle class="ic" cx="12" cy="12" r="3.2"/></svg><svg class="hilal" viewBox="0 0 24 24" aria-hidden="true"><path class="y" d="M15.5 3.2A9 9 0 1 0 20.8 16 7.2 7.2 0 0 1 15.5 3.2Z"/></svg></button>
+      <a class="lang" href="/notes/gpu-persistence-mode" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap article">
+  <p class="crumbs"><a href="/tr/">Ana sayfa</a> › <a href="/tr/notes/">Notlar</a></p>
+  <article>
+  <h1>NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir?</h1>
+  <p class="note-lang">Bu yazının İngilizce karşılığı: <a href="/notes/gpu-persistence-mode" hreflang="en" lang="en">Avoiding duplicate work across parallel AI sessions</a>.</p>
+  <p class="meta"><time datetime="2026-11-25">25 Kasım 2026</time></p>
+
+  <p class="lead">GPU'yu hiçbir süreç açık tutmadığında sürücü durumunu bellekten bırakabilir. Sonraki CUDA çağrısı birkaç saniyelik bir başlatma gecikmesi öder. Persistence mode sürücü durumunu yüklü tutar ve bu gecikmeyi ortadan kaldırır.</p>
+
+  <h2>Ne yapar, ne yapmaz</h2>
+  <p>GPU'ya dokunan ilk sürecin başlangıcını kısaltır; sık açılıp kapanan konteynerlerde fark eder. Verimi ya da saat hızlarını <strong>artırmaz</strong>. Bunun için güç sınırlarına, saat hızlarına ve soğutmaya bakılır.</p>
+
+  <h2>Açmak</h2>
+  <pre tabindex="0"><code>sudo nvidia-smi -pm 1   # aç
+sudo nvidia-smi -pm 0   # kapat
+nvidia-smi              # Persistence-M: On satırına bakın</code></pre>
+  <p><code>-pm</code> anahtarı eski yöntem. NVIDIA artık <code>nvidia-persistenced</code> servisinin çalıştırılmasını öneriyor (genelde systemd servisi olarak); ayar yeniden başlatmalarda korunur ve sunucularda daha iyi seçenektir.</p>
+
+  <h2>Ne zaman değer</h2>
+  <p>Her biri CUDA'yı baştan başlatan çok sayıda kısa konteyner işinde ya da ilk çağrının yavaş hissedildiği etkileşimli araçlarda. Bir kez başlayan uzun bir eğitim işinde kazanç birkaç saniyedir ve çoğunlukla önemsizdir.</p>
+  
+  <p class="meta">İlk olarak 13 Ocak 2025'te Medium'da yayımlandı; burada gözden geçirilip kısaltıldı. O tarihte yazıldı; komutlara güvenmeden önce güncel NVIDIA sürücü belgelerine bakın.</p>
+
+  <div class="box">
+    Bu yazı üzerine soru veya notlar için: <a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="/tr/notes/">Tüm notlar</a>
+  </div>
+  </article>
+</main>
+
+<!-- Cloudflare Web Analytics insertion point: token supplied by Taha. -->
+<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->
+<footer>
+  <div class="wrap">© 2026 Taha Bagatur · Çerez yok. · <a href="/tr/feed.xml">Atom akışı</a></div>
+</footer>
+<!--/email_off-->
+</body>
+</html>

@@ -12,6 +12,8 @@ const BILINGUAL_PAIRS = [
   ['/notes/', '/tr/notes/'],
   ['/notes/red-team-my-own-rag-bot', '/tr/notes/red-team-my-own-rag-bot'],
   ['/notes/parallel-ai-sessions', '/tr/notes/parallel-ai-sessions'],
+  ['/notes/gpu-persistence-mode', '/tr/notes/gpu-persistence-mode'],
+  ['/notes/mlops-reference-setup', '/tr/notes/mlops-reference-setup'],
   ['/notes/bekci-agent-security', '/tr/notes/bekci-agent-security'],
   ['/notes/audit-01-claude-code-vs-hermes', '/tr/notes/audit-01-claude-code-vs-hermes'],
   ['/lab/canary/', '/tr/lab/canary/'],
@@ -189,7 +191,7 @@ test.describe('3. SEO, JSON-LD, OpenGraph & email_off across all pages', () => {
       expect(ogUrl).toBe(BASE_ORIGIN + p);
       const isHome = p === '/' || p === '/tr/';
       const slug = p.replace(/^\//, '').replace(/\/$/, '').replace(/\.html$/, '');
-      expect(ogImg).toMatch(new RegExp("^" + (BASE_ORIGIN + (isHome ? "/og.png" : `/og/${slug}.png`)).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + (isHome ? "$" : "\\?v=\\d+$")));
+      expect(ogImg).toMatch(new RegExp("^" + (BASE_ORIGIN + (isHome ? "/og.png" : `/og/${slug}.png`)).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + (isHome ? "(\\?v=\\d+)?$" : "\\?v=\\d+$")));
       const twImg = await page.locator('meta[name="twitter:image"]').getAttribute('content');
       expect(twImg).toBe(ogImg);
       const imgRes = await page.request.get(ogImg.replace(BASE_ORIGIN, ''));

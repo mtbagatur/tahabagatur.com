@@ -71,6 +71,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/bekci-agent-security"/>
   </url>
   <url>
+    <loc>https://tahabagatur.com/notes/mlops-reference-setup</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/mlops-reference-setup"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/mlops-reference-setup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/mlops-reference-setup"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/mlops-reference-setup</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/mlops-reference-setup"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/mlops-reference-setup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/mlops-reference-setup"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/notes/gpu-persistence-mode</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/gpu-persistence-mode"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/gpu-persistence-mode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/gpu-persistence-mode"/>
+  </url>
+  <url>
+    <loc>https://tahabagatur.com/tr/notes/gpu-persistence-mode</loc>
+    <lastmod>2026-11-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/gpu-persistence-mode"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/gpu-persistence-mode"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/gpu-persistence-mode"/>
+  </url>
+  <url>
     <loc>https://tahabagatur.com/notes/parallel-ai-sessions</loc>
     <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/parallel-ai-sessions"/>

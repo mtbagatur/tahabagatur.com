@@ -7,6 +7,22 @@
   <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/"/>
   <updated>2026-11-23T16:41:43Z</updated>
   <entry>
+    <title>NVIDIA persistence mode: GPU konteynerlerinde ne değiştirir?</title>
+    <id>https://tahabagatur.com/tr/notes/gpu-persistence-mode</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/gpu-persistence-mode"/>
+    <published>2026-11-25T00:00:00Z</published>
+    <updated>2026-11-25T00:00:00Z</updated>
+    <summary>Persistence mode sürücüyü yüklü tutar, böylece ilk CUDA çağrısı daha hızlı başlar. GPU'nun kendisini hızlandırmaz.</summary>
+  </entry>
+  <entry>
+    <title>Referans bir MLOps kurulumu: tek komut, izleme ve CI ile</title>
+    <id>https://tahabagatur.com/tr/notes/mlops-reference-setup</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/mlops-reference-setup"/>
+    <published>2026-11-25T00:00:00Z</published>
+    <updated>2026-11-25T00:00:00Z</updated>
+    <summary>MLflow takibi, Prometheus ve Grafana izlemesi ve GitHub Actions hattı olan küçük bir FastAPI servisi; üretimin neresinde bittiği de yazıda.</summary>
+  </entry>
+  <entry>
     <title>Claude Code ve Hermes Agent: yerel denetimde izin kontrolleri nasıl davrandı?</title>
     <id>https://tahabagatur.com/tr/notes/audit-01-claude-code-vs-hermes</id>
     <link rel="alternate" type="text/html" href="https://tahabagatur.com/tr/notes/audit-01-claude-code-vs-hermes"/>

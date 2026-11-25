@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A reference MLOps setup: one command, with tracking, monitoring and CI · Taha Bagatur</title>
+<meta name="description" content="A small FastAPI service with MLflow tracking, Prometheus and Grafana monitoring and a GitHub Actions pipeline, and where it stops short of production.">
+<meta name="author" content="Taha Bagatur">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1622" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://tahabagatur.com/notes/mlops-reference-setup">
+<link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/mlops-reference-setup">
+<link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/mlops-reference-setup">
+<link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/mlops-reference-setup">
+<link rel="alternate" type="application/atom+xml" title="Taha Bagatur · Notes" href="https://tahabagatur.com/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Taha Bagatur">
+<meta property="og:title" content="A reference MLOps setup: one command, with tracking, monitoring and CI · Taha Bagatur">
+<meta property="og:description" content="A small FastAPI service with MLflow tracking, Prometheus and Grafana monitoring and a GitHub Actions pipeline, and where it stops short of production.">
+<meta property="og:url" content="https://tahabagatur.com/notes/mlops-reference-setup">
+<meta property="og:image" content="https://tahabagatur.com/og/notes/mlops-reference-setup.png?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A reference MLOps setup: one command, with tracking, monitoring and CI">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A reference MLOps setup: one command, with tracking, monitoring and CI">
+<meta name="twitter:description" content="A small FastAPI service with MLflow tracking, Prometheus and Grafana monitoring and a GitHub Actions pipeline, and where it stops short of production.">
+<meta name="twitter:image" content="https://tahabagatur.com/og/notes/mlops-reference-setup.png?v=4">
+<meta name="twitter:image:alt" content="A reference MLOps setup: one command, with tracking, monitoring and CI">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' shape-rendering='crispEdges'%3E%3Crect width='11' height='11' fill='%2316233f'/%3E%3Cpath fill='%23f5f0e6' d='M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css?v=20261125">
+<script src="/assets/tema.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"A reference MLOps setup: one command, with tracking, monitoring and CI","description":"A small FastAPI service with MLflow tracking, Prometheus and Grafana monitoring and a GitHub Actions pipeline, and where it stops short of production.","inLanguage":"en","datePublished":"2026-11-25","url":"https://tahabagatur.com/notes/mlops-reference-setup","mainEntityOfPage":"https://tahabagatur.com/notes/mlops-reference-setup","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahabagatur.com/"},{"@type":"ListItem","position":2,"name":"Notes","item":"https://tahabagatur.com/notes/"},{"@type":"ListItem","position":3,"name":"A reference MLOps setup: one command, with tracking, monitoring and CI","item":"https://tahabagatur.com/notes/mlops-reference-setup"}]}]}
+</script>
+<meta property="article:published_time" content="2026-11-25">
+</head>
+<body>
+<!--email_off-->
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><svg class="seal" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect class="s-bg" width="11" height="11"/><path class="s-fg" d="M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z"/></svg>Taha Bagatur</a>
+    <div class="top">
+      <nav aria-label="Sections">
+        <a href="/#work">Cases</a>
+        <a href="/notes/" aria-current="page">Notes</a>
+        <a href="/#divan">Divan</a>
+        <a href="/#ask">Ask me</a>
+      </nav>
+      <button class="tema" type="button" aria-label="Switch to night" aria-pressed="false" title="Day / night"><svg class="semse" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="14" height="14"/><rect x="5" y="5" width="14" height="14" transform="rotate(45 12 12)"/></g><circle class="ic" cx="12" cy="12" r="3.2"/></svg><svg class="hilal" viewBox="0 0 24 24" aria-hidden="true"><path class="y" d="M15.5 3.2A9 9 0 1 0 20.8 16 7.2 7.2 0 0 1 15.5 3.2Z"/></svg></button>
+      <a class="lang" href="/tr/notes/mlops-reference-setup" hreflang="tr" lang="tr">Türkçe</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/notes/">Notes</a></p>
+  <article>
+  <h1>A reference MLOps setup: one command, with tracking, monitoring and CI</h1>
+  <p class="meta"><time datetime="2026-11-25">25 Nov 2026</time></p>
+
+  <p class="lead">Most ML projects stop at the notebook. This one is a small system that runs with <code>docker compose up --build</code> and shows how the usual MLOps pieces fit together: serving, experiment tracking, monitoring and a CI pipeline.</p>
+
+  <h2>What it is, and what it is not</h2>
+  <p>It is a reference setup, not a production deployment. The vehicle inventory lives in memory, the sentiment model (TF-IDF with logistic regression) is retrained on every start, and the deploy step restarts the container, so it is not zero-downtime. Those are deliberate simplifications: complexity should be earned. What it does show is the wiring around the model, which is the part tutorials usually skip.</p>
+
+  <h2>Two services, one platform</h2>
+  <p>A vehicle inventory API (cars and motorcycles, stock changes, strict validation) and a sentiment API sit behind one FastAPI app, with one monitoring stack and one pipeline. Validation happens when the object is created, in <code>__post_init__</code>. One detail worth keeping: in Python <code>bool</code> is a subclass of <code>int</code>, so <code>num_doors=True</code> passes a plain integer check unless you test for <code>bool</code> first.</p>
+
+  <h2>Experiment tracking</h2>
+  <p>Every training run logs its parameters, metrics and model artifact to MLflow, so after a retrain you can compare two runs side by side instead of guessing. The vectorizer is fitted on the training split only, which keeps the logged metrics free of leakage.</p>
+
+  <h2>Monitoring</h2>
+  <p>Each prediction increments a labelled counter and records latency in a histogram. Prometheus scrapes them every 15 seconds and a Grafana dashboard shows totals, the positive/negative ratio and p95 latency. The ratio panel is the one to watch: a sudden shift from the usual split means the input data or the model changed.</p>
+  <pre tabindex="0"><code>PREDICTIONS = Counter('sentiment_predictions_total', 'Total predictions', ['label'])
+PREDICTION_LATENCY = Histogram('sentiment_prediction_duration_seconds', 'Prediction latency')</code></pre>
+
+  <h2>CI/CD</h2>
+  <p>Three stages: test, build, deploy. A stage runs only if the previous one passed. Images are tagged with the commit SHA, so every image traces to one commit and a rollback is a pull of the previous tag. The deploy job runs <code>docker compose pull</code> and <code>up -d</code> over SSH, which restarts the service. Rolling or blue-green deploys would be the next step.</p>
+
+  <h2>Run it</h2>
+  <pre tabindex="0"><code>git clone https://github.com/mtbagatur/vehicle-sentiment-mlops
+cd vehicle-sentiment-mlops
+docker compose up --build</code></pre>
+  <p>API docs at <code>localhost:8000/docs</code>, MLflow on 5000, Grafana on 3000, Prometheus on 9090. The Grafana login in the compose file is a local demo credential: change it before exposing anything.</p>
+  
+  <p class="meta">First published on Medium on 13 July 2026 as "Building a Production-Ready MLOps System from Scratch"; revised here. The repository is <a href="https://github.com/mtbagatur/vehicle-sentiment-mlops">mtbagatur/vehicle-sentiment-mlops</a>.</p>
+
+  <div class="box">
+    Questions or notes on this write-up: <a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="/notes/">All notes</a>
+  </div>
+  </article>
+</main>
+
+<!-- Cloudflare Web Analytics insertion point: token supplied by Taha. -->
+<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->
+<footer>
+  <div class="wrap">© 2026 Taha Bagatur · No cookies. · <a href="/feed.xml">Atom feed</a></div>
+</footer>
+<!--/email_off-->
+</body>
+</html>

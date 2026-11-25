@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NVIDIA persistence mode: what it changes for GPU containers · Taha Bagatur</title>
+<meta name="description" content="Persistence mode keeps the driver loaded so the first CUDA call is faster. It does not make the GPU itself faster.">
+<meta name="author" content="Taha Bagatur">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1622" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://tahabagatur.com/notes/gpu-persistence-mode">
+<link rel="alternate" hreflang="en" href="https://tahabagatur.com/notes/gpu-persistence-mode">
+<link rel="alternate" hreflang="tr" href="https://tahabagatur.com/tr/notes/gpu-persistence-mode">
+<link rel="alternate" hreflang="x-default" href="https://tahabagatur.com/notes/gpu-persistence-mode">
+<link rel="alternate" type="application/atom+xml" title="Taha Bagatur · Notes" href="https://tahabagatur.com/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Taha Bagatur">
+<meta property="og:title" content="NVIDIA persistence mode: what it changes for GPU containers · Taha Bagatur">
+<meta property="og:description" content="Persistence mode keeps the driver loaded so the first CUDA call is faster. It does not make the GPU itself faster.">
+<meta property="og:url" content="https://tahabagatur.com/notes/gpu-persistence-mode">
+<meta property="og:image" content="https://tahabagatur.com/og/notes/gpu-persistence-mode.png?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NVIDIA persistence mode: what it changes for GPU containers">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NVIDIA persistence mode: what it changes for GPU containers">
+<meta name="twitter:description" content="Persistence mode keeps the driver loaded so the first CUDA call is faster. It does not make the GPU itself faster.">
+<meta name="twitter:image" content="https://tahabagatur.com/og/notes/gpu-persistence-mode.png?v=4">
+<meta name="twitter:image:alt" content="NVIDIA persistence mode: what it changes for GPU containers">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11' shape-rendering='crispEdges'%3E%3Crect width='11' height='11' fill='%2316233f'/%3E%3Cpath fill='%23f5f0e6' d='M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/site.css?v=20261125">
+<script src="/assets/tema.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"NVIDIA persistence mode: what it changes for GPU containers","description":"Persistence mode keeps the driver loaded so the first CUDA call is faster. It does not make the GPU itself faster.","inLanguage":"en","datePublished":"2026-11-25","url":"https://tahabagatur.com/notes/gpu-persistence-mode","mainEntityOfPage":"https://tahabagatur.com/notes/gpu-persistence-mode","image":"https://tahabagatur.com/og.png","author":{"@type":"Person","@id":"https://tahabagatur.com/#person","name":"Taha Bagatur","url":"https://tahabagatur.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tahabagatur.com/"},{"@type":"ListItem","position":2,"name":"Notes","item":"https://tahabagatur.com/notes/"},{"@type":"ListItem","position":3,"name":"NVIDIA persistence mode: what it changes for GPU containers","item":"https://tahabagatur.com/notes/gpu-persistence-mode"}]}]}
+</script>
+<meta property="article:published_time" content="2026-11-25">
+</head>
+<body>
+<!--email_off-->
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><svg class="seal" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><rect class="s-bg" width="11" height="11"/><path class="s-fg" d="M6 2h1v3H6zM1 5h3v1H1zM5 5h5v1H5zM1 6h1v2H1zM3 6h1v2H3zM5 6h1v2H5zM9 6h1v2H9zM1 8h9v1H1z"/></svg>Taha Bagatur</a>
+    <div class="top">
+      <nav aria-label="Sections">
+        <a href="/#work">Cases</a>
+        <a href="/notes/" aria-current="page">Notes</a>
+        <a href="/#divan">Divan</a>
+        <a href="/#ask">Ask me</a>
+      </nav>
+      <button class="tema" type="button" aria-label="Switch to night" aria-pressed="false" title="Day / night"><svg class="semse" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="14" height="14"/><rect x="5" y="5" width="14" height="14" transform="rotate(45 12 12)"/></g><circle class="ic" cx="12" cy="12" r="3.2"/></svg><svg class="hilal" viewBox="0 0 24 24" aria-hidden="true"><path class="y" d="M15.5 3.2A9 9 0 1 0 20.8 16 7.2 7.2 0 0 1 15.5 3.2Z"/></svg></button>
+      <a class="lang" href="/tr/notes/gpu-persistence-mode" hreflang="tr" lang="tr">Türkçe</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/notes/">Notes</a></p>
+  <article>
+  <h1>NVIDIA persistence mode: what it changes for GPU containers</h1>
+  <p class="meta"><time datetime="2026-11-25">25 Nov 2026</time></p>
+
+  <p class="lead">When no process holds the GPU open, the driver can unload its state. The next CUDA call then pays an initialisation delay of a few seconds. Persistence mode keeps the driver state loaded so that delay goes away.</p>
+
+  <h2>What it does and does not do</h2>
+  <p>It shortens startup for the first process that touches the GPU, which matters for containers that start and stop often. It does <strong>not</strong> raise throughput or clock speeds. For that you look at power limits, clocks and cooling.</p>
+
+  <h2>Turning it on</h2>
+  <pre tabindex="0"><code>sudo nvidia-smi -pm 1   # enable
+sudo nvidia-smi -pm 0   # disable
+nvidia-smi              # look for Persistence-M: On</code></pre>
+  <p>The <code>-pm</code> switch is the legacy method. NVIDIA now recommends running the <code>nvidia-persistenced</code> daemon (usually a systemd service), which keeps the setting across reboots and is the better choice on servers.</p>
+
+  <h2>When it is worth it</h2>
+  <p>Many short container jobs that each initialise CUDA, or interactive tools where the first call feels slow. For one long training job that starts once, the saving is a few seconds and rarely matters.</p>
+  
+  <p class="meta">First published on Medium (in Turkish) on 13 January 2025; revised and shortened here. Written then, so check the current NVIDIA driver documentation before relying on the commands.</p>
+
+  <div class="box">
+    Questions or notes on this write-up: <a href="mailto:taha@tahabagatur.com">taha@tahabagatur.com</a> · <a href="/notes/">All notes</a>
+  </div>
+  </article>
+</main>
+
+<!-- Cloudflare Web Analytics insertion point: token supplied by Taha. -->
+<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;TOKEN_FROM_TAHA&quot;}"></script> -->
+<footer>
+  <div class="wrap">© 2026 Taha Bagatur · No cookies. · <a href="/feed.xml">Atom feed</a></div>
+</footer>
+<!--/email_off-->
+</body>
+</html>

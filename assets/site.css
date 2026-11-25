@@ -405,3 +405,5 @@ code{font-family:var(--mono);font-size:14px;background:var(--paper-2);padding:1p
 @media (max-width:640px){
   .rhumb{top:-52px;right:auto;bottom:auto;left:calc(100% - 892px);width:1080px;height:480px;overflow:visible}
 }
+pre{font-family:var(--mono);font-size:13.5px;line-height:1.5;background:var(--paper-2);padding:12px 14px;border-radius:3px;overflow-x:auto;margin:14px 0}
+pre code{background:none;padding:0;font-size:inherit}

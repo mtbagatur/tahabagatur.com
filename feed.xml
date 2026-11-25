@@ -7,6 +7,22 @@
   <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/"/>
   <updated>2026-11-23T16:41:43Z</updated>
   <entry>
+    <title>NVIDIA persistence mode: what it changes for GPU containers</title>
+    <id>https://tahabagatur.com/notes/gpu-persistence-mode</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/gpu-persistence-mode"/>
+    <published>2026-11-25T00:00:00Z</published>
+    <updated>2026-11-25T00:00:00Z</updated>
+    <summary>Persistence mode keeps the driver loaded so the first CUDA call is faster. It does not make the GPU itself faster.</summary>
+  </entry>
+  <entry>
+    <title>A reference MLOps setup: one command, with tracking, monitoring and CI</title>
+    <id>https://tahabagatur.com/notes/mlops-reference-setup</id>
+    <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/mlops-reference-setup"/>
+    <published>2026-11-25T00:00:00Z</published>
+    <updated>2026-11-25T00:00:00Z</updated>
+    <summary>A small FastAPI service with MLflow tracking, Prometheus and Grafana monitoring and a GitHub Actions pipeline, and where it stops short of production.</summary>
+  </entry>
+  <entry>
     <title>Claude Code and Hermes Agent: what their permission controls did in a local audit</title>
     <id>https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes</id>
     <link rel="alternate" type="text/html" href="https://tahabagatur.com/notes/audit-01-claude-code-vs-hermes"/>
