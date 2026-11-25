@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://tahabagatur.com';
-const TEMPLATE_VERSION = '4';
+const TEMPLATE_VERSION = '5';
 const SKIP = new Set(['index.html', 'tr/index.html', '404.html']);
 const IGNORE_DIRS = new Set(['node_modules', 'test-results', 'og', '.git', 'samples', 'scripts', 'tests', 'onizleme']);
 const CHECK = process.argv.includes('--check');
