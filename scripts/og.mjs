@@ -64,7 +64,7 @@ const COMPASS = HOME.match(/<svg class="bg"[\s\S]*?<\/svg>/)[0];
 const SEAL = HOME.match(/<svg class="seal"[\s\S]*?<\/svg>/)[0];
 
 function cardHtml(c) {
-  const titleSize = c.title.length > 70 ? 56 : c.title.length > 40 ? 66 : 78;
+  const titleSize = c.title.length > 70 ? 62 : c.title.length > 40 ? 72 : 84;
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${FONT_FACES}
 html,body{margin:0}
@@ -74,13 +74,13 @@ body{width:1200px;height:630px;overflow:hidden;background:#0f1622;color:#ece4d3;
 .bg .rose{stroke:#c9a46a;fill:none;opacity:.16}
 .bg .rose .pt{fill:#c9a46a;stroke:none}
 .bg .route{stroke:#e0756e;stroke-width:1.6;stroke-dasharray:4 7;fill:none;opacity:.22}
-.in{position:absolute;left:84px;top:64px;right:84px;bottom:60px;display:flex;flex-direction:column}
+.in{position:absolute;left:84px;top:56px;right:84px;bottom:44px;display:flex;flex-direction:column}
 .brand{display:flex;align-items:center;gap:16px;font:600 28px "Inter Tight"}
 .seal{width:42px;height:42px} .s-bg{fill:#ece4d3} .s-fg{fill:#0f1622}
-.eb{margin-top:auto;font:400 20px "IBM Plex Mono";letter-spacing:.08em;color:#ece4d3c4}
+.eb{margin-top:auto;font:400 22px "IBM Plex Mono";letter-spacing:.08em;color:#ece4d3c4}
 .eb i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#5fb393;margin-right:12px;vertical-align:2px}
-h1{font:400 ${titleSize}px/1.06 Fraunces,serif;margin:18px 0 0;letter-spacing:-.01em;max-width:900px}
-.ft{margin-top:34px;display:flex;justify-content:flex-end;font:400 20px "IBM Plex Mono";color:#ece4d3a8}
+h1{font:400 ${titleSize}px/1.06 Fraunces,serif;margin:18px 0 0;letter-spacing:-.01em;max-width:980px;margin-bottom:auto}
+.ft{display:flex;justify-content:flex-end;font:400 18px "IBM Plex Mono";color:#ece4d3a8}
 </style></head><body>
 ${COMPASS}
 <div class="in">
