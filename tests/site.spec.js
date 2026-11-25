@@ -17,6 +17,7 @@ const BILINGUAL_PAIRS = [
   ['/notes/bekci-agent-security', '/tr/notes/bekci-agent-security'],
   ['/notes/audit-01-claude-code-vs-hermes', '/tr/notes/audit-01-claude-code-vs-hermes'],
   ['/lab/canary/', '/tr/lab/canary/'],
+  ['/lab/jetson-orin-pytorch-opencv/', '/tr/lab/jetson-orin-pytorch-opencv/'],
   ['/live/', '/tr/live/'],
   ['/work/slow-llm-prefill', '/tr/work/slow-llm-prefill'],
   ['/work/gpu-node-nvme-hang', '/tr/work/gpu-node-nvme-hang'],

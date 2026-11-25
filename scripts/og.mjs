@@ -24,6 +24,7 @@ const KICKERS = [
   ['notes/index', 'FIELD NOTES', 'SAHA NOTLARI'],
   ['notes/', 'FIELD NOTE', 'SAHA NOTU'],
   ['lab/canary/', 'PROMPT-INJECTION CANARY', 'PROMPT INJECTION KANARYASI'],
+  ['lab/jetson-', 'LAB · BUILD LOG', 'LAB · KURULUM KAYDI'],
   ['lab/', 'LAB', 'LAB'],
 ];
 
