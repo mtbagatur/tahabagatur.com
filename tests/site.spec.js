@@ -336,6 +336,15 @@ test('Retired service URLs redirect away and home pages avoid employment-seeking
   }
 });
 
+test('home page title and structured data carry the same role in both languages', async ({ page }) => {
+  for (const p of ['/', '/tr/']) {
+    await page.goto(p);
+    await expect(page).toHaveTitle('Taha Bagatur · Platform Engineer (DevOps / MLOps)');
+    const ld = await page.locator('script[type="application/ld+json"]').first().textContent();
+    expect(ld).toContain('"jobTitle":"Platform Engineer (DevOps / MLOps)"');
+  }
+});
+
 test.describe('6. Bottom-of-page account links open in a new tab', () => {
   for (const p of [...ALL_PAGES, '/404']) {
     test(`external account links on ${p} use target=_blank and rel=noopener`, async ({ page }) => {
