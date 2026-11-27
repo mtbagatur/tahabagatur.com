@@ -372,3 +372,30 @@ test.describe('6. Bottom-of-page account links open in a new tab', () => {
     expect(new URL(page.url()).pathname).toBe('/');
   });
 });
+
+test.describe('7. Touch feedback and wide tables', () => {
+  test('audit matrix tables scroll sideways, are keyboard reachable and never widen the page', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/notes/audit-01-claude-code-vs-hermes/matrix');
+    const wraps = page.locator('.table-wrap');
+    await expect(wraps).toHaveCount(2);
+    for (const w of await wraps.all()) {
+      await expect(w).toHaveAttribute('tabindex', '0');
+      await expect(w).toHaveAttribute('role', 'region');
+      expect(await w.getAttribute('aria-label')).toBeTruthy();
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(375);
+  });
+
+  test('cards and list rows have a pressed state in the stylesheet', async ({ request }) => {
+    const css = await (await request.get('/assets/site.css')).text();
+    expect(css).toMatch(/\.case-card:active[^{]*\{opacity:\.7\}/);
+  });
+
+  test('home page links the Ulak product page in both languages', async ({ page }) => {
+    for (const p of ['/', '/tr/']) {
+      await page.goto(p);
+      await expect(page.locator('#divan a[href="https://ulak.tahabagatur.com/"]')).toHaveCount(1);
+    }
+  });
+});
