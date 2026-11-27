@@ -15,6 +15,12 @@
 https://tahabagatur.pages.dev/*
   X-Robots-Tag: noindex
 
+# The live page shows sample data only; it stays out of search results until real data is connected.
+/live/*
+  X-Robots-Tag: noindex
+/tr/live/*
+  X-Robots-Tag: noindex
+
 # Repo-only files are served too (Pages publishes the repo root); keep them out of search results.
 /README.md
   X-Robots-Tag: noindex

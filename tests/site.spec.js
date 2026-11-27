@@ -25,14 +25,20 @@ const BILINGUAL_PAIRS = [
   ['/work/dns-migration-decision', '/tr/work/dns-migration-decision'],
 ];
 
+// Served and tested, but kept out of the sitemap and out of search results.
+const NOINDEX_PAGES = ['/live/', '/tr/live/'];
+
+const SITEMAP_PAIRS = BILINGUAL_PAIRS.filter(([en]) => !NOINDEX_PAGES.includes(en));
+
 const SITEMAP_PAGES = [
-  ...BILINGUAL_PAIRS.flatMap(([en, tr]) => [en, tr]),
+  ...SITEMAP_PAIRS.flatMap(([en, tr]) => [en, tr]),
   '/notes/audit-01-claude-code-vs-hermes/matrix',
   '/notes/audit-01-claude-code-vs-hermes/method',
 ];
 
 const ALL_PAGES = [
   ...SITEMAP_PAGES,
+  ...NOINDEX_PAGES,
 ];
 
 test.describe('1. Sitemap, robots.txt & Atom feeds', () => {
@@ -67,7 +73,7 @@ test.describe('1. Sitemap, robots.txt & Atom feeds', () => {
       expect(lm).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     }
 
-    for (const [enPath, trPath] of BILINGUAL_PAIRS) {
+    for (const [enPath, trPath] of SITEMAP_PAIRS) {
       const en = BASE_ORIGIN + enPath;
       const tr = BASE_ORIGIN + trPath;
       const pairBlocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)]
@@ -152,6 +158,15 @@ test.describe('2. Clean URLs, redirects, 404 & security headers', () => {
 
     const font = await request.get('/assets/fonts/fraunces-normal-400-500-latin.woff2');
     expect(font.headers()['cache-control']).toContain('immutable');
+
+    for (const p of NOINDEX_PAGES) {
+      const live = await request.get(p);
+      expect(live.status()).toBe(200);
+      expect(live.headers()['x-robots-tag'], p).toBe('noindex');
+    }
+    const sitemap = await (await request.get('/sitemap.xml')).text();
+    expect(sitemap).not.toContain('/live/');
+    expect((await request.get('/')).headers()['x-robots-tag']).toBeUndefined();
 
     const readme = await request.get('/README.md');
     expect(readme.headers()['x-robots-tag']).toBe('noindex');
