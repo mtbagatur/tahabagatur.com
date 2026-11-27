@@ -148,6 +148,10 @@ test.describe('2. Clean URLs, redirects, 404 & security headers', () => {
     expect(h['content-security-policy']).toContain("default-src 'self'");
     expect(h['content-security-policy']).toContain('https://static.cloudflareinsights.com/beacon.min.js');
     expect(h['content-security-policy']).toContain('https://cloudflareinsights.com');
+    expect(h['strict-transport-security']).toMatch(/max-age=\d{7,}/);
+
+    const font = await request.get('/assets/fonts/fraunces-normal-400-500-latin.woff2');
+    expect(font.headers()['cache-control']).toContain('immutable');
 
     const readme = await request.get('/README.md');
     expect(readme.headers()['x-robots-tag']).toBe('noindex');
