@@ -378,7 +378,8 @@ test.describe('6. Bottom-of-page account links open in a new tab', () => {
         }
       }
       if (p === '/' || p === '/tr/') {
-        expect(links.filter(l => /^https?:\/\//.test(l.href))).toHaveLength(8);
+        const external = links.filter(l => /^https?:\/\//.test(l.href)).map(l => l.href);
+        expect(external).toEqual(['https://github.com/mtbagatur', 'https://www.linkedin.com/in/mtbagatur', 'https://x.com/mtbagatur', 'https://medium.com/@mtbagatur']);
         await expect(page.locator('#newtab-hint')).toHaveText(p === '/' ? '(opens in a new tab)' : '(yeni sekmede açılır)');
       }
     });
